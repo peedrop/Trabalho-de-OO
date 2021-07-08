@@ -10,6 +10,13 @@ package com.mycompany.candidato;
  * @author gabriel
  */
 public class Deputado extends Candidato {
+    String nome;
+    String estado;
+    Partido partido;
     Candidato suplente;
     int numero_cand;
+    
+    public Deputado(String nome, String estado, Partido partido) {
+        super(nome, estado, partido);
+    }
 }

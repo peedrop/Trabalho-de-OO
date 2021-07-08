@@ -12,9 +12,7 @@ package com.mycompany.candidato;
 public class DeputadoEstadual extends Deputado {
 
     public DeputadoEstadual(String nome, String estado, Partido partido, Candidato suplente, int numero_cand) {
-        this.nome = nome;
-        this.estado = estado;
-        this.partido = partido;
+        super(nome, estado, partido);
         this.suplente = suplente;
         this.numero_cand = numero_cand;
     }

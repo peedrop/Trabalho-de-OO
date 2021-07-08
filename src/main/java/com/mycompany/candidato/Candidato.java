@@ -14,4 +14,10 @@ public class Candidato {
     String estado;
     Partido partido;
     int numero_votos;
+    
+    public Candidato(String nome, String estado, Partido partido) {
+        this.nome = nome;
+        this.estado = estado;
+        this.partido = partido;
+    }
 }

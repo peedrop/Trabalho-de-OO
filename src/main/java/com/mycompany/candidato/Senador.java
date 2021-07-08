@@ -14,11 +14,9 @@ public class Senador extends Candidato {
     private int numero_cand;
 
     public Senador(String nome, String estado, Partido partido, Candidato suplente, int numero_cand) {
+        super(nome, estado, partido);
         this.suplente = suplente;
         this.numero_cand = numero_cand;
-        this.nome = nome;
-        this.estado = estado;
-        this.partido = partido;
     }
 
     public Candidato getSuplente() {
