@@ -18,7 +18,7 @@ public class Administrador {
         this.nome = nome;
         this.senha = senha;
     }
-
+    
     public String getNome() {
         return nome;
     }
@@ -30,10 +30,15 @@ public class Administrador {
     public String getIdentificador() {
         return identificador;
     }
+    
+    public void setIdentificador(String identificador) {
+        this.identificador = identificador;
+    }
 
     public void setSenha(String senha) {
         this.senha = senha;
     }
+    
     
     public void cadastrar(String nome, String senha) {
         //adicionar administrador em uma lista de administradores
