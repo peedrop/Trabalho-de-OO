@@ -15,6 +15,7 @@ public class Eleitor {
     private String estado;
     private String cpf;
     private String titulo_eleitor;
+    private static boolean validado;
 
     public Eleitor(String nome, String estado, String cpf, String titulo_eleitor) {
         this.nome = nome;
@@ -55,5 +56,9 @@ public class Eleitor {
         this.titulo_eleitor = titulo_eleitor;
     }
     
-    
+    public void setValidado(boolean validado) {
+        Eleitor.validado = validado;
+        /*método usado pra verificar se ele pode votar ou não. deve ser chamado
+        após o eleitor informar seus dados antes da primeira tela de votação */
+    }
 }

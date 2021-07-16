@@ -39,13 +39,7 @@ public class Administrador {
         this.senha = senha;
     }
     
-    
-    public void cadastrar(String nome, String senha) {
-        //adicionar administrador em uma lista de administradores
-        //vai gerar seu identificador
-    }
-    
-    public void login(String nome, String senha) {
-        //vai entrar no sistema informando identificador e senha
+    public String getSenha() {
+        return this.senha;
     }
 }

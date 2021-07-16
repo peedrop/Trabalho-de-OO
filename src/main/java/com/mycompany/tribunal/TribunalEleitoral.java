@@ -24,6 +24,14 @@ public class TribunalEleitoral {
     Set<Eleitor> listaEleitores = new HashSet<>();
     Set<Partido> listaPartidos = new HashSet<>();
     Set<Administrador> listaAdministradores = new HashSet<>();
+
+    public Set<Candidato> getListaCandidatos() {
+        return listaCandidatos;
+    }
+
+    public void setListaCandidatos(Set<Candidato> listaCandidatos) {
+        this.listaCandidatos = listaCandidatos;
+    }
     
     public void menuPrincipal() {
         //abre interface gráfica com menu principal para cadastro
@@ -48,7 +56,10 @@ public class TribunalEleitoral {
                     }    
                     break;
                 case "Senador":
-                    if(numero < 100 || numero > 999) {
+                    if(Integer.parseInt(Integer.toString(numero).substring(0, 2)) != partido.getNumero()) {
+                        //nao cadastrou senador
+                    }
+                    else if(numero < 100 || numero > 999) {
                         //nao cadastrou senador
                     }
                     else {
@@ -68,7 +79,10 @@ public class TribunalEleitoral {
                     }
                     break;
                 case "Deputado Federal":
-                    if(numero < 1000 || numero > 9999) {
+                    if(Integer.parseInt(Integer.toString(numero).substring(0, 2)) != partido.getNumero()) {
+                        //nao cadastrou deputado federal
+                    }
+                    else if(numero < 1000 || numero > 9999) {
                         //nao cadastrou deputado federal
                     }
                     else {
@@ -88,7 +102,10 @@ public class TribunalEleitoral {
                     }
                     break;
                 case "Deputado Estadual":
-                    if(numero < 10000 || numero > 99999) {
+                    if(Integer.parseInt(Integer.toString(numero).substring(0, 2)) != partido.getNumero()) {
+                        
+                    }
+                    else if(numero < 10000 || numero > 99999) {
                         //nao cadastrou deputado estadual
                     }
                     else {
@@ -148,5 +165,14 @@ public class TribunalEleitoral {
         adm.setIdentificador(generatedString);
         listaAdministradores.add(adm);
         //mostrar na interface grafica o identificador do novo administrador cadastrado
+    }
+    
+    public void login(String identificador, String senha) {
+        for(Administrador administrador : this.listaAdministradores) {
+            if((administrador.getIdentificador() == null ? identificador == null : administrador.getIdentificador().equals(identificador)) && (administrador.getSenha() == null ? senha == null : administrador.getSenha().equals(senha))) {
+                System.out.println("Logado com sucesso!");
+                break;
+            }
+        }
     }
 }
