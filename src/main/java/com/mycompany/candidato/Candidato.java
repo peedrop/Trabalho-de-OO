@@ -37,4 +37,8 @@ public class Candidato {
     public void setNumeroVotos(int numero_votos) {
         this.numero_votos = numero_votos;
     }
+    
+    public String getEstado() {
+        return this.estado;
+    }
 }
