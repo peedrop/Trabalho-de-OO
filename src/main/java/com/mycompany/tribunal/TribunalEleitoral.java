@@ -62,10 +62,10 @@ public class TribunalEleitoral {
                     break;
                 case "Senador":
                     if(Integer.parseInt(Integer.toString(numero).substring(0, 2)) != partido.getNumero()) {
-                        //nao cadastrou senador
+                        //partido diferente
                     }
                     else if(numero < 100 || numero > 999) {
-                        //nao cadastrou senador
+                        //numero de digitos invalido
                     }
                     else {
                         boolean flag_senador = false;

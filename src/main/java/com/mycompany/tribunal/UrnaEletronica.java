@@ -112,7 +112,7 @@ public class UrnaEletronica {
             }
             for(Candidato candidato : this.tribunalEleitoral.getListaCandidatos()) {
                 if(!"Presidente".equals(cargo)) {
-                    if(candidato.getEstado() == null ? votante.getEstado() == null : candidato.getEstado().equals(votante.getEstado())) {
+                    if((candidato.getNumero_cand() == numero_escolhido) && (candidato.getEstado() == null ? votante.getEstado() == null : candidato.getEstado().equals(votante.getEstado()))) {
                         candidato.setNumeroVotos(1 + candidato.getNumeroVotos());
                     }
                     else {
