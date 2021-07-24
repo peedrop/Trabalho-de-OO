@@ -17,7 +17,7 @@
 <configuration>
 <archive>
 <manifest>
-<mainClass>com.mycompany.tribunal.UrnaEletronica</mainClass>
+<mainClass>com.mycompany.principal.Principal</mainClass>
 </manifest>
 </archive>
 <descriptorRefs>
@@ -38,5 +38,4 @@
 </plugin>
 </plugins>
 </build>
-    <name>Eleicoes</name>
 </project>

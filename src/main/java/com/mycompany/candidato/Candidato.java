@@ -21,6 +21,10 @@ public class Candidato {
         this.estado = estado;
         this.partido = partido;
     }
+    
+    public String getNome() {
+        return this.nome;
+    }
 
     public Partido getPartido() {
         return this.partido;

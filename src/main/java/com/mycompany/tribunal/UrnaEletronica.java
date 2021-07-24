@@ -11,13 +11,19 @@ import com.mycompany.candidato.DeputadoFederal;
 import com.mycompany.candidato.Presidente;
 import com.mycompany.candidato.Senador;
 import com.mycompany.usuarios.Eleitor;
-
 /**
  *
  * @author gabriel
  */
 public class UrnaEletronica {
     private static boolean votacao = false;
+    private static int numero_votos_presidente = 0;
+    private static int[] numero_votos_estado_sen = {0};
+    private static int[] numero_votos_estado_depest = {0};
+    private static int[] numero_votos_estado_depfed = {0};
+    private final String[] estados = {"AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES",
+        "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO",
+        "RR", "SC", "SP", "SE", "TO"};
     private TribunalEleitoral tribunalEleitoral;
     
     public void setTribunalEleitoral(TribunalEleitoral tribunalEleitoral) {
@@ -30,9 +36,6 @@ public class UrnaEletronica {
     
     public void encerrarVotacao() {
         votacao = false;
-        String[] estados = new String[]{"AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES",
-        "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO",
-        "RR", "SC", "SP", "SE", "TO"};
         Candidato presidente_eleito = null;
         Candidato senador_eleito = null;
         Candidato depfed_eleito = null;
@@ -94,13 +97,45 @@ public class UrnaEletronica {
             senador_eleito = null;
             i++;
         }
-        System.out.println("Presidente eleito: " + presidente_eleito);
+        for(Candidato c : this.tribunalEleitoral.listaCandidatos) {
+            if(c instanceof Presidente) {
+                System.out.println("Nome: " + c.getNome() + " | Partido: " + c.getPartido() + " | Número de votos: " + c.getNumeroVotos() + " (" + (c.getNumeroVotos() / (numero_votos_presidente))*100 + "%)");
+                if(c == presidente_eleito) {
+                    System.out.print(" (Eleito) ");
+                }
+            }
+        }
         for(int j = 0; j < estados.length; j++) {
-           System.out.println("Senador eleito no estado " +  estados[j] + ": " + sen_eleitos[j]);
-           System.out.println("Deputado federal eleito no estado " +  estados[j] + ": " + depfed_eleitos[j]);
-           System.out.println("Deputado estadual eleito no estado " +  estados[j] + ": " + depest_eleitos[j]);
+           for(Candidato c : this.tribunalEleitoral.listaCandidatos) {
+               if(c instanceof Senador && (c.getEstado() == null ? estados[j] == null : c.getEstado().equals(estados[j]))) {
+                   System.out.println("SENADOR " + estados[j]);
+                   System.out.println("Nome: " + c.getNome() + " | Partido: " + c.getPartido() + " | Número de votos: " + c.getNumeroVotos() + " (" + (c.getNumeroVotos() / (numero_votos_estado_sen[j]))*100 + "%)");
+                    if(c != sen_eleitos[j]) {
+                    } else {
+                        System.out.print(" (Eleito) ");
+                   }
+                }
+               if(c instanceof DeputadoFederal && (c.getEstado() == null ? estados[j] == null : c.getEstado().equals(estados[j]))) { 
+                   System.out.println("DEPUTADO FEDERAL " + estados[j]);
+                   System.out.println("Nome: " + c.getNome() + " | Partido: " + c.getPartido() + " | Número de votos: " + c.getNumeroVotos() + " (" + (c.getNumeroVotos() / (numero_votos_estado_depfed[j]))*100 + "%)");
+                    if(c != depfed_eleitos[j]) {
+                    } else {
+                        System.out.print(" (Eleito) ");
+                    }
+                }
+                if(c instanceof DeputadoEstadual && (c.getEstado() == null ? estados[j] == null : c.getEstado().equals(estados[j]))) {
+                    System.out.println("DEPUTADO ESTADUAL " + estados[j]);
+                    System.out.println("Nome: " + c.getNome() + " | Partido: " + c.getPartido() + " | Número de votos: " + c.getNumeroVotos() + " (" + (c.getNumeroVotos() / (numero_votos_estado_depest[j]))*100 + "%)");
+                    if(c != depest_eleitos[j]) {
+                    } else {
+                        System.out.print(" (Eleito) ");
+                    }
+                }
+               
+                System.out.println("Deputado estadual eleito no estado " +  estados[j] + ": " + depest_eleitos[j]);
+               }
+           }
         } 
-    }
     
     public void votar(String titulo_eleitor, String cargo, int numero_escolhido) {
         if(votacao) {
@@ -114,6 +149,7 @@ public class UrnaEletronica {
                 if(!"Presidente".equals(cargo)) {
                     if((candidato.getNumero_cand() == numero_escolhido) && (candidato.getEstado() == null ? votante.getEstado() == null : candidato.getEstado().equals(votante.getEstado()))) {
                         candidato.setNumeroVotos(1 + candidato.getNumeroVotos());
+                        numero_votos_presidente++;
                     }
                     else {
                         System.out.println("Candidato não é do seu estado!");
@@ -121,15 +157,25 @@ public class UrnaEletronica {
                 }
                 else {
                     candidato.setNumeroVotos(1 + candidato.getNumeroVotos());
+                    for(int i = 0; i < estados.length; i++) {
+                        if(votante.getEstado() == null ? estados[i] == null : votante.getEstado().equals(estados[i])) {
+                            if(candidato instanceof Senador) {
+                                numero_votos_estado_sen[i]++;
+                            }
+                            else if(candidato instanceof DeputadoFederal) {
+                                numero_votos_estado_depfed[i]++;
+                            }
+                            else if(candidato instanceof DeputadoEstadual) {
+                                numero_votos_estado_depest[i]++;
+                            }
+                            break;
+                        }
+                    }
                 }
             }
         }
         else {
             System.out.println("Votação não iniciada!");
         }
-    }
-    
-    public static void main(String[] args) {
-        
     }
 }

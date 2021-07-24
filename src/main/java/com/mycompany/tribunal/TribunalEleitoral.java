@@ -46,6 +46,7 @@ public class TribunalEleitoral {
         if(listaPartidos.contains(partido) && listaPartidos.contains(partido_suplente)) {
             if(null != cargo) switch (cargo) {
                 case "Presidente":
+                    System.out.println("Entrou aqui");
                     boolean flag_presidente = false;
                     Presidente presidente = new Presidente(new Candidato(suplente, estado_suplente, partido_suplente), nome, estado, partido);
                     for(Candidato c : listaCandidatos) {
@@ -146,9 +147,22 @@ public class TribunalEleitoral {
         if(!flag) {
             listaPartidos.add(partido);
         }    
-    }    
+    }
+
+    public void editarPartido(Partido partido_antigo, Partido partido_novo) {
+        listaPartidos.stream().filter((p) -> (partido_antigo == p)).forEachOrdered((p) -> {
+            p = partido_novo;
+        });
+    }
+    
+    public void deletarPartido(Partido partido) {
+        listaPartidos.remove(partido);
+    }
     
     public void cadastrarEleitor(String nome, String estado, String cpf, String titulo_eleitor) {
+        if(cpf.toCharArray().length != 11 || titulo_eleitor.toCharArray().length != 12) {
+            return;
+        }
         boolean flag = false;
         for(Eleitor e : listaEleitores) {
             if((e.getCpf() == null ? cpf == null : e.getCpf().equals(cpf)) || (e.getTitulo_eleitor() == null ? titulo_eleitor == null : e.getTitulo_eleitor().equals(titulo_eleitor))) {
