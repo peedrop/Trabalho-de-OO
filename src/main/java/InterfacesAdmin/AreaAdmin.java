@@ -7,7 +7,6 @@ package InterfacesAdmin;
 
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 /**
  *
  * @author pedro
@@ -34,6 +33,99 @@ public class AreaAdmin extends javax.swing.JFrame {
         PainelPadrao = new javax.swing.JPanel();
         TelaInicial = new javax.swing.JPanel();
         btnLogin = new javax.swing.JButton();
+        clAdmin = new javax.swing.JPanel();
+        AdminPadrao = new javax.swing.JPanel();
+        btnGerenciarPartido = new javax.swing.JButton();
+        btnGerenciarEleitores = new javax.swing.JButton();
+        btnGerenciarCandidato = new javax.swing.JButton();
+        btnGerenciarAdm = new javax.swing.JButton();
+        dashBoardAdm = new javax.swing.JLabel();
+        btnVotacao = new javax.swing.JButton();
+        Votacao = new javax.swing.JPanel();
+        btnEncerrarVotacao = new javax.swing.JButton();
+        btnIniciarVotacao = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        GerenciadorEleitor = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        painelListaEleitores = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
+        painelFormEleitor = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jtNomeEleitor = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        btnLimparEleitor = new javax.swing.JButton();
+        btnAdicionarEleitor = new javax.swing.JButton();
+        btnEditarEleitor = new javax.swing.JButton();
+        btnRemoverEleitor = new javax.swing.JButton();
+        cbEstadoEleitor = new javax.swing.JComboBox<>();
+        jLabel22 = new javax.swing.JLabel();
+        jtTituloEleitor = new javax.swing.JTextField();
+        jtCpfEleitor = new javax.swing.JFormattedTextField();
+        btnVoltarDashEleitores = new javax.swing.JButton();
+        GerenciadorPartido = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jList3 = new javax.swing.JList<>();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jtNomePartido = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jtSiglaPartido = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        jtNumeroPartido = new javax.swing.JTextField();
+        btnLimparPartido = new javax.swing.JButton();
+        btnAdicionarPartido = new javax.swing.JButton();
+        btnEditarPartido = new javax.swing.JButton();
+        btnRemoverPartido = new javax.swing.JButton();
+        btnVoltarDashPartidos = new javax.swing.JButton();
+        GerenciadorCandidato = new javax.swing.JPanel();
+        painelFormCandidato = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jtNomeCandidato = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        btnLimparCandidato = new javax.swing.JButton();
+        btnAdicionarCandidato = new javax.swing.JButton();
+        btnEditarCandidato = new javax.swing.JButton();
+        btnRemoverCandidato = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        cbPartidoCandidato = new javax.swing.JComboBox<>();
+        cbEstadoCandidato = new javax.swing.JComboBox<>();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jtNomeViceCandidato = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        cbEstadoViceCandidato = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
+        cbPartidoViceCandidato = new javax.swing.JComboBox<>();
+        cbTipoCandidato = new javax.swing.JComboBox<>();
+        painelListaCandidato = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jLabel1 = new javax.swing.JLabel();
+        btnVoltarDashB = new javax.swing.JButton();
+        GerenciadorAdministrador = new javax.swing.JPanel();
+        painelListaAdm1 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        listaAdm1 = new javax.swing.JList<>();
+        painelFormularioAdm1 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jtNomeAdm = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        btnLimparAdm = new javax.swing.JButton();
+        btnAdicionarAdm = new javax.swing.JButton();
+        btnEditarAdm = new javax.swing.JButton();
+        btnRemoverAdm = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        jtIdAdm = new javax.swing.JTextField();
+        jtSenhaAdm = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        btnVoltarDashB2 = new javax.swing.JButton();
         clLogin = new javax.swing.JPanel();
         LoginPadrao = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -43,15 +135,19 @@ public class AreaAdmin extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         btnLogar = new javax.swing.JButton();
         btnVoltarInicial = new javax.swing.JButton();
+        imagemLogin = new javax.swing.JLabel();
         ErroLogin = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         btnVoltarLogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMinimumSize(new java.awt.Dimension(800, 600));
 
         txtAreaAdm.setText("Área Administrativa");
 
+        PainelPadrao.setMinimumSize(new java.awt.Dimension(780, 600));
+        PainelPadrao.setPreferredSize(new java.awt.Dimension(778, 600));
         PainelPadrao.setLayout(new java.awt.CardLayout());
 
         btnLogin.setText("Login");
@@ -66,22 +162,986 @@ public class AreaAdmin extends javax.swing.JFrame {
         TelaInicialLayout.setHorizontalGroup(
             TelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TelaInicialLayout.createSequentialGroup()
-                .addGap(324, 324, 324)
-                .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
-                .addGap(321, 321, 321))
+                .addGap(326, 326, 326)
+                .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                .addGap(319, 319, 319))
         );
         TelaInicialLayout.setVerticalGroup(
             TelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TelaInicialLayout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-                .addGap(172, 172, 172))
+                .addGap(238, 238, 238)
+                .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                .addGap(257, 257, 257))
         );
 
         PainelPadrao.add(TelaInicial, "telaInicial");
 
-        clLogin.setPreferredSize(new java.awt.Dimension(778, 401));
+        clAdmin.setMinimumSize(new java.awt.Dimension(780, 670));
+        clAdmin.setName(""); // NOI18N
+        clAdmin.setLayout(new java.awt.CardLayout());
+
+        AdminPadrao.setMinimumSize(new java.awt.Dimension(778, 600));
+        AdminPadrao.setPreferredSize(new java.awt.Dimension(778, 600));
+
+        btnGerenciarPartido.setText("Gerenciar Partidos");
+        btnGerenciarPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGerenciarPartidoActionPerformed(evt);
+            }
+        });
+
+        btnGerenciarEleitores.setText("Gerenciar Eleitores");
+        btnGerenciarEleitores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGerenciarEleitoresActionPerformed(evt);
+            }
+        });
+
+        btnGerenciarCandidato.setText("Gerenciar Candidatos");
+        btnGerenciarCandidato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGerenciarCandidatoActionPerformed(evt);
+            }
+        });
+
+        btnGerenciarAdm.setText("Gerenciar Administradores");
+        btnGerenciarAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGerenciarAdmActionPerformed(evt);
+            }
+        });
+
+        dashBoardAdm.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        dashBoardAdm.setForeground(new java.awt.Color(0, 102, 102));
+        dashBoardAdm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dashBoardAdm.setText("DashBoard Administradores");
+
+        btnVotacao.setText("Votação");
+        btnVotacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVotacaoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout AdminPadraoLayout = new javax.swing.GroupLayout(AdminPadrao);
+        AdminPadrao.setLayout(AdminPadraoLayout);
+        AdminPadraoLayout.setHorizontalGroup(
+            AdminPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AdminPadraoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AdminPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dashBoardAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(AdminPadraoLayout.createSequentialGroup()
+                        .addGroup(AdminPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnGerenciarAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnGerenciarEleitores, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(AdminPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnGerenciarCandidato)
+                            .addComponent(btnGerenciarPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+            .addGroup(AdminPadraoLayout.createSequentialGroup()
+                .addGap(295, 295, 295)
+                .addComponent(btnVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 306, Short.MAX_VALUE))
+        );
+        AdminPadraoLayout.setVerticalGroup(
+            AdminPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AdminPadraoLayout.createSequentialGroup()
+                .addGap(106, 106, 106)
+                .addComponent(dashBoardAdm)
+                .addGap(59, 59, 59)
+                .addGroup(AdminPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGerenciarAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGerenciarCandidato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(btnVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addGroup(AdminPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGerenciarEleitores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGerenciarPartido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
+        );
+
+        clAdmin.add(AdminPadrao, "telaAdminPadrao");
+
+        btnEncerrarVotacao.setBackground(new java.awt.Color(217, 83, 79));
+        btnEncerrarVotacao.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnEncerrarVotacao.setText("Encerrar");
+        btnEncerrarVotacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEncerrarVotacaoActionPerformed(evt);
+            }
+        });
+
+        btnIniciarVotacao.setBackground(new java.awt.Color(92, 184, 92));
+        btnIniciarVotacao.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnIniciarVotacao.setText("Iniciar");
+        btnIniciarVotacao.setEnabled(false);
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel27.setText("Votação");
+        jLabel27.setAlignmentY(0.0F);
+
+        javax.swing.GroupLayout VotacaoLayout = new javax.swing.GroupLayout(Votacao);
+        Votacao.setLayout(VotacaoLayout);
+        VotacaoLayout.setHorizontalGroup(
+            VotacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VotacaoLayout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addComponent(btnEncerrarVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnIniciarVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(157, 157, 157))
+        );
+        VotacaoLayout.setVerticalGroup(
+            VotacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(VotacaoLayout.createSequentialGroup()
+                .addComponent(jLabel27)
+                .addGap(27, 27, 27)
+                .addGroup(VotacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEncerrarVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnIniciarVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(422, Short.MAX_VALUE))
+        );
+
+        clAdmin.add(Votacao, "telaVotacao");
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("Gerenciamento de Eleitores");
+        jLabel15.setAlignmentY(0.0F);
+
+        painelListaEleitores.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Eleitores"));
+
+        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Pedro Paulo Silva Filogônio", "Gabriel Arantes Resende Pereira", "Gabriel do Carmo Silva", "Pedro Leopoldo Dal-Col Vianna", " " };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jList2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane2.setViewportView(jList2);
+
+        javax.swing.GroupLayout painelListaEleitoresLayout = new javax.swing.GroupLayout(painelListaEleitores);
+        painelListaEleitores.setLayout(painelListaEleitoresLayout);
+        painelListaEleitoresLayout.setHorizontalGroup(
+            painelListaEleitoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelListaEleitoresLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        painelListaEleitoresLayout.setVerticalGroup(
+            painelListaEleitoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelListaEleitoresLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2)
+                .addContainerGap())
+        );
+
+        painelFormEleitor.setBorder(javax.swing.BorderFactory.createTitledBorder("Formulário"));
+
+        jLabel16.setText("Nome");
+
+        jtNomeEleitor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtNomeEleitorActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setText("Cpf");
+
+        jLabel21.setText("Estado");
+
+        btnLimparEleitor.setBackground(new java.awt.Color(240, 173, 78));
+        btnLimparEleitor.setLabel("Limpar");
+
+        btnAdicionarEleitor.setBackground(new java.awt.Color(2, 117, 216));
+        btnAdicionarEleitor.setLabel("Adicionar");
+        btnAdicionarEleitor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarEleitorActionPerformed(evt);
+            }
+        });
+
+        btnEditarEleitor.setBackground(new java.awt.Color(92, 184, 92));
+        btnEditarEleitor.setLabel("Editar");
+
+        btnRemoverEleitor.setBackground(new java.awt.Color(217, 83, 79));
+        btnRemoverEleitor.setLabel("Remover");
+        btnRemoverEleitor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverEleitorActionPerformed(evt);
+            }
+        });
+
+        cbEstadoEleitor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Minas Gerais - MG" }));
+
+        jLabel22.setText("Título de Eleitor");
+
+        jtTituloEleitor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtTituloEleitorActionPerformed(evt);
+            }
+        });
+
+        try {
+            jtCpfEleitor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jtCpfEleitor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtCpfEleitorActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout painelFormEleitorLayout = new javax.swing.GroupLayout(painelFormEleitor);
+        painelFormEleitor.setLayout(painelFormEleitorLayout);
+        painelFormEleitorLayout.setHorizontalGroup(
+            painelFormEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelFormEleitorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(painelFormEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jtNomeEleitor)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFormEleitorLayout.createSequentialGroup()
+                        .addGroup(painelFormEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelFormEleitorLayout.createSequentialGroup()
+                                .addGroup(painelFormEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(painelFormEleitorLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(painelFormEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(btnLimparEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(btnRemoverEleitor)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelFormEleitorLayout.createSequentialGroup()
+                                        .addGroup(painelFormEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addGap(0, 262, Short.MAX_VALUE)))
+                                .addGap(18, 18, 18))
+                            .addGroup(painelFormEleitorLayout.createSequentialGroup()
+                                .addComponent(jtCpfEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(painelFormEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(painelFormEleitorLayout.createSequentialGroup()
+                                .addGroup(painelFormEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel21)
+                                    .addComponent(btnEditarEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnAdicionarEleitor))
+                                .addGap(73, 73, 73))
+                            .addComponent(cbEstadoEleitor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(painelFormEleitorLayout.createSequentialGroup()
+                        .addComponent(jLabel22)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jtTituloEleitor))
+                .addContainerGap())
+        );
+        painelFormEleitorLayout.setVerticalGroup(
+            painelFormEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelFormEleitorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtNomeEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelFormEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelFormEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbEstadoEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtCpfEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel22)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtTituloEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(painelFormEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAdicionarEleitor)
+                    .addComponent(btnRemoverEleitor))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelFormEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLimparEleitor)
+                    .addComponent(btnEditarEleitor))
+                .addContainerGap())
+        );
+
+        btnVoltarDashEleitores.setText("Voltar");
+        btnVoltarDashEleitores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarDashEleitoresActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout GerenciadorEleitorLayout = new javax.swing.GroupLayout(GerenciadorEleitor);
+        GerenciadorEleitor.setLayout(GerenciadorEleitorLayout);
+        GerenciadorEleitorLayout.setHorizontalGroup(
+            GerenciadorEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GerenciadorEleitorLayout.createSequentialGroup()
+                .addGroup(GerenciadorEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(GerenciadorEleitorLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnVoltarDashEleitores, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(GerenciadorEleitorLayout.createSequentialGroup()
+                        .addComponent(painelListaEleitores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(painelFormEleitor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        GerenciadorEleitorLayout.setVerticalGroup(
+            GerenciadorEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GerenciadorEleitorLayout.createSequentialGroup()
+                .addGroup(GerenciadorEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(btnVoltarDashEleitores))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(GerenciadorEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(painelListaEleitores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(painelFormEleitor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
+        );
+
+        clAdmin.add(GerenciadorEleitor, "telaGerenciarEleitor");
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setText("Gerenciamento de Partidos");
+        jLabel23.setAlignmentY(0.0F);
+
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Partidos"));
+
+        jList3.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Progressistas - PP", "Partido Liberal -  PL", "Partido dos Trabalhadores - PT", "Movimento Democrático Brasileiro - MDB", " " };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jList3.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane4.setViewportView(jList3);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane4)
+                .addContainerGap())
+        );
+
+        jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Formulário"));
+
+        jLabel24.setText("Nome");
+
+        jtNomePartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtNomePartidoActionPerformed(evt);
+            }
+        });
+
+        jLabel25.setText("Sigla");
+
+        jtSiglaPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtSiglaPartidoActionPerformed(evt);
+            }
+        });
+
+        jLabel26.setText("Número");
+
+        jtNumeroPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtNumeroPartidoActionPerformed(evt);
+            }
+        });
+
+        btnLimparPartido.setBackground(new java.awt.Color(240, 173, 78));
+        btnLimparPartido.setLabel("Limpar");
+
+        btnAdicionarPartido.setBackground(new java.awt.Color(2, 117, 216));
+        btnAdicionarPartido.setLabel("Adicionar");
+        btnAdicionarPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarPartidoActionPerformed(evt);
+            }
+        });
+
+        btnEditarPartido.setBackground(new java.awt.Color(92, 184, 92));
+        btnEditarPartido.setLabel("Editar");
+
+        btnRemoverPartido.setBackground(new java.awt.Color(217, 83, 79));
+        btnRemoverPartido.setLabel("Remover");
+        btnRemoverPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverPartidoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jtNomePartido)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jtSiglaPartido, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel7Layout.createSequentialGroup()
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(0, 214, Short.MAX_VALUE)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnLimparPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnRemoverPartido))))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel26)
+                            .addComponent(jtNumeroPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEditarPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAdicionarPartido))))
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtNomePartido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel26))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jtSiglaPartido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtNumeroPartido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAdicionarPartido)
+                    .addComponent(btnRemoverPartido))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLimparPartido)
+                    .addComponent(btnEditarPartido))
+                .addContainerGap())
+        );
+
+        btnVoltarDashPartidos.setText("Voltar");
+        btnVoltarDashPartidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarDashPartidosActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout GerenciadorPartidoLayout = new javax.swing.GroupLayout(GerenciadorPartido);
+        GerenciadorPartido.setLayout(GerenciadorPartidoLayout);
+        GerenciadorPartidoLayout.setHorizontalGroup(
+            GerenciadorPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GerenciadorPartidoLayout.createSequentialGroup()
+                .addGroup(GerenciadorPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(GerenciadorPartidoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnVoltarDashPartidos, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(GerenciadorPartidoLayout.createSequentialGroup()
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        GerenciadorPartidoLayout.setVerticalGroup(
+            GerenciadorPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GerenciadorPartidoLayout.createSequentialGroup()
+                .addGroup(GerenciadorPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(btnVoltarDashPartidos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(GerenciadorPartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
+        );
+
+        clAdmin.add(GerenciadorPartido, "telaGerenciarPartido");
+
+        painelFormCandidato.setBorder(javax.swing.BorderFactory.createTitledBorder("Formulário"));
+
+        jLabel6.setText("Nome");
+
+        jtNomeCandidato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtNomeCandidatoActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Partido");
+
+        jLabel8.setText("Estado");
+
+        btnLimparCandidato.setBackground(new java.awt.Color(240, 173, 78));
+        btnLimparCandidato.setLabel("Limpar");
+
+        btnAdicionarCandidato.setBackground(new java.awt.Color(2, 117, 216));
+        btnAdicionarCandidato.setLabel("Adicionar");
+        btnAdicionarCandidato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarCandidatoActionPerformed(evt);
+            }
+        });
+
+        btnEditarCandidato.setBackground(new java.awt.Color(92, 184, 92));
+        btnEditarCandidato.setLabel("Editar");
+
+        btnRemoverCandidato.setBackground(new java.awt.Color(217, 83, 79));
+        btnRemoverCandidato.setLabel("Remover");
+        btnRemoverCandidato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverCandidatoActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Tipo");
+
+        cbPartidoCandidato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Progressistas - PP", "Partido Liberal -  PL", "Partido dos Trabalhadores - PT", "Movimento Democrático Brasileiro - MDB", " " }));
+        cbPartidoCandidato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbPartidoCandidatoActionPerformed(evt);
+            }
+        });
+
+        cbEstadoCandidato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Minas Gerais - MG" }));
+
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Número");
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Vice ou Suplente"));
+
+        jLabel12.setText("Nome");
+
+        jtNomeViceCandidato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtNomeViceCandidatoActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setText("Estado");
+
+        cbEstadoViceCandidato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Minas Gerais - MG" }));
+        cbEstadoViceCandidato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbEstadoViceCandidatoActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setText("Partido");
+
+        cbPartidoViceCandidato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Progressistas - PP", "Partido Liberal -  PL", "Partido dos Trabalhadores - PT", "Movimento Democrático Brasileiro - MDB", " " }));
+        cbPartidoViceCandidato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbPartidoViceCandidatoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jtNomeViceCandidato)
+                    .addComponent(jLabel12)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addComponent(cbPartidoViceCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbEstadoViceCandidato, 0, 130, Short.MAX_VALUE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtNomeViceCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbEstadoViceCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbPartidoViceCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        cbTipoCandidato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Presidente", "Senador", "Deputado", "Deputado Federal", "Deputado Estadual" }));
+
+        javax.swing.GroupLayout painelFormCandidatoLayout = new javax.swing.GroupLayout(painelFormCandidato);
+        painelFormCandidato.setLayout(painelFormCandidatoLayout);
+        painelFormCandidatoLayout.setHorizontalGroup(
+            painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelFormCandidatoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jtNomeCandidato)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFormCandidatoLayout.createSequentialGroup()
+                        .addGroup(painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelFormCandidatoLayout.createSequentialGroup()
+                                .addGroup(painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(painelFormCandidatoLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(btnLimparCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(btnRemoverCandidato)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelFormCandidatoLayout.createSequentialGroup()
+                                        .addGroup(painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(18, 18, 18))
+                            .addGroup(painelFormCandidatoLayout.createSequentialGroup()
+                                .addComponent(cbPartidoCandidato, 0, 1, Short.MAX_VALUE)
+                                .addGap(20, 20, 20)))
+                        .addGroup(painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(btnEditarCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAdicionarCandidato)
+                            .addComponent(cbEstadoCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(painelFormCandidatoLayout.createSequentialGroup()
+                        .addGroup(painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(cbTipoCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(20, 20, 20)
+                        .addGroup(painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelFormCandidatoLayout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jTextField3)))
+                    .addGroup(painelFormCandidatoLayout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        painelFormCandidatoLayout.setVerticalGroup(
+            painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelFormCandidatoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtNomeCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbPartidoCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbEstadoCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbTipoCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAdicionarCandidato)
+                    .addComponent(btnRemoverCandidato))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLimparCandidato)
+                    .addComponent(btnEditarCandidato))
+                .addContainerGap())
+        );
+
+        painelListaCandidato.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Candidatos"));
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Pedro Paulo Silva Filogônio", "Gabriel Arantes Resende Pereira", "Gabriel do Carmo Silva", "Pedro Leopoldo Dal-Col Vianna", " " };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(jList1);
+
+        javax.swing.GroupLayout painelListaCandidatoLayout = new javax.swing.GroupLayout(painelListaCandidato);
+        painelListaCandidato.setLayout(painelListaCandidatoLayout);
+        painelListaCandidatoLayout.setHorizontalGroup(
+            painelListaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelListaCandidatoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        painelListaCandidatoLayout.setVerticalGroup(
+            painelListaCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelListaCandidatoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+        );
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Gerenciamento de Candidatos");
+        jLabel1.setAlignmentY(0.0F);
+
+        btnVoltarDashB.setText("Voltar");
+        btnVoltarDashB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarDashBActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout GerenciadorCandidatoLayout = new javax.swing.GroupLayout(GerenciadorCandidato);
+        GerenciadorCandidato.setLayout(GerenciadorCandidatoLayout);
+        GerenciadorCandidatoLayout.setHorizontalGroup(
+            GerenciadorCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, GerenciadorCandidatoLayout.createSequentialGroup()
+                .addGroup(GerenciadorCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(GerenciadorCandidatoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnVoltarDashB)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(GerenciadorCandidatoLayout.createSequentialGroup()
+                        .addComponent(painelListaCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(painelFormCandidato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        GerenciadorCandidatoLayout.setVerticalGroup(
+            GerenciadorCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GerenciadorCandidatoLayout.createSequentialGroup()
+                .addGroup(GerenciadorCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(btnVoltarDashB))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(GerenciadorCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(painelListaCandidato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(painelFormCandidato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
+        );
+
+        clAdmin.add(GerenciadorCandidato, "telaGerenciarCandidato");
+
+        GerenciadorAdministrador.setMinimumSize(new java.awt.Dimension(778, 600));
+
+        painelListaAdm1.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Administradores"));
+
+        listaAdm1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Pedro Paulo Silva Filogônio", "Gabriel Arantes Resende Pereira", "Gabriel do Carmo Silva", "Pedro Leopoldo Dal-Col Vianna", " " };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listaAdm1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane3.setViewportView(listaAdm1);
+
+        javax.swing.GroupLayout painelListaAdm1Layout = new javax.swing.GroupLayout(painelListaAdm1);
+        painelListaAdm1.setLayout(painelListaAdm1Layout);
+        painelListaAdm1Layout.setHorizontalGroup(
+            painelListaAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelListaAdm1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        painelListaAdm1Layout.setVerticalGroup(
+            painelListaAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelListaAdm1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3)
+                .addContainerGap())
+        );
+
+        painelFormularioAdm1.setBorder(javax.swing.BorderFactory.createTitledBorder("Formulário"));
+
+        jLabel9.setText("Nome");
+
+        jtNomeAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtNomeAdmActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setText("Senha");
+
+        btnLimparAdm.setBackground(new java.awt.Color(240, 173, 78));
+        btnLimparAdm.setLabel("Limpar");
+
+        btnAdicionarAdm.setBackground(new java.awt.Color(2, 117, 216));
+        btnAdicionarAdm.setLabel("Adicionar");
+        btnAdicionarAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarAdmActionPerformed(evt);
+            }
+        });
+
+        btnEditarAdm.setBackground(new java.awt.Color(92, 184, 92));
+        btnEditarAdm.setLabel("Editar");
+
+        btnRemoverAdm.setBackground(new java.awt.Color(217, 83, 79));
+        btnRemoverAdm.setLabel("Remover");
+        btnRemoverAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverAdmActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setText("Identificador");
+
+        jtIdAdm.setEditable(false);
+        jtIdAdm.setBackground(new java.awt.Color(153, 153, 153));
+        jtIdAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtIdAdmActionPerformed(evt);
+            }
+        });
+
+        jtSenhaAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtSenhaAdmActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout painelFormularioAdm1Layout = new javax.swing.GroupLayout(painelFormularioAdm1);
+        painelFormularioAdm1.setLayout(painelFormularioAdm1Layout);
+        painelFormularioAdm1Layout.setHorizontalGroup(
+            painelFormularioAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelFormularioAdm1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(painelFormularioAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelFormularioAdm1Layout.createSequentialGroup()
+                        .addGroup(painelFormularioAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtNomeAdm)
+                            .addComponent(jtIdAdm)
+                            .addComponent(jtSenhaAdm)
+                            .addGroup(painelFormularioAdm1Layout.createSequentialGroup()
+                                .addGroup(painelFormularioAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel19))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(painelFormularioAdm1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(painelFormularioAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnRemoverAdm)
+                            .addComponent(btnLimparAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
+                        .addGroup(painelFormularioAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAdicionarAdm)
+                            .addComponent(btnEditarAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 22, 22))))
+        );
+        painelFormularioAdm1Layout.setVerticalGroup(
+            painelFormularioAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelFormularioAdm1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtNomeAdm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtSenhaAdm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtIdAdm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(painelFormularioAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAdicionarAdm)
+                    .addComponent(btnRemoverAdm))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelFormularioAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLimparAdm)
+                    .addComponent(btnEditarAdm))
+                .addContainerGap())
+        );
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("Gerenciamento de Administradores");
+        jLabel20.setAlignmentY(0.0F);
+
+        btnVoltarDashB2.setText("Voltar");
+        btnVoltarDashB2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarDashB2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout GerenciadorAdministradorLayout = new javax.swing.GroupLayout(GerenciadorAdministrador);
+        GerenciadorAdministrador.setLayout(GerenciadorAdministradorLayout);
+        GerenciadorAdministradorLayout.setHorizontalGroup(
+            GerenciadorAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GerenciadorAdministradorLayout.createSequentialGroup()
+                .addComponent(painelListaAdm1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(painelFormularioAdm1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(GerenciadorAdministradorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnVoltarDashB2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        GerenciadorAdministradorLayout.setVerticalGroup(
+            GerenciadorAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(GerenciadorAdministradorLayout.createSequentialGroup()
+                .addGroup(GerenciadorAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(btnVoltarDashB2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(GerenciadorAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(painelListaAdm1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(painelFormularioAdm1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
+        );
+
+        clAdmin.add(GerenciadorAdministrador, "telaGerenciarAdmin");
+
+        PainelPadrao.add(clAdmin, "telaAdmin");
+
+        clLogin.setMinimumSize(new java.awt.Dimension(780, 600));
+        clLogin.setPreferredSize(new java.awt.Dimension(780, 600));
         clLogin.setLayout(new java.awt.CardLayout());
+
+        LoginPadrao.setMinimumSize(new java.awt.Dimension(778, 454));
 
         jLabel2.setText("Login");
 
@@ -115,50 +1175,55 @@ public class AreaAdmin extends javax.swing.JFrame {
             }
         });
 
+        imagemLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/InterfacesAdmin/imagens/login.png")));
+        imagemLogin.setPreferredSize(new java.awt.Dimension(100, 127));
+
         javax.swing.GroupLayout LoginPadraoLayout = new javax.swing.GroupLayout(LoginPadrao);
         LoginPadrao.setLayout(LoginPadraoLayout);
         LoginPadraoLayout.setHorizontalGroup(
             LoginPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginPadraoLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addGroup(LoginPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginPadraoLayout.createSequentialGroup()
+                        .addComponent(btnVoltarInicial)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 602, Short.MAX_VALUE)
+                        .addComponent(btnLogar))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginPadraoLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel2))
                     .addGroup(LoginPadraoLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(LoginPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginPadraoLayout.createSequentialGroup()
-                                .addComponent(btnVoltarInicial)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 640, Short.MAX_VALUE)
-                                .addComponent(btnLogar))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginPadraoLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel2))))
-                    .addGroup(LoginPadraoLayout.createSequentialGroup()
-                        .addGap(116, 116, 116)
+                            .addGroup(LoginPadraoLayout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(31, 31, 31))
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(204, 204, 204)
                         .addGroup(LoginPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(LoginPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtSenha)
-                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(92, 92, 92)))
-                .addContainerGap())
+                            .addComponent(txtId, javax.swing.GroupLayout.DEFAULT_SIZE, 454, Short.MAX_VALUE))))
+                .addGap(30, 30, 30))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginPadraoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(imagemLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(346, 346, 346))
         );
         LoginPadraoLayout.setVerticalGroup(
             LoginPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginPadraoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(112, 112, 112)
-                .addGroup(LoginPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(LoginPadraoLayout.createSequentialGroup()
-                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
-                        .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(LoginPadraoLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(55, 55, 55)
-                        .addComponent(jLabel5)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
+                .addGap(9, 9, 9)
+                .addComponent(imagemLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(LoginPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
+                .addGroup(LoginPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(LoginPadraoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLogar)
                     .addComponent(btnVoltarInicial))
@@ -167,6 +1232,10 @@ public class AreaAdmin extends javax.swing.JFrame {
 
         clLogin.add(LoginPadrao, "telaLoginPadrao");
 
+        ErroLogin.setMinimumSize(new java.awt.Dimension(778, 600));
+        ErroLogin.setPreferredSize(new java.awt.Dimension(778, 600));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Usuário não existe. Tente novamente.");
 
         btnVoltarLogin.setText("Voltar");
@@ -181,22 +1250,23 @@ public class AreaAdmin extends javax.swing.JFrame {
         ErroLoginLayout.setHorizontalGroup(
             ErroLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ErroLoginLayout.createSequentialGroup()
-                .addGap(294, 294, 294)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(299, 299, 299))
-            .addGroup(ErroLoginLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnVoltarLogin)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(ErroLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ErroLoginLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(btnVoltarLogin))
+                    .addGroup(ErroLoginLayout.createSequentialGroup()
+                        .addGap(281, 281, 281)
+                        .addComponent(jLabel3)))
+                .addContainerGap(314, Short.MAX_VALUE))
         );
         ErroLoginLayout.setVerticalGroup(
             ErroLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ErroLoginLayout.createSequentialGroup()
-                .addGap(202, 202, 202)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(151, 151, 151)
+                .addContainerGap(205, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(247, 247, 247)
                 .addComponent(btnVoltarLogin)
-                .addContainerGap())
+                .addGap(62, 62, 62))
         );
 
         clLogin.add(ErroLogin, "telaErroLogin");
@@ -213,9 +1283,7 @@ public class AreaAdmin extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtAreaAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(PainelPadrao, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE)))
+                    .addComponent(PainelPadrao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -223,9 +1291,9 @@ public class AreaAdmin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtAreaAdm)
-                .addGap(18, 18, 18)
-                .addComponent(PainelPadrao, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PainelPadrao, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -234,8 +1302,10 @@ public class AreaAdmin extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
+        
         CardLayout cl = (CardLayout) PainelPadrao.getLayout();
         cl.show(PainelPadrao, "telaLogin");
+        txtId.requestFocus();
         
     }//GEN-LAST:event_btnLoginActionPerformed
 
@@ -257,21 +1327,21 @@ public class AreaAdmin extends javax.swing.JFrame {
 
     private void btnLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogarActionPerformed
         // TODO add your handling code here:
-        String identificador = txtId.getText();
-        char[] senha = txtSenha.getPassword();
-
+        String identificador = txtId.getText().trim();
+        String senha = new String(txtSenha.getPassword()).trim();
+        
         //Verifica se os dados nao estao vazios
-        if( identificador.isEmpty() || senha.length == 0 ){
+        if( identificador.isEmpty() || senha.isEmpty()){
             JOptionPane.showMessageDialog(null , "Digite uma senha e um Identificador");
-        }else if(!validaLogin(identificador, senha))
+        }else if(!validaLogin(identificador, senha))            //Valida a senha
         {
-            CardLayout cl = (CardLayout) clLogin.getLayout();
-            cl.show(clLogin, "telaErroLogin");
-            txtId.setText("");
+            CardLayout cl = (CardLayout) clLogin.getLayout();   //Troca a tela para o ERRO
+            cl.show(clLogin, "telaErroLogin");                  
+            txtId.setText("");                                  //Esvazia os campos
             txtSenha.setText("");
         }else{
-            JOptionPane.showMessageDialog(rootPane, "Bem vindo admin");
-            //Criar um painel para colocas as funções do adm
+            CardLayout cl = (CardLayout) PainelPadrao.getLayout();   //Troca a tela para o dashboard
+            cl.show(PainelPadrao, "telaAdmin");
         }
     }//GEN-LAST:event_btnLogarActionPerformed
 
@@ -279,13 +1349,155 @@ public class AreaAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         CardLayout cl = (CardLayout) clLogin.getLayout();
         cl.show(clLogin, "telaLoginPadrao");
+        txtId.requestFocus();
     }//GEN-LAST:event_btnVoltarLoginActionPerformed
+
+    private void btnGerenciarAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenciarAdmActionPerformed
+        CardLayout cl = (CardLayout) clAdmin.getLayout();
+        cl.show(clAdmin, "telaGerenciarAdmin");
+    }//GEN-LAST:event_btnGerenciarAdmActionPerformed
+
+    private void btnGerenciarCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenciarCandidatoActionPerformed
+        CardLayout cl = (CardLayout) clAdmin.getLayout();
+        cl.show(clAdmin, "telaGerenciarCandidato");
+    }//GEN-LAST:event_btnGerenciarCandidatoActionPerformed
+
+    private void btnGerenciarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenciarPartidoActionPerformed
+        CardLayout cl = (CardLayout) clAdmin.getLayout();
+        cl.show(clAdmin, "telaGerenciarPartido");
+    }//GEN-LAST:event_btnGerenciarPartidoActionPerformed
+
+    private void jtNomeAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNomeAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtNomeAdmActionPerformed
+
+    private void btnAdicionarAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdicionarAdmActionPerformed
+
+    private void btnRemoverAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRemoverAdmActionPerformed
+
+    private void jtIdAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtIdAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtIdAdmActionPerformed
+
+    private void jtSenhaAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtSenhaAdmActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtSenhaAdmActionPerformed
+
+    private void btnVoltarDashB2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarDashB2ActionPerformed
+        CardLayout cl = (CardLayout) clAdmin.getLayout();
+        cl.show(clAdmin, "telaAdminPadrao");
+    }//GEN-LAST:event_btnVoltarDashB2ActionPerformed
+
+    private void jtNomeCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNomeCandidatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtNomeCandidatoActionPerformed
+
+    private void btnAdicionarCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarCandidatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdicionarCandidatoActionPerformed
+
+    private void btnRemoverCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverCandidatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRemoverCandidatoActionPerformed
+
+    private void cbPartidoCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPartidoCandidatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbPartidoCandidatoActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jtNomeViceCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNomeViceCandidatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtNomeViceCandidatoActionPerformed
+
+    private void cbEstadoViceCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEstadoViceCandidatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbEstadoViceCandidatoActionPerformed
+
+    private void cbPartidoViceCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbPartidoViceCandidatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbPartidoViceCandidatoActionPerformed
+
+    private void btnVoltarDashBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarDashBActionPerformed
+        CardLayout cl = (CardLayout) clAdmin.getLayout();
+        cl.show(clAdmin, "telaAdminPadrao");
+    }//GEN-LAST:event_btnVoltarDashBActionPerformed
+
+    private void jtNomeEleitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNomeEleitorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtNomeEleitorActionPerformed
+
+    private void btnAdicionarEleitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarEleitorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdicionarEleitorActionPerformed
+
+    private void btnRemoverEleitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverEleitorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRemoverEleitorActionPerformed
+
+    private void jtTituloEleitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtTituloEleitorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtTituloEleitorActionPerformed
+
+    private void jtCpfEleitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtCpfEleitorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtCpfEleitorActionPerformed
+
+    private void jtNomePartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNomePartidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtNomePartidoActionPerformed
+
+    private void jtSiglaPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtSiglaPartidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtSiglaPartidoActionPerformed
+
+    private void jtNumeroPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNumeroPartidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtNumeroPartidoActionPerformed
+
+    private void btnAdicionarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarPartidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdicionarPartidoActionPerformed
+
+    private void btnRemoverPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverPartidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRemoverPartidoActionPerformed
+
+    private void btnGerenciarEleitoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenciarEleitoresActionPerformed
+        CardLayout cl = (CardLayout) clAdmin.getLayout();
+        cl.show(clAdmin, "telaGerenciarEleitor");
+    }//GEN-LAST:event_btnGerenciarEleitoresActionPerformed
+
+    private void btnVoltarDashPartidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarDashPartidosActionPerformed
+        CardLayout cl = (CardLayout) clAdmin.getLayout();
+        cl.show(clAdmin, "telaAdminPadrao");
+    }//GEN-LAST:event_btnVoltarDashPartidosActionPerformed
+
+    private void btnVoltarDashEleitoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarDashEleitoresActionPerformed
+        CardLayout cl = (CardLayout) clAdmin.getLayout();
+        cl.show(clAdmin, "telaAdminPadrao");
+    }//GEN-LAST:event_btnVoltarDashEleitoresActionPerformed
+
+    private void btnVotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVotacaoActionPerformed
+        CardLayout cl = (CardLayout) clAdmin.getLayout();
+        cl.show(clAdmin, "telaVotacao");
+    }//GEN-LAST:event_btnVotacaoActionPerformed
+
+    private void btnEncerrarVotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncerrarVotacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEncerrarVotacaoActionPerformed
     
-    private static boolean validaLogin(String id, char[] senha)
+    private static boolean validaLogin(String id, String senha)
     {
         //Depois pode chamar uma função para verificar se esta no arquivo de texto
         //Rever pq o char[] n funciona o equals
-        if(id.equals("admin") && senha.equals("admin"))
+        if(id.equals("admin") && senha.equals("admin")) 
         {
             return true;
         }else
@@ -330,19 +1542,113 @@ public class AreaAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel AdminPadrao;
     private javax.swing.JPanel ErroLogin;
+    private javax.swing.JPanel GerenciadorAdministrador;
+    private javax.swing.JPanel GerenciadorCandidato;
+    private javax.swing.JPanel GerenciadorEleitor;
+    private javax.swing.JPanel GerenciadorPartido;
     private javax.swing.JPanel LoginPadrao;
     private javax.swing.JPanel PainelPadrao;
     private javax.swing.JPanel TelaInicial;
+    private javax.swing.JPanel Votacao;
+    private javax.swing.JButton btnAdicionarAdm;
+    private javax.swing.JButton btnAdicionarCandidato;
+    private javax.swing.JButton btnAdicionarEleitor;
+    private javax.swing.JButton btnAdicionarPartido;
+    private javax.swing.JButton btnEditarAdm;
+    private javax.swing.JButton btnEditarCandidato;
+    private javax.swing.JButton btnEditarEleitor;
+    private javax.swing.JButton btnEditarPartido;
+    private javax.swing.JButton btnEncerrarVotacao;
+    private javax.swing.JButton btnGerenciarAdm;
+    private javax.swing.JButton btnGerenciarCandidato;
+    private javax.swing.JButton btnGerenciarEleitores;
+    private javax.swing.JButton btnGerenciarPartido;
+    private javax.swing.JButton btnIniciarVotacao;
+    private javax.swing.JButton btnLimparAdm;
+    private javax.swing.JButton btnLimparCandidato;
+    private javax.swing.JButton btnLimparEleitor;
+    private javax.swing.JButton btnLimparPartido;
     private javax.swing.JButton btnLogar;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnRemoverAdm;
+    private javax.swing.JButton btnRemoverCandidato;
+    private javax.swing.JButton btnRemoverEleitor;
+    private javax.swing.JButton btnRemoverPartido;
+    private javax.swing.JButton btnVoltarDashB;
+    private javax.swing.JButton btnVoltarDashB2;
+    private javax.swing.JButton btnVoltarDashEleitores;
+    private javax.swing.JButton btnVoltarDashPartidos;
     private javax.swing.JButton btnVoltarInicial;
     private javax.swing.JButton btnVoltarLogin;
+    private javax.swing.JButton btnVotacao;
+    private javax.swing.JComboBox<String> cbEstadoCandidato;
+    private javax.swing.JComboBox<String> cbEstadoEleitor;
+    private javax.swing.JComboBox<String> cbEstadoViceCandidato;
+    private javax.swing.JComboBox<String> cbPartidoCandidato;
+    private javax.swing.JComboBox<String> cbPartidoViceCandidato;
+    private javax.swing.JComboBox<String> cbTipoCandidato;
+    private javax.swing.JPanel clAdmin;
     private javax.swing.JPanel clLogin;
+    private javax.swing.JLabel dashBoardAdm;
+    private javax.swing.JLabel imagemLogin;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
+    private javax.swing.JList<String> jList3;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JFormattedTextField jtCpfEleitor;
+    private javax.swing.JTextField jtIdAdm;
+    private javax.swing.JTextField jtNomeAdm;
+    private javax.swing.JTextField jtNomeCandidato;
+    private javax.swing.JTextField jtNomeEleitor;
+    private javax.swing.JTextField jtNomePartido;
+    private javax.swing.JTextField jtNomeViceCandidato;
+    private javax.swing.JTextField jtNumeroPartido;
+    private javax.swing.JTextField jtSenhaAdm;
+    private javax.swing.JTextField jtSiglaPartido;
+    private javax.swing.JTextField jtTituloEleitor;
+    private javax.swing.JList<String> listaAdm1;
+    private javax.swing.JPanel painelFormCandidato;
+    private javax.swing.JPanel painelFormEleitor;
+    private javax.swing.JPanel painelFormularioAdm1;
+    private javax.swing.JPanel painelListaAdm1;
+    private javax.swing.JPanel painelListaCandidato;
+    private javax.swing.JPanel painelListaEleitores;
     private javax.swing.JLabel txtAreaAdm;
     private javax.swing.JTextField txtId;
     private javax.swing.JPasswordField txtSenha;
