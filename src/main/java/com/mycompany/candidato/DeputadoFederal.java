@@ -15,51 +15,5 @@ public class DeputadoFederal extends Deputado {
         super(nome, estado, partido);
         this.suplente = suplente;
         this.numero_cand = numero_cand;
-    }
-
-    public Candidato getSuplente() {
-        return suplente;
-    }
-
-    public void setSuplente(Candidato suplente) {
-        this.suplente = suplente;
-    }
-
-    public int getNumero_cand() {
-        return numero_cand;
-    }
-
-    public void setNumero_cand(int numero_cand) {
-        this.numero_cand = numero_cand;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public Partido getPartido() {
-        return partido;
-    }
-
-    public void setPartido(Partido partido) {
-        this.partido = partido;
-    }
-
-    public void setNumero_votos(int numero_votos) {
-        this.numero_votos = numero_votos;
-    }
-    
-    
+    }    
 }
