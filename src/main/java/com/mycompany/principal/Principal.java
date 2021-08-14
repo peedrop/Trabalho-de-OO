@@ -30,6 +30,9 @@ public class Principal {
         tribunal.cadastrarEleitor("Gabriel", "MG", "12901920192", "102910921029");
         tribunal.cadastrarAdministrador("Admin", "123456");
         urna.setTribunalEleitoral(tribunal);
-        Set<Candidato> lista = tribunal.getListaCandidatos();
+        Set<Candidato> lista = urna.getTribunalEleitoral().getListaCandidatos();
+        urna.iniciarVotacao();
+        urna.votar("102910921029", "Presidente", 13);
+        urna.encerrarVotacao();
     }
 }

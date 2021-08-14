@@ -20,19 +20,22 @@ import java.util.*;
  * @author gabriel
  */
 public class TribunalEleitoral {
-    Set<Candidato> listaCandidatos = new HashSet<>();
-    Set<Eleitor> listaEleitores = new HashSet<>();
-    Set<Partido> listaPartidos = new HashSet<>();
-    Set<Administrador> listaAdministradores = new HashSet<>();
+    private Set<Candidato> listaCandidatos = new HashSet<>();
+    private Set<Eleitor> listaEleitores = new HashSet<>();
+    private Set<Partido> listaPartidos = new HashSet<>();
+    private Set<Administrador> listaAdministradores = new HashSet<>();
 
     public Set<Candidato> getListaCandidatos() {
-        return listaCandidatos;
+        return this.listaCandidatos;
     }
     
     public Set<Eleitor> getListaEleitores() {
-        return listaEleitores;
+        return this.listaEleitores;
     }
 
+    public Set<Partido> getListaPartidos() {
+        return this.listaPartidos;
+    }
 
     public void setListaCandidatos(Set<Candidato> listaCandidatos) {
         this.listaCandidatos = listaCandidatos;
@@ -47,7 +50,6 @@ public class TribunalEleitoral {
             if(listaPartidos.contains(partido) && listaPartidos.contains(partido_suplente)) {
                 if(null != cargo) switch (cargo) {
                     case "Presidente":
-                        System.out.println("Entrou aqui");
                         boolean flag_presidente = false;
                         Presidente presidente = new Presidente(new Candidato(suplente, estado_suplente, partido_suplente), nome, estado, partido);
                         for(Candidato c : listaCandidatos) {
