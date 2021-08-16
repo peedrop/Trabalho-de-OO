@@ -24,6 +24,9 @@ public class TribunalEleitoral {
     Set<Eleitor> listaEleitores = new HashSet<>();
     Set<Partido> listaPartidos = new HashSet<>();
     Set<Administrador> listaAdministradores = new HashSet<>();
+    
+    private String id_teste = "admin";
+    private String senha_teste = "senha";
 
     public Set<Candidato> getListaCandidatos() {
         return listaCandidatos;
@@ -172,12 +175,13 @@ public class TribunalEleitoral {
         //mostrar na interface grafica o identificador do novo administrador cadastrado
     }
     
-    public void login(String identificador, String senha) {
+    public boolean login(String identificador, String senha) {
         for(Administrador administrador : this.listaAdministradores) {
             if((administrador.getIdentificador() == null ? identificador == null : administrador.getIdentificador().equals(identificador)) && (administrador.getSenha() == null ? senha == null : administrador.getSenha().equals(senha))) {
                 System.out.println("Logado com sucesso!");
-                break;
+                return true;
             }
         }
+        return false;
     }
 }

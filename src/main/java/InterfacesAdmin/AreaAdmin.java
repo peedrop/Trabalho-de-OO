@@ -7,6 +7,7 @@ package InterfacesAdmin;
 
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
+import com.mycompany.tribunal.TribunalEleitoral;
 /**
  *
  * @author pedro
@@ -1175,7 +1176,6 @@ public class AreaAdmin extends javax.swing.JFrame {
             }
         });
 
-        imagemLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/InterfacesAdmin/imagens/login.png")));
         imagemLogin.setPreferredSize(new java.awt.Dimension(100, 127));
 
         javax.swing.GroupLayout LoginPadraoLayout = new javax.swing.GroupLayout(LoginPadrao);
@@ -1262,7 +1262,7 @@ public class AreaAdmin extends javax.swing.JFrame {
         ErroLoginLayout.setVerticalGroup(
             ErroLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ErroLoginLayout.createSequentialGroup()
-                .addContainerGap(205, Short.MAX_VALUE)
+                .addContainerGap(196, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(247, 247, 247)
                 .addComponent(btnVoltarLogin)
@@ -1329,11 +1329,11 @@ public class AreaAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         String identificador = txtId.getText().trim();
         String senha = new String(txtSenha.getPassword()).trim();
-        
+       this.tribunalEleitoral = new TribunalEleitoral();
         //Verifica se os dados nao estao vazios
         if( identificador.isEmpty() || senha.isEmpty()){
             JOptionPane.showMessageDialog(null , "Digite uma senha e um Identificador");
-        }else if(!validaLogin(identificador, senha))            //Valida a senha
+        }else if(!tribunalEleitoral.login(identificador, senha))            //Valida a senha
         {
             CardLayout cl = (CardLayout) clLogin.getLayout();   //Troca a tela para o ERRO
             cl.show(clLogin, "telaErroLogin");                  
@@ -1493,18 +1493,6 @@ public class AreaAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEncerrarVotacaoActionPerformed
     
-    private static boolean validaLogin(String id, String senha)
-    {
-        //Depois pode chamar uma função para verificar se esta no arquivo de texto
-        //Rever pq o char[] n funciona o equals
-        if(id.equals("admin") && senha.equals("admin")) 
-        {
-            return true;
-        }else
-        {
-            return false;
-        }
-    }
     
     /**
      * @param args the command line arguments
@@ -1541,6 +1529,7 @@ public class AreaAdmin extends javax.swing.JFrame {
         });
     }
 
+    private TribunalEleitoral tribunalEleitoral;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPadrao;
     private javax.swing.JPanel ErroLogin;

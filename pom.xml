@@ -25,7 +25,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.mycompany.tribunal.UrnaEletronica</mainClass>
+                            <mainClass>InterfacesAdmin.AreaAdmin</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
