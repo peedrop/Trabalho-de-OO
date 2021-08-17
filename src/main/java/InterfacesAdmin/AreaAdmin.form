@@ -153,9 +153,9 @@
                                       <Component id="btnGerenciarEleitores" min="-2" pref="159" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="btnGerenciarCandidato" min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnGerenciarPartido" min="-2" pref="135" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="btnGerenciarPartido" max="32767" attributes="0"/>
+                                      <Component id="btnGerenciarCandidato" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -165,6 +165,11 @@
                           <EmptySpace min="-2" pref="295" max="-2" attributes="0"/>
                           <Component id="btnVotacao" min="-2" pref="179" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="306" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnVoltarTelaInicial" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -185,7 +190,9 @@
                               <Component id="btnGerenciarEleitores" alignment="3" max="32767" attributes="0"/>
                               <Component id="btnGerenciarPartido" alignment="3" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
+                          <Component id="btnVoltarTelaInicial" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -243,6 +250,14 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVotacaoActionPerformed"/>
                   </Events>
                 </Component>
+                <Component class="javax.swing.JButton" name="btnVoltarTelaInicial">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Voltar"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarTelaInicialActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="Votacao">
@@ -263,6 +278,11 @@
                           <Component id="btnIniciarVotacao" min="-2" pref="131" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnVoltarVot" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -274,7 +294,9 @@
                               <Component id="btnEncerrarVotacao" alignment="3" min="-2" pref="73" max="-2" attributes="0"/>
                               <Component id="btnIniciarVotacao" alignment="3" min="-2" pref="73" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="541" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
+                          <Component id="btnVoltarVot" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="349" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -315,6 +337,14 @@
                     <Property name="text" type="java.lang.String" value="Vota&#xe7;&#xe3;o"/>
                     <Property name="alignmentY" type="float" value="0.0"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnVoltarVot">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Voltar"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarVotActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -560,6 +590,9 @@
                         </Property>
                         <Property name="label" type="java.lang.String" value="Limpar"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimparEleitorActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnAdicionarEleitor">
                       <Properties>
@@ -866,6 +899,9 @@
                         </Property>
                         <Property name="label" type="java.lang.String" value="Limpar"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimparPartidoActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnAdicionarPartido">
                       <Properties>
@@ -1099,6 +1135,9 @@
                         </Property>
                         <Property name="label" type="java.lang.String" value="Limpar"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimparCandidatoActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnAdicionarCandidato">
                       <Properties>
@@ -1407,7 +1446,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="painelListaAdm1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="painelFormularioAdm1" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1415,7 +1454,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnVoltarDashB2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel20" max="32767" attributes="0"/>
+                          <Component id="jLabel20" pref="705" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1510,11 +1549,13 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jtIdAdm" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jtNomeAdm" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jtIdAdm" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jtSenhaAdm" alignment="0" max="32767" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -1523,6 +1564,7 @@
                                               </Group>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
+                                          <Component id="jtSenhaAdm" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
@@ -1532,7 +1574,7 @@
                                           <Component id="btnRemoverAdm" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="btnLimparAdm" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="142" max="32767" attributes="0"/>
+                                      <EmptySpace pref="130" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="btnAdicionarAdm" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="btnEditarAdm" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
@@ -1558,7 +1600,7 @@
                               <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jtIdAdm" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="303" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="btnAdicionarAdm" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnRemoverAdm" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1596,6 +1638,9 @@
                         </Property>
                         <Property name="label" type="java.lang.String" value="Limpar"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimparAdmActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnAdicionarAdm">
                       <Properties>
@@ -1643,10 +1688,7 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtIdAdmActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="jtSenhaAdm">
-                      <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtSenhaAdmActionPerformed"/>
-                      </Events>
+                    <Component class="javax.swing.JPasswordField" name="jtSenhaAdm">
                     </Component>
                   </SubComponents>
                 </Container>

@@ -64,7 +64,7 @@ public class TribunalEleitoral {
                         }
                         if(!flag_presidente) {
                             listaCandidatos.add(presidente);
-                            return "Candidato cadastrado com sucesso.";
+                            return "O candidato foi adicionado com sucesso.";
                         }    
                         break;
                     case "Senador":
@@ -111,7 +111,7 @@ public class TribunalEleitoral {
                             }
                             if(!flag_depfed) {
                                 listaCandidatos.add(deputadoFederal);
-                                return "Candidato cadastrado com sucesso.";
+                                return "O candidato foi adicionado com sucesso.";
                             }    
                         }
                         break;
@@ -135,7 +135,7 @@ public class TribunalEleitoral {
                             }
                             if(!flag_depest) {
                                 listaCandidatos.add(deputadoEstadual);
-                                return "Candidato cadastrado com sucesso!";
+                                return "O candidato foi adicionado com sucesso.";
                             }   
                         }
                         break;
