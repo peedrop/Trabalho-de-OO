@@ -5,6 +5,7 @@
  */
 package InterfacesAdmin;
 
+import com.mycompany.candidato.Partido;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import com.mycompany.tribunal.TribunalEleitoral;
@@ -18,6 +19,7 @@ public class AreaAdmin extends javax.swing.JFrame {
      * Creates new form AreaAdmin
      */
     public AreaAdmin() {
+        this.tribunalEleitoral = new TribunalEleitoral();
         initComponents();
     }
 
@@ -95,7 +97,7 @@ public class AreaAdmin extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         cbPartidoCandidato = new javax.swing.JComboBox<>();
         cbEstadoCandidato = new javax.swing.JComboBox<>();
-        jTextField3 = new javax.swing.JTextField();
+        jtNumeroCandidato = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
@@ -305,7 +307,7 @@ public class AreaAdmin extends javax.swing.JFrame {
                 .addGroup(VotacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEncerrarVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnIniciarVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(422, Short.MAX_VALUE))
+                .addContainerGap(541, Short.MAX_VALUE))
         );
 
         clAdmin.add(Votacao, "telaVotacao");
@@ -728,10 +730,15 @@ public class AreaAdmin extends javax.swing.JFrame {
         });
 
         cbEstadoCandidato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Minas Gerais - MG" }));
-
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        cbEstadoCandidato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                cbEstadoCandidatoActionPerformed(evt);
+            }
+        });
+
+        jtNumeroCandidato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtNumeroCandidatoActionPerformed(evt);
             }
         });
 
@@ -846,7 +853,7 @@ public class AreaAdmin extends javax.swing.JFrame {
                             .addGroup(painelFormCandidatoLayout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTextField3)))
+                            .addComponent(jtNumeroCandidato)))
                     .addGroup(painelFormCandidatoLayout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -873,7 +880,7 @@ public class AreaAdmin extends javax.swing.JFrame {
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelFormCandidatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtNumeroCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbTipoCandidato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1326,10 +1333,9 @@ public class AreaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIdActionPerformed
 
     private void btnLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogarActionPerformed
-        // TODO add your handling code here:
+
         String identificador = txtId.getText().trim();
         String senha = new String(txtSenha.getPassword()).trim();
-       this.tribunalEleitoral = new TribunalEleitoral();
         //Verifica se os dados nao estao vazios
         if( identificador.isEmpty() || senha.isEmpty()){
             JOptionPane.showMessageDialog(null , "Digite uma senha e um Identificador");
@@ -1358,6 +1364,29 @@ public class AreaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGerenciarAdmActionPerformed
 
     private void btnGerenciarCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenciarCandidatoActionPerformed
+        javax.swing.DefaultComboBoxModel<String> model = new javax.swing.DefaultComboBoxModel<>();
+
+        if(this.tribunalEleitoral.getListaPartidos() != null) {
+            if(!this.tribunalEleitoral.getListaPartidos().isEmpty()) {
+                for(Partido partido : this.tribunalEleitoral.getListaPartidos()){
+                    model.addElement(partido.getNome());
+                }
+
+                cbPartidoCandidato.setModel(model);
+            }
+        }
+        
+        javax.swing.DefaultComboBoxModel<String> modelSuplente = new javax.swing.DefaultComboBoxModel<>();
+
+        if(this.tribunalEleitoral.getListaPartidos() != null) {
+            if(!this.tribunalEleitoral.getListaPartidos().isEmpty()) {
+                for(Partido partido : this.tribunalEleitoral.getListaPartidos()){
+                    modelSuplente.addElement(partido.getNome());
+                }
+
+                cbPartidoViceCandidato.setModel(modelSuplente);
+            }
+        }
         CardLayout cl = (CardLayout) clAdmin.getLayout();
         cl.show(clAdmin, "telaGerenciarCandidato");
     }//GEN-LAST:event_btnGerenciarCandidatoActionPerformed
@@ -1373,6 +1402,13 @@ public class AreaAdmin extends javax.swing.JFrame {
 
     private void btnAdicionarAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarAdmActionPerformed
         // TODO add your handling code here:
+        if(!jtNomeAdm.getText().trim().isEmpty() && !jtSenhaAdm.getText().trim().isEmpty()) {
+            String id = tribunalEleitoral.cadastrarAdministrador(jtNomeAdm.getText(), jtSenhaAdm.getText());
+            JOptionPane.showMessageDialog(null, "O identificador do novo admin é " + id);
+        }
+        else {
+            JOptionPane.showMessageDialog(null , "Digite uma senha e um nome");
+        }
     }//GEN-LAST:event_btnAdicionarAdmActionPerformed
 
     private void btnRemoverAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverAdmActionPerformed
@@ -1397,7 +1433,34 @@ public class AreaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jtNomeCandidatoActionPerformed
 
     private void btnAdicionarCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarCandidatoActionPerformed
-        // TODO add your handling code here:
+        Partido partidoCandidato = null;
+        Partido partidoSuplente = null;
+        String nomeCandidato = jtNomeCandidato.getText().trim();
+        int numeroCandidato = Integer.parseInt(jtNumeroCandidato.getText().trim());
+        String nomeVice = jtNomeViceCandidato.getText().trim();
+        String nomePartidoCandidato = cbPartidoCandidato.getSelectedItem().toString();
+        String estadoCandidato = cbEstadoCandidato.getSelectedItem().toString();
+        String cargo = cbTipoCandidato.getSelectedItem().toString();
+        String partidoVice = cbPartidoViceCandidato.getSelectedItem().toString();
+        String estadoVice = cbEstadoViceCandidato.getSelectedItem().toString();
+        for(Partido p : this.tribunalEleitoral.getListaPartidos()) {
+            if(p.getNome() == null ? nomePartidoCandidato == null : p.getNome().equals(nomePartidoCandidato)) {
+                partidoCandidato = p;
+                break;
+            }
+        }
+        for(Partido p : this.tribunalEleitoral.getListaPartidos()) {
+            if(p.getNome() == null ? partidoVice == null : p.getNome().equals(partidoVice)) {
+                partidoSuplente = p;
+                break;
+            }
+        }
+        if(!nomeCandidato.isEmpty() && !jtNumeroCandidato.getText().trim().isEmpty()
+                && !nomeVice.isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, this.tribunalEleitoral.cadastrarCandidato(cargo, numeroCandidato, nomeCandidato,
+                    partidoCandidato, estadoCandidato, nomeVice, estadoVice, partidoSuplente));
+        }
+        
     }//GEN-LAST:event_btnAdicionarCandidatoActionPerformed
 
     private void btnRemoverCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverCandidatoActionPerformed
@@ -1408,9 +1471,9 @@ public class AreaAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbPartidoCandidatoActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void jtNumeroCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNumeroCandidatoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_jtNumeroCandidatoActionPerformed
 
     private void jtNomeViceCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNomeViceCandidatoActionPerformed
         // TODO add your handling code here:
@@ -1435,6 +1498,16 @@ public class AreaAdmin extends javax.swing.JFrame {
 
     private void btnAdicionarEleitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarEleitorActionPerformed
         // TODO add your handling code here:
+        String nomeEleitor = jtNomeEleitor.getText().trim();
+        String cpfEleitor = jtCpfEleitor.getText().trim().replace(".", "").replace("-", "");
+        String estadoEleitor = cbEstadoEleitor.getSelectedItem().toString();
+        String tituloEleitor = jtTituloEleitor.getText().trim();
+        if(!nomeEleitor.isEmpty() && !cpfEleitor.isEmpty() && !tituloEleitor.isEmpty()) {
+            JOptionPane.showMessageDialog(rootPane, this.tribunalEleitoral.cadastrarEleitor(nomeEleitor, estadoEleitor, cpfEleitor, tituloEleitor));
+        }
+        else {
+            JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos.");
+        }
     }//GEN-LAST:event_btnAdicionarEleitorActionPerformed
 
     private void btnRemoverEleitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverEleitorActionPerformed
@@ -1462,7 +1535,20 @@ public class AreaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jtNumeroPartidoActionPerformed
 
     private void btnAdicionarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarPartidoActionPerformed
-        // TODO add your handling code here:
+       String nomePartido = jtNomePartido.getText().trim();
+       String siglaPartido = jtSiglaPartido.getText().trim();
+       int numeroPartido = Integer.parseInt(jtNumeroPartido.getText().trim());
+       if(!nomePartido.isEmpty() && !siglaPartido.isEmpty() && !jtNumeroPartido.getText().trim().isEmpty()) {
+           Partido partido = new Partido(nomePartido, numeroPartido, siglaPartido);
+           if(this.tribunalEleitoral.cadastrarPartido(partido)) {
+               JOptionPane.showMessageDialog(rootPane, "Partido cadastrado com sucesso!");
+           }
+           else {
+               JOptionPane.showMessageDialog(rootPane, "Ocorreu um erro! O partido pode já existir ou algum campo pode estar inválido!");
+           }
+       } else {
+           JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos!");
+       }
     }//GEN-LAST:event_btnAdicionarPartidoActionPerformed
 
     private void btnRemoverPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverPartidoActionPerformed
@@ -1492,6 +1578,10 @@ public class AreaAdmin extends javax.swing.JFrame {
     private void btnEncerrarVotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncerrarVotacaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEncerrarVotacaoActionPerformed
+
+    private void cbEstadoCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEstadoCandidatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbEstadoCandidatoActionPerformed
     
     
     /**
@@ -1619,7 +1709,6 @@ public class AreaAdmin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JFormattedTextField jtCpfEleitor;
     private javax.swing.JTextField jtIdAdm;
     private javax.swing.JTextField jtNomeAdm;
@@ -1627,6 +1716,7 @@ public class AreaAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField jtNomeEleitor;
     private javax.swing.JTextField jtNomePartido;
     private javax.swing.JTextField jtNomeViceCandidato;
+    private javax.swing.JTextField jtNumeroCandidato;
     private javax.swing.JTextField jtNumeroPartido;
     private javax.swing.JTextField jtSenhaAdm;
     private javax.swing.JTextField jtSiglaPartido;

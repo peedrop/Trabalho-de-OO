@@ -47,7 +47,7 @@ public class TribunalEleitoral {
         //abre interface gráfica com menu principal para cadastro
     }
     
-    public void cadastrarCandidato(String cargo, int numero, String nome, Partido partido, String estado, String suplente, String estado_suplente, Partido partido_suplente) {
+    public String cadastrarCandidato(String cargo, int numero, String nome, Partido partido, String estado, String suplente, String estado_suplente, Partido partido_suplente) {
         try {
             if(listaPartidos.contains(partido) && listaPartidos.contains(partido_suplente)) {
                 if(null != cargo) switch (cargo) {
@@ -58,20 +58,21 @@ public class TribunalEleitoral {
                             if(c.getClass() == presidente.getClass()) {
                                 if(c.getPartido() == presidente.getPartido()) {
                                     flag_presidente = true; //existe um candidato a presidente com esse partido
-                                    break;
+                                    return "O candidato já existe.";
                                 }
                             }
                         }
                         if(!flag_presidente) {
                             listaCandidatos.add(presidente);
+                            return "Candidato cadastrado com sucesso.";
                         }    
                         break;
                     case "Senador":
                         if(Integer.parseInt(Integer.toString(numero).substring(0, 2)) != partido.getNumero()) {
-                            //partido diferente
+                            return "Os dois primeiros dígitos não estão de acordo com o partido.";
                         }
                         else if(numero < 100 || numero > 999) {
-                            //numero de digitos invalido
+                            return "O senador deve ter três dígitos.";
                         }
                         else {
                             boolean flag_senador = false;
@@ -80,21 +81,22 @@ public class TribunalEleitoral {
                                 if(c.getClass() == senador.getClass()) {
                                     if(c.getNumero_cand() == senador.getNumero_cand()) {
                                         flag_senador = true;
-                                        break;
+                                        return "O candidato já existe.";
                                     }
                                 }
                             }
                             if(!flag_senador) {
                                 listaCandidatos.add(senador);
+                                return "O candidato foi adicionado com sucesso.";
                             }    
                         }
                         break;
                     case "Deputado Federal":
                         if(Integer.parseInt(Integer.toString(numero).substring(0, 2)) != partido.getNumero()) {
-                            //nao cadastrou deputado federal
+                            return "Os dois primeiros dígitos não estão de acordo com o partido.";
                         }
                         else if(numero < 1000 || numero > 9999) {
-                            //nao cadastrou deputado federal
+                            return "O deputado federal deve ter quatro dígitos.";
                         }
                         else {
                             boolean flag_depfed = false;
@@ -103,21 +105,22 @@ public class TribunalEleitoral {
                                 if(c.getClass() == deputadoFederal.getClass()) {
                                     if(c.getNumero_cand() == deputadoFederal.getNumero_cand()) {
                                         flag_depfed = true;
-                                        break;
+                                        return "O deputado federal já existe.";
                                     }
                                 }
                             }
                             if(!flag_depfed) {
                                 listaCandidatos.add(deputadoFederal);
+                                return "Candidato cadastrado com sucesso.";
                             }    
                         }
                         break;
                     case "Deputado Estadual":
                         if(Integer.parseInt(Integer.toString(numero).substring(0, 2)) != partido.getNumero()) {
-
+                            return "Os dois primeiros dígitos não estão de acordo com o partido.";
                         }
                         else if(numero < 10000 || numero > 99999) {
-                            //nao cadastrou deputado estadual
+                            return "O deputado estadual deve ter cinco dígitos.";
                         }
                         else {
                             boolean flag_depest = false;
@@ -126,12 +129,13 @@ public class TribunalEleitoral {
                                 if(c.getClass() == deputadoEstadual.getClass()) {
                                     if(c.getNumero_cand() == deputadoEstadual.getNumero_cand()) {
                                         flag_depest = true;
-                                        break;
+                                        return "O deputado estadual já existe.";
                                     }
                                 }
                             }
                             if(!flag_depest) {
                                 listaCandidatos.add(deputadoEstadual);
+                                return "Candidato cadastrado com sucesso!";
                             }   
                         }
                         break;
@@ -139,12 +143,16 @@ public class TribunalEleitoral {
                         break;
                 }
             }
+            else {
+                return "O partido do candidato não está cadastrado.";
+            }
+            return "Erro desconhecido";
         } catch(NumberFormatException e) {
-            System.out.println("Erro!");
+            return "Erro!";
         }    
     }
     
-    public void cadastrarPartido(Partido partido) {
+    public boolean cadastrarPartido(Partido partido) {
         try {
             boolean flag = false;
             for(Partido p : listaPartidos) {
@@ -155,9 +163,11 @@ public class TribunalEleitoral {
             }
             if(!flag) {
                 listaPartidos.add(partido);
+                return true;
             }
+            return false;
         } catch(Exception e) {    
-            System.out.println("Erro!");
+            return false;
         }
     }
 
@@ -201,42 +211,55 @@ public class TribunalEleitoral {
         listaAdministradores.remove(administrador);
     }
      
-    public void cadastrarEleitor(String nome, String estado, String cpf, String titulo_eleitor) {
+    public String cadastrarEleitor(String nome, String estado, String cpf, String titulo_eleitor) {
         try {
             if(cpf.toCharArray().length != 11 || titulo_eleitor.toCharArray().length != 12) {
-                return;
+                return "Número de dígitos de um dos documentos inválido!";
             }
             boolean flag = false;
             for(Eleitor e : listaEleitores) {
                 if((e.getCpf() == null ? cpf == null : e.getCpf().equals(cpf)) || (e.getTitulo_eleitor() == null ? titulo_eleitor == null : e.getTitulo_eleitor().equals(titulo_eleitor))) {
                     flag = true;
-                    break;
+                    return "O eleitor já está cadastrado.";
                 }
             }
             if(!flag) {
                 listaEleitores.add(new Eleitor(nome, estado, cpf, titulo_eleitor));
+                return "Eleitor cadastrado com sucesso.";
             }
+            return "Erro desconhecido";
         } catch(Exception e) {
-            System.out.println("Erro!");
+            return "Erro!";
         }    
     }
     
-    public void cadastrarAdministrador(String nome, String senha) {
+    public String cadastrarAdministrador(String nome, String senha) {
         try {
-            byte[] array = new byte[7]; // length is bounded by 7
-            new Random().nextBytes(array);
-            String generatedString = new String(array, Charset.forName("UTF-8"));
+            String charset = "abcdefghijklmnopqrstuvwxyzABCDEIFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*_+";
+            String generatedString = "";
+            Random aleatorio = new Random();
+            for(int i = 0; i < 7; i++) {
+                generatedString += charset.charAt(aleatorio.nextInt(charset.length()));
+            }
 
             Administrador adm = new Administrador(nome, senha);
             adm.setIdentificador(generatedString);
             listaAdministradores.add(adm);
+            return generatedString;
             //mostrar na interface grafica o identificador do novo administrador cadastrado
         } catch(Exception e) {
             System.out.println("Erro!");
+            return "";
         }    
     }
     
     public boolean login(String identificador, String senha) {
+        if(this.listaAdministradores.isEmpty()) {
+            if((identificador == null ? this.id_teste == null : identificador.equals(this.id_teste)) && (senha == null ? this.senha_teste == null : senha.equals(this.senha_teste))) {
+                return true;
+            }
+            return false;
+        }
         for(Administrador administrador : this.listaAdministradores) {
             if((administrador.getIdentificador() == null ? identificador == null : administrador.getIdentificador().equals(identificador)) && (administrador.getSenha() == null ? senha == null : administrador.getSenha().equals(senha))) {
                 System.out.println("Logado com sucesso!");
