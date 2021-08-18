@@ -164,7 +164,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="295" max="-2" attributes="0"/>
                           <Component id="btnVotacao" min="-2" pref="179" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="355" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="304" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
@@ -252,7 +252,7 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnVoltarTelaInicial">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Voltar"/>
+                    <Property name="text" type="java.lang.String" value="Log Out"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarTelaInicialActionPerformed"/>
@@ -479,19 +479,19 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Component id="btnLimparEleitor" alignment="1" min="-2" pref="73" max="-2" attributes="0"/>
-                                                          <Component id="btnRemoverEleitor" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="1" attributes="0">
                                                           <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace min="0" pref="293" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                          <Component id="btnRemoverEleitor" pref="117" max="32767" attributes="0"/>
+                                                          <Component id="btnLimparEleitor" max="32767" attributes="0"/>
+                                                      </Group>
                                                   </Group>
                                               </Group>
                                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -502,15 +502,15 @@
                                           </Group>
                                       </Group>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel21" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="btnEditarEleitor" alignment="0" min="-2" pref="73" max="-2" attributes="0"/>
-                                                  <Component id="btnAdicionarEleitor" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
-                                          </Group>
                                           <Component id="cbEstadoEleitor" alignment="0" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="jLabel21" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="btnEditarEleitor" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="btnAdicionarEleitor" alignment="0" max="32767" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -607,7 +607,7 @@
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="5c" green="b8" red="5c" type="rgb"/>
                         </Property>
-                        <Property name="label" type="java.lang.String" value="Editar"/>
+                        <Property name="text" type="java.lang.String" value="Salvar Altera&#xe7;&#xf5;es"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnRemoverEleitor">
@@ -830,10 +830,10 @@
                                               </Group>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="0" pref="205" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace min="10" pref="215" max="32767" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="btnRemoverPartido" pref="127" max="32767" attributes="0"/>
+                                                  <Component id="btnRemoverPartido" alignment="1" pref="117" max="32767" attributes="0"/>
                                                   <Component id="btnLimparPartido" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
@@ -1038,19 +1038,19 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Component id="btnLimparCandidato" alignment="1" min="-2" pref="73" max="-2" attributes="0"/>
-                                                          <Component id="btnRemoverCandidato" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="1" attributes="0">
                                                           <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       </Group>
                                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                          <Component id="btnRemoverCandidato" pref="117" max="32767" attributes="0"/>
+                                                          <Component id="btnLimparCandidato" max="32767" attributes="0"/>
+                                                      </Group>
                                                   </Group>
                                               </Group>
                                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -1062,9 +1062,11 @@
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnEditarCandidato" alignment="0" min="-2" pref="73" max="-2" attributes="0"/>
-                                          <Component id="btnAdicionarCandidato" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="cbEstadoCandidato" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="btnAdicionarCandidato" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="btnEditarCandidato" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
@@ -1182,7 +1184,7 @@
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="5c" green="b8" red="5c" type="rgb"/>
                         </Property>
-                        <Property name="label" type="java.lang.String" value="Editar"/>
+                        <Property name="text" type="java.lang.String" value="Salvar Altera&#xe7;&#xf5;es"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnRemoverCandidato">
@@ -1630,14 +1632,14 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="btnRemoverAdm" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnLimparAdm" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="btnRemoverAdm" pref="117" max="32767" attributes="0"/>
+                                          <Component id="btnLimparAdm" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="175" max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="btnAdicionarAdm" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btnEditarAdm" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="btnEditarAdm" max="32767" attributes="0"/>
+                                          <Component id="btnAdicionarAdm" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                   </Group>
@@ -1718,7 +1720,7 @@
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="5c" green="b8" red="5c" type="rgb"/>
                         </Property>
-                        <Property name="label" type="java.lang.String" value="Editar"/>
+                        <Property name="text" type="java.lang.String" value="Salvar Altera&#xe7;&#xf5;es"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnRemoverAdm">
