@@ -43,8 +43,8 @@ public class TribunalEleitoral {
         this.listaCandidatos = listaCandidatos;
     }
     
-    public void menuPrincipal() {
-        //abre interface gráfica com menu principal para cadastro
+    public Set<Administrador> getListaAdministradores() {
+        return this.listaAdministradores;
     }
     
     public String cadastrarCandidato(String cargo, int numero, String nome, Partido partido, String estado, String suplente, String estado_suplente, Partido partido_suplente) {

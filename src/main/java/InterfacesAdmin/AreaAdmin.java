@@ -5,10 +5,15 @@
  */
 package InterfacesAdmin;
 
+import com.mycompany.candidato.Candidato;
 import com.mycompany.candidato.Partido;
+import com.mycompany.candidato.Presidente;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import com.mycompany.tribunal.TribunalEleitoral;
+import com.mycompany.usuarios.Administrador;
+import com.mycompany.usuarios.Eleitor;
+import javax.swing.DefaultListModel;
 /**
  *
  * @author pedro
@@ -20,7 +25,36 @@ public class AreaAdmin extends javax.swing.JFrame {
      */
     public AreaAdmin() {
         this.tribunalEleitoral = new TribunalEleitoral();
+        this.modeloListaPartidos = new DefaultListModel<>();
+        this.modeloListaAdm = new DefaultListModel<>();
+        this.modeloListaEleitores = new DefaultListModel<>();
+        this.modeloListaCandidatos = new DefaultListModel<>();
         initComponents();
+        for (Partido partido : this.tribunalEleitoral.getListaPartidos()) {
+            this.modeloListaPartidos.addElement(partido.getSigla());
+        }
+        this.jListPartidos.setModel(this.modeloListaPartidos);
+        this.jListPartidos.repaint();
+        if(this.tribunalEleitoral.getListaAdministradores().isEmpty()) {
+            this.modeloListaAdm.addElement("admin (Crie um novo perfil)");
+        }
+        else {
+            for (Administrador adm : this.tribunalEleitoral.getListaAdministradores()) {
+                this.modeloListaAdm.addElement(adm.getNome());
+            }
+        }
+        this.listaAdm1.setModel(this.modeloListaAdm);
+        this.listaAdm1.repaint();
+        for(Eleitor eleitor : this.tribunalEleitoral.getListaEleitores()) {
+            this.modeloListaEleitores.addElement(eleitor.getNome() + " - " + eleitor.getTitulo_eleitor());
+        }
+        this.jListEleitores.setModel(this.modeloListaEleitores);
+        this.jListEleitores.repaint();
+        for(Candidato candidato : this.tribunalEleitoral.getListaCandidatos()) {
+            this.modeloListaCandidatos.addElement(candidato.getNome() + " - " + candidato.getNumero_cand());
+        }
+        this.jListCandidatos.setModel(this.modeloListaCandidatos);
+        this.jListCandidatos.repaint();
     }
 
     /**
@@ -54,7 +88,7 @@ public class AreaAdmin extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         painelListaEleitores = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        jListEleitores = new javax.swing.JList<>();
         painelFormEleitor = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jtNomeEleitor = new javax.swing.JTextField();
@@ -73,7 +107,7 @@ public class AreaAdmin extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList<>();
+        jListPartidos = new javax.swing.JList<>();
         jPanel7 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jtNomePartido = new javax.swing.JTextField();
@@ -111,7 +145,7 @@ public class AreaAdmin extends javax.swing.JFrame {
         cbTipoCandidato = new javax.swing.JComboBox<>();
         painelListaCandidato = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jListCandidatos = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         btnVoltarDashB = new javax.swing.JButton();
         GerenciadorAdministrador = new javax.swing.JPanel();
@@ -255,7 +289,7 @@ public class AreaAdmin extends javax.swing.JFrame {
             .addGroup(AdminPadraoLayout.createSequentialGroup()
                 .addGap(295, 295, 295)
                 .addComponent(btnVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 306, Short.MAX_VALUE))
+                .addGap(0, 355, Short.MAX_VALUE))
             .addGroup(AdminPadraoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnVoltarTelaInicial)
@@ -313,7 +347,7 @@ public class AreaAdmin extends javax.swing.JFrame {
         Votacao.setLayout(VotacaoLayout);
         VotacaoLayout.setHorizontalGroup(
             VotacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
+            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 829, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VotacaoLayout.createSequentialGroup()
                 .addGap(139, 139, 139)
                 .addComponent(btnEncerrarVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -335,7 +369,7 @@ public class AreaAdmin extends javax.swing.JFrame {
                     .addComponent(btnIniciarVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(169, 169, 169)
                 .addComponent(btnVoltarVot)
-                .addContainerGap(349, Short.MAX_VALUE))
+                .addContainerGap(344, Short.MAX_VALUE))
         );
 
         clAdmin.add(Votacao, "telaVotacao");
@@ -347,13 +381,13 @@ public class AreaAdmin extends javax.swing.JFrame {
 
         painelListaEleitores.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Eleitores"));
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Pedro Paulo Silva Filogônio", "Gabriel Arantes Resende Pereira", "Gabriel do Carmo Silva", "Pedro Leopoldo Dal-Col Vianna", " " };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        jListEleitores.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jListEleitores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListEleitoresMouseClicked(evt);
+            }
         });
-        jList2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane2.setViewportView(jList2);
+        jScrollPane2.setViewportView(jListEleitores);
 
         javax.swing.GroupLayout painelListaEleitoresLayout = new javax.swing.GroupLayout(painelListaEleitores);
         painelListaEleitores.setLayout(painelListaEleitoresLayout);
@@ -413,7 +447,7 @@ public class AreaAdmin extends javax.swing.JFrame {
             }
         });
 
-        cbEstadoEleitor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Minas Gerais - MG" }));
+        cbEstadoEleitor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " AC", " AL", " AP", " AM", " BA", " CE", " DF", " ES", " GO", " MA", " MT", " MS", " MG", " PA", " PB", " PR", " PE", " PI", " RJ", " RN", " RS", " RO", " RR", " SC", " SP", " SE", " TO" }));
 
         jLabel22.setText("Título de Eleitor");
 
@@ -455,7 +489,7 @@ public class AreaAdmin extends javax.swing.JFrame {
                                         .addGroup(painelFormEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING))
-                                        .addGap(0, 262, Short.MAX_VALUE)))
+                                        .addGap(0, 293, Short.MAX_VALUE)))
                                 .addGap(18, 18, 18))
                             .addGroup(painelFormEleitorLayout.createSequentialGroup()
                                 .addComponent(jtCpfEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -550,13 +584,18 @@ public class AreaAdmin extends javax.swing.JFrame {
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Partidos"));
 
-        jList3.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Progressistas - PP", "Partido Liberal -  PL", "Partido dos Trabalhadores - PT", "Movimento Democrático Brasileiro - MDB", " " };
+        jListPartidos.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jList3.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane4.setViewportView(jList3);
+        jListPartidos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jListPartidos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListPartidosMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(jListPartidos);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -618,7 +657,12 @@ public class AreaAdmin extends javax.swing.JFrame {
         });
 
         btnEditarPartido.setBackground(new java.awt.Color(92, 184, 92));
-        btnEditarPartido.setLabel("Editar");
+        btnEditarPartido.setText("Salvar Alterações");
+        btnEditarPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarPartidoActionPerformed(evt);
+            }
+        });
 
         btnRemoverPartido.setBackground(new java.awt.Color(217, 83, 79));
         btnRemoverPartido.setLabel("Remover");
@@ -645,16 +689,17 @@ public class AreaAdmin extends javax.swing.JFrame {
                                     .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(0, 214, Short.MAX_VALUE)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnLimparPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnRemoverPartido))))
+                                .addGap(0, 205, Short.MAX_VALUE)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnRemoverPartido, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                                    .addComponent(btnLimparPartido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel26)
                             .addComponent(jtNumeroPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEditarPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAdicionarPartido))))
+                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(btnEditarPartido, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnAdicionarPartido, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -765,14 +810,14 @@ public class AreaAdmin extends javax.swing.JFrame {
 
         jLabel10.setText("Tipo");
 
-        cbPartidoCandidato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Progressistas - PP", "Partido Liberal -  PL", "Partido dos Trabalhadores - PT", "Movimento Democrático Brasileiro - MDB", " " }));
+        cbPartidoCandidato.setToolTipText("");
         cbPartidoCandidato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbPartidoCandidatoActionPerformed(evt);
             }
         });
 
-        cbEstadoCandidato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Minas Gerais - MG" }));
+        cbEstadoCandidato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " AC", " AL", " AP", " AM", " BA", " CE", " DF", " ES", " GO", " MA", " MT", " MS", " MG", " PA", " PB", " PR", " PE", " PI", " RJ", " RN", " RS", " RO", " RR", " SC", " SP", " SE", " TO" }));
         cbEstadoCandidato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbEstadoCandidatoActionPerformed(evt);
@@ -799,7 +844,7 @@ public class AreaAdmin extends javax.swing.JFrame {
 
         jLabel13.setText("Estado");
 
-        cbEstadoViceCandidato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Minas Gerais - MG" }));
+        cbEstadoViceCandidato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " AC", " AL", " AP", " AM", " BA", " CE", " DF", " ES", " GO", " MA", " MT", " MS", " MG", " PA", " PB", " PR", " PE", " PI", " RJ", " RN", " RS", " RO", " RR", " SC", " SP", " SE", " TO" }));
         cbEstadoViceCandidato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbEstadoViceCandidatoActionPerformed(evt);
@@ -808,7 +853,7 @@ public class AreaAdmin extends javax.swing.JFrame {
 
         jLabel14.setText("Partido");
 
-        cbPartidoViceCandidato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Progressistas - PP", "Partido Liberal -  PL", "Partido dos Trabalhadores - PT", "Movimento Democrático Brasileiro - MDB", " " }));
+        cbPartidoViceCandidato.setToolTipText("");
         cbPartidoViceCandidato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbPartidoViceCandidatoActionPerformed(evt);
@@ -940,13 +985,13 @@ public class AreaAdmin extends javax.swing.JFrame {
 
         painelListaCandidato.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Candidatos"));
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Pedro Paulo Silva Filogônio", "Gabriel Arantes Resende Pereira", "Gabriel do Carmo Silva", "Pedro Leopoldo Dal-Col Vianna", " " };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        jListCandidatos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jListCandidatos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListCandidatosMouseClicked(evt);
+            }
         });
-        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(jListCandidatos);
 
         javax.swing.GroupLayout painelListaCandidatoLayout = new javax.swing.GroupLayout(painelListaCandidato);
         painelListaCandidato.setLayout(painelListaCandidatoLayout);
@@ -1013,11 +1058,6 @@ public class AreaAdmin extends javax.swing.JFrame {
 
         painelListaAdm1.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Administradores"));
 
-        listaAdm1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Pedro Paulo Silva Filogônio", "Gabriel Arantes Resende Pereira", "Gabriel do Carmo Silva", "Pedro Leopoldo Dal-Col Vianna", " " };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         listaAdm1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane3.setViewportView(listaAdm1);
 
@@ -1113,7 +1153,7 @@ public class AreaAdmin extends javax.swing.JFrame {
                         .addGroup(painelFormularioAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnRemoverAdm)
                             .addComponent(btnLimparAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
                         .addGroup(painelFormularioAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAdicionarAdm)
                             .addComponent(btnEditarAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1134,7 +1174,7 @@ public class AreaAdmin extends javax.swing.JFrame {
                 .addComponent(jLabel19)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtIdAdm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 303, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 305, Short.MAX_VALUE)
                 .addGroup(painelFormularioAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdicionarAdm)
                     .addComponent(btnRemoverAdm))
@@ -1170,7 +1210,7 @@ public class AreaAdmin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(btnVoltarDashB2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, 705, Short.MAX_VALUE))
+                .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE))
         );
         GerenciadorAdministradorLayout.setVerticalGroup(
             GerenciadorAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1438,6 +1478,9 @@ public class AreaAdmin extends javax.swing.JFrame {
     private void btnGerenciarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenciarPartidoActionPerformed
         CardLayout cl = (CardLayout) clAdmin.getLayout();
         cl.show(clAdmin, "telaGerenciarPartido");
+        if(this.tribunalEleitoral.getListaPartidos().isEmpty()) {
+            return;
+        }
     }//GEN-LAST:event_btnGerenciarPartidoActionPerformed
 
     private void jtNomeAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNomeAdmActionPerformed
@@ -1447,6 +1490,11 @@ public class AreaAdmin extends javax.swing.JFrame {
     private void btnAdicionarAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarAdmActionPerformed
         String senha = new String(jtSenhaAdm.getPassword()).trim();
         if(!jtNomeAdm.getText().trim().isEmpty() && !senha.isEmpty()) {
+            if(this.tribunalEleitoral.getListaAdministradores().isEmpty()) {
+                this.modeloListaAdm.remove(0);
+            }
+            this.modeloListaAdm.addElement(jtNomeAdm.getText());
+            listaAdm1.repaint();
             String id = tribunalEleitoral.cadastrarAdministrador(jtNomeAdm.getText(), senha);
             JOptionPane.showMessageDialog(rootPane, "O identificador do novo admin é " + id);
             btnLimparAdm.doClick();
@@ -1515,6 +1563,7 @@ public class AreaAdmin extends javax.swing.JFrame {
         }
         if(mensagem.equals("O candidato foi adicionado com sucesso.")){
             btnLimparCandidato.doClick();
+            this.modeloListaCandidatos.addElement(nomeCandidato + " - " + numeroCandidato);
         }
     }//GEN-LAST:event_btnAdicionarCandidatoActionPerformed
 
@@ -1561,8 +1610,10 @@ public class AreaAdmin extends javax.swing.JFrame {
         if(!nomeEleitor.isEmpty() && !cpfEleitor.isEmpty() && !tituloEleitor.isEmpty()) {
             mensagem = this.tribunalEleitoral.cadastrarEleitor(nomeEleitor, estadoEleitor, cpfEleitor, tituloEleitor);
             JOptionPane.showMessageDialog(rootPane, mensagem);
-            if("Eleitor cadastrado com sucesso.".equals(mensagem))
+            if("Eleitor cadastrado com sucesso.".equals(mensagem)) {
                 btnLimparEleitor.doClick();
+                this.modeloListaEleitores.addElement(nomeEleitor + " - " + tituloEleitor);
+            }
         }
         else {
             JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos.");
@@ -1602,6 +1653,9 @@ public class AreaAdmin extends javax.swing.JFrame {
            if(this.tribunalEleitoral.cadastrarPartido(partido)) {
                JOptionPane.showMessageDialog(rootPane, "Partido cadastrado com sucesso!");
                btnLimparPartido.doClick();
+                this.modeloListaPartidos.addElement(partido.getSigla());
+                this.jListPartidos.setModel(this.modeloListaPartidos);
+                this.jListPartidos.repaint();
            }
            else {
                JOptionPane.showMessageDialog(rootPane, "Ocorreu um erro! O partido pode já existir ou algum campo pode estar inválido!");
@@ -1613,6 +1667,16 @@ public class AreaAdmin extends javax.swing.JFrame {
 
     private void btnRemoverPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverPartidoActionPerformed
         // TODO add your handling code here:
+        if(!this.tribunalEleitoral.getListaPartidos().isEmpty() && jListPartidos.getSelectedIndex() != -1) {
+            for(Partido p : this.tribunalEleitoral.getListaPartidos()) {
+                if(p.getSigla() == null ? jListPartidos.getSelectedValue() == null : p.getSigla().equals(jListPartidos.getSelectedValue())) {
+                    this.tribunalEleitoral.deletarPartido(p);
+                    break;
+                }
+            }
+            this.modeloListaPartidos.remove(jListPartidos.getSelectedIndex());
+            btnLimparPartido.doClick();
+        }
     }//GEN-LAST:event_btnRemoverPartidoActionPerformed
 
     private void btnGerenciarEleitoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenciarEleitoresActionPerformed
@@ -1677,6 +1741,72 @@ public class AreaAdmin extends javax.swing.JFrame {
         jtNomeAdm.setText("");
         jtSenhaAdm.setText("");
     }//GEN-LAST:event_btnLimparAdmActionPerformed
+
+    private void jListPartidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListPartidosMouseClicked
+        // TODO add your handling code here:
+        if(jListPartidos.getSelectedIndex() == -1) {
+            return;
+        }
+        Partido partido = null;
+        for(Partido p : this.tribunalEleitoral.getListaPartidos()) {
+            if(p.getSigla() == null ? jListPartidos.getSelectedValue() == null : p.getSigla().equals(jListPartidos.getSelectedValue())) {
+                partido = p;
+            }
+        }
+        jtNomePartido.setText(partido.getNome());
+        jtSiglaPartido.setText(partido.getSigla());
+        jtNumeroPartido.setText(String.valueOf(partido.getNumero()));
+    }//GEN-LAST:event_jListPartidosMouseClicked
+
+    private void btnEditarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPartidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarPartidoActionPerformed
+
+    private void jListEleitoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListEleitoresMouseClicked
+        // TODO add your handling code here:
+        if(jListEleitores.getSelectedIndex() == -1) {
+            return;
+        }
+        Eleitor eleitor = null;
+        int pos_sep = jListEleitores.getSelectedValue().indexOf('-');
+        String titulo = jListEleitores.getSelectedValue().substring(pos_sep+2);
+        for(Eleitor e : this.tribunalEleitoral.getListaEleitores()) {
+            if(e.getTitulo_eleitor() == null ? titulo == null : e.getTitulo_eleitor().equals(titulo)) {
+                jtNomeEleitor.setText(e.getNome());
+                jtCpfEleitor.setText(e.getCpf());
+                jtTituloEleitor.setText(e.getTitulo_eleitor());
+                cbEstadoEleitor.setSelectedItem(e.getEstado());
+            }
+        }
+    }//GEN-LAST:event_jListEleitoresMouseClicked
+
+    private void jListCandidatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListCandidatosMouseClicked
+        if(jListCandidatos.getSelectedIndex() == -1) {
+            return;
+        }
+        Candidato candidato = null;
+        int pos_sep = jListCandidatos.getSelectedValue().indexOf('-');
+        int numero = Integer.parseInt(jListCandidatos.getSelectedValue().substring(pos_sep+2));
+        for(Candidato c : this.tribunalEleitoral.getListaCandidatos()) {
+            System.out.println(c.getNome());
+            System.out.println(c.getNumero_cand());
+            System.out.println(numero);
+            if(c.getNumero_cand() == numero) {
+                jtNomeCandidato.setText(c.getNome());
+                jtNumeroCandidato.setText(String.valueOf(c.getNumero_cand()));
+                if(c.getSuplenteVice() != null) {
+                    jtNomeViceCandidato.setText(c.getSuplenteVice().getNome());
+                    cbPartidoViceCandidato.setSelectedItem(c.getSuplenteVice().getPartido().getNome());
+                    cbEstadoViceCandidato.setSelectedItem(c.getSuplenteVice().getEstado());
+                }    
+                cbTipoCandidato.setSelectedItem(c.getClass().getSimpleName());
+               cbEstadoCandidato.setSelectedItem(c.getEstado());
+               cbPartidoCandidato.setSelectedItem(c.getPartido().getNome());
+               
+               
+            }
+        } 
+    }//GEN-LAST:event_jListCandidatosMouseClicked
     
     
     /**
@@ -1714,6 +1844,10 @@ public class AreaAdmin extends javax.swing.JFrame {
         });
     }
 
+    private DefaultListModel<String> modeloListaPartidos;
+    private DefaultListModel<String> modeloListaAdm;
+    private DefaultListModel<String> modeloListaEleitores;
+    private DefaultListModel<String> modeloListaCandidatos;
     private TribunalEleitoral tribunalEleitoral;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPadrao;
@@ -1796,9 +1930,9 @@ public class AreaAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
-    private javax.swing.JList<String> jList3;
+    private javax.swing.JList<String> jListCandidatos;
+    private javax.swing.JList<String> jListEleitores;
+    private javax.swing.JList<String> jListPartidos;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;

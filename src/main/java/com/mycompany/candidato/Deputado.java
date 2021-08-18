@@ -16,8 +16,8 @@ abstract class Deputado extends Candidato {
     Candidato suplente;
     int numero_cand;
     
-    public Deputado(String nome, String estado, Partido partido) {
-        super(nome, estado, partido);
+    public Deputado(String nome, String estado, Partido partido, Candidato suplente) {
+        super(nome, estado, partido, suplente);
     }
     
      public Candidato getSuplente() {

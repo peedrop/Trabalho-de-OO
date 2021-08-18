@@ -164,7 +164,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="295" max="-2" attributes="0"/>
                           <Component id="btnVotacao" min="-2" pref="179" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="306" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="355" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
@@ -270,7 +270,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel27" alignment="0" pref="780" max="32767" attributes="0"/>
+                      <Component id="jLabel27" alignment="0" pref="829" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
                           <Component id="btnEncerrarVotacao" min="-2" pref="146" max="-2" attributes="0"/>
@@ -296,7 +296,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                           <Component id="btnVoltarVot" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="349" max="32767" attributes="0"/>
+                          <EmptySpace pref="344" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -441,19 +441,16 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JList" name="jList2">
+                        <Component class="javax.swing.JList" name="jListEleitores">
                           <Properties>
                             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                              <StringArray count="5">
-                                <StringItem index="0" value="Pedro Paulo Silva Filog&#xf4;nio"/>
-                                <StringItem index="1" value="Gabriel Arantes Resende Pereira"/>
-                                <StringItem index="2" value="Gabriel do Carmo Silva"/>
-                                <StringItem index="3" value="Pedro Leopoldo Dal-Col Vianna"/>
-                                <StringItem index="4" value=" "/>
-                              </StringArray>
+                              <StringArray count="0"/>
                             </Property>
                             <Property name="selectionMode" type="int" value="0"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jListEleitoresMouseClicked"/>
+                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
@@ -494,7 +491,7 @@
                                                           <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       </Group>
-                                                      <EmptySpace min="0" pref="262" max="32767" attributes="0"/>
+                                                      <EmptySpace min="0" pref="293" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -627,8 +624,34 @@
                     <Component class="javax.swing.JComboBox" name="cbEstadoEleitor">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="1">
-                            <StringItem index="0" value="Minas Gerais - MG"/>
+                          <StringArray count="27">
+                            <StringItem index="0" value=" AC"/>
+                            <StringItem index="1" value=" AL"/>
+                            <StringItem index="2" value=" AP"/>
+                            <StringItem index="3" value=" AM"/>
+                            <StringItem index="4" value=" BA"/>
+                            <StringItem index="5" value=" CE"/>
+                            <StringItem index="6" value=" DF"/>
+                            <StringItem index="7" value=" ES"/>
+                            <StringItem index="8" value=" GO"/>
+                            <StringItem index="9" value=" MA"/>
+                            <StringItem index="10" value=" MT"/>
+                            <StringItem index="11" value=" MS"/>
+                            <StringItem index="12" value=" MG"/>
+                            <StringItem index="13" value=" PA"/>
+                            <StringItem index="14" value=" PB"/>
+                            <StringItem index="15" value=" PR"/>
+                            <StringItem index="16" value=" PE"/>
+                            <StringItem index="17" value=" PI"/>
+                            <StringItem index="18" value=" RJ"/>
+                            <StringItem index="19" value=" RN"/>
+                            <StringItem index="20" value=" RS"/>
+                            <StringItem index="21" value=" RO"/>
+                            <StringItem index="22" value=" RR"/>
+                            <StringItem index="23" value=" SC"/>
+                            <StringItem index="24" value=" SP"/>
+                            <StringItem index="25" value=" SE"/>
+                            <StringItem index="26" value=" TO"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -761,19 +784,18 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JList" name="jList3">
+                        <Component class="javax.swing.JList" name="jListPartidos">
                           <Properties>
                             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                              <StringArray count="5">
-                                <StringItem index="0" value="Progressistas - PP"/>
-                                <StringItem index="1" value="Partido Liberal -  PL"/>
-                                <StringItem index="2" value="Partido dos Trabalhadores - PT"/>
-                                <StringItem index="3" value="Movimento Democr&#xe1;tico Brasileiro - MDB"/>
-                                <StringItem index="4" value=" "/>
+                              <StringArray count="1">
+                                <StringItem index="0" value=""/>
                               </StringArray>
                             </Property>
                             <Property name="selectionMode" type="int" value="0"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jListPartidosMouseClicked"/>
+                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
@@ -808,11 +830,11 @@
                                               </Group>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="0" pref="214" max="32767" attributes="0"/>
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="btnLimparPartido" alignment="1" min="-2" pref="73" max="-2" attributes="0"/>
-                                                  <Component id="btnRemoverPartido" alignment="1" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="0" pref="205" max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="btnRemoverPartido" pref="127" max="32767" attributes="0"/>
+                                                  <Component id="btnLimparPartido" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -820,8 +842,10 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel26" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jtNumeroPartido" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                                          <Component id="btnEditarPartido" alignment="0" min="-2" pref="73" max="-2" attributes="0"/>
-                                          <Component id="btnAdicionarPartido" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="btnEditarPartido" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="btnAdicionarPartido" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
@@ -919,8 +943,11 @@
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="5c" green="b8" red="5c" type="rgb"/>
                         </Property>
-                        <Property name="label" type="java.lang.String" value="Editar"/>
+                        <Property name="text" type="java.lang.String" value="Salvar Altera&#xe7;&#xf5;es"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarPartidoActionPerformed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="btnRemoverPartido">
                       <Properties>
@@ -1177,14 +1204,9 @@
                     <Component class="javax.swing.JComboBox" name="cbPartidoCandidato">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="5">
-                            <StringItem index="0" value="Progressistas - PP"/>
-                            <StringItem index="1" value="Partido Liberal -  PL"/>
-                            <StringItem index="2" value="Partido dos Trabalhadores - PT"/>
-                            <StringItem index="3" value="Movimento Democr&#xe1;tico Brasileiro - MDB"/>
-                            <StringItem index="4" value=" "/>
-                          </StringArray>
+                          <StringArray count="0"/>
                         </Property>
+                        <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbPartidoCandidatoActionPerformed"/>
@@ -1196,8 +1218,34 @@
                     <Component class="javax.swing.JComboBox" name="cbEstadoCandidato">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="1">
-                            <StringItem index="0" value="Minas Gerais - MG"/>
+                          <StringArray count="27">
+                            <StringItem index="0" value=" AC"/>
+                            <StringItem index="1" value=" AL"/>
+                            <StringItem index="2" value=" AP"/>
+                            <StringItem index="3" value=" AM"/>
+                            <StringItem index="4" value=" BA"/>
+                            <StringItem index="5" value=" CE"/>
+                            <StringItem index="6" value=" DF"/>
+                            <StringItem index="7" value=" ES"/>
+                            <StringItem index="8" value=" GO"/>
+                            <StringItem index="9" value=" MA"/>
+                            <StringItem index="10" value=" MT"/>
+                            <StringItem index="11" value=" MS"/>
+                            <StringItem index="12" value=" MG"/>
+                            <StringItem index="13" value=" PA"/>
+                            <StringItem index="14" value=" PB"/>
+                            <StringItem index="15" value=" PR"/>
+                            <StringItem index="16" value=" PE"/>
+                            <StringItem index="17" value=" PI"/>
+                            <StringItem index="18" value=" RJ"/>
+                            <StringItem index="19" value=" RN"/>
+                            <StringItem index="20" value=" RS"/>
+                            <StringItem index="21" value=" RO"/>
+                            <StringItem index="22" value=" RR"/>
+                            <StringItem index="23" value=" SC"/>
+                            <StringItem index="24" value=" SP"/>
+                            <StringItem index="25" value=" SE"/>
+                            <StringItem index="26" value=" TO"/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -1295,8 +1343,34 @@
                         <Component class="javax.swing.JComboBox" name="cbEstadoViceCandidato">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="1">
-                                <StringItem index="0" value="Minas Gerais - MG"/>
+                              <StringArray count="27">
+                                <StringItem index="0" value=" AC"/>
+                                <StringItem index="1" value=" AL"/>
+                                <StringItem index="2" value=" AP"/>
+                                <StringItem index="3" value=" AM"/>
+                                <StringItem index="4" value=" BA"/>
+                                <StringItem index="5" value=" CE"/>
+                                <StringItem index="6" value=" DF"/>
+                                <StringItem index="7" value=" ES"/>
+                                <StringItem index="8" value=" GO"/>
+                                <StringItem index="9" value=" MA"/>
+                                <StringItem index="10" value=" MT"/>
+                                <StringItem index="11" value=" MS"/>
+                                <StringItem index="12" value=" MG"/>
+                                <StringItem index="13" value=" PA"/>
+                                <StringItem index="14" value=" PB"/>
+                                <StringItem index="15" value=" PR"/>
+                                <StringItem index="16" value=" PE"/>
+                                <StringItem index="17" value=" PI"/>
+                                <StringItem index="18" value=" RJ"/>
+                                <StringItem index="19" value=" RN"/>
+                                <StringItem index="20" value=" RS"/>
+                                <StringItem index="21" value=" RO"/>
+                                <StringItem index="22" value=" RR"/>
+                                <StringItem index="23" value=" SC"/>
+                                <StringItem index="24" value=" SP"/>
+                                <StringItem index="25" value=" SE"/>
+                                <StringItem index="26" value=" TO"/>
                               </StringArray>
                             </Property>
                           </Properties>
@@ -1315,14 +1389,9 @@
                         <Component class="javax.swing.JComboBox" name="cbPartidoViceCandidato">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="5">
-                                <StringItem index="0" value="Progressistas - PP"/>
-                                <StringItem index="1" value="Partido Liberal -  PL"/>
-                                <StringItem index="2" value="Partido dos Trabalhadores - PT"/>
-                                <StringItem index="3" value="Movimento Democr&#xe1;tico Brasileiro - MDB"/>
-                                <StringItem index="4" value=" "/>
-                              </StringArray>
+                              <StringArray count="0"/>
                             </Property>
+                            <Property name="toolTipText" type="java.lang.String" value=""/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbPartidoViceCandidatoActionPerformed"/>
@@ -1388,19 +1457,16 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JList" name="jList1">
+                        <Component class="javax.swing.JList" name="jListCandidatos">
                           <Properties>
                             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                              <StringArray count="5">
-                                <StringItem index="0" value="Pedro Paulo Silva Filog&#xf4;nio"/>
-                                <StringItem index="1" value="Gabriel Arantes Resende Pereira"/>
-                                <StringItem index="2" value="Gabriel do Carmo Silva"/>
-                                <StringItem index="3" value="Pedro Leopoldo Dal-Col Vianna"/>
-                                <StringItem index="4" value=" "/>
-                              </StringArray>
+                              <StringArray count="0"/>
                             </Property>
                             <Property name="selectionMode" type="int" value="0"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jListCandidatosMouseClicked"/>
+                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
@@ -1454,7 +1520,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnVoltarDashB2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel20" pref="705" max="32767" attributes="0"/>
+                          <Component id="jLabel20" pref="753" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1516,13 +1582,7 @@
                         <Component class="javax.swing.JList" name="listaAdm1">
                           <Properties>
                             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                              <StringArray count="5">
-                                <StringItem index="0" value="Pedro Paulo Silva Filog&#xf4;nio"/>
-                                <StringItem index="1" value="Gabriel Arantes Resende Pereira"/>
-                                <StringItem index="2" value="Gabriel do Carmo Silva"/>
-                                <StringItem index="3" value="Pedro Leopoldo Dal-Col Vianna"/>
-                                <StringItem index="4" value=" "/>
-                              </StringArray>
+                              <StringArray count="0"/>
                             </Property>
                             <Property name="selectionMode" type="int" value="0"/>
                           </Properties>
@@ -1574,7 +1634,7 @@
                                           <Component id="btnRemoverAdm" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="btnLimparAdm" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="130" max="32767" attributes="0"/>
+                                      <EmptySpace pref="175" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="btnAdicionarAdm" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="btnEditarAdm" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
@@ -1600,7 +1660,7 @@
                               <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jtIdAdm" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="303" max="32767" attributes="0"/>
+                              <EmptySpace pref="305" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="btnAdicionarAdm" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnRemoverAdm" alignment="3" min="-2" max="-2" attributes="0"/>

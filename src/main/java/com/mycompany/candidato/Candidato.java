@@ -13,6 +13,7 @@ public class Candidato {
     String nome;
     String estado;
     Partido partido;
+    Candidato suplente_vice;
     int numero_cand;
     int numero_votos;
     
@@ -20,6 +21,13 @@ public class Candidato {
         this.nome = nome;
         this.estado = estado;
         this.partido = partido;
+    }
+    
+    public Candidato(String nome, String estado, Partido partido, Candidato suplente_vice) {
+        this.nome = nome;
+        this.estado = estado;
+        this.partido = partido;
+        this.suplente_vice = suplente_vice;
     }
     
     public String getNome() {
@@ -37,6 +45,10 @@ public class Candidato {
     public int getNumeroVotos() {
         return this.numero_votos;
     }
+    
+    public Candidato getSuplenteVice() {
+        return this.suplente_vice;
+    }    
     
     public void setNumeroVotos(int numero_votos) {
         this.numero_votos = numero_votos;

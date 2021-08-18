@@ -13,8 +13,7 @@ public class Presidente extends Candidato {
     private Candidato vice;
 
     public Presidente(Candidato vice, String nome, String estado, Partido partido) {
-        super(nome, estado, partido);
-        this.vice = vice;
+        super(nome, estado, partido, vice);
         this.numero_cand = partido.getNumero();
     }
 
