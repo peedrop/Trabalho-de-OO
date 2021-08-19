@@ -73,13 +73,13 @@ public class BancoDados {
     }
     
     // Função salvar todas listas set do programa
-    public static void salvarTodos() {
+    public static void salvarTodos(TribunalEleitoral tribunalEleitoral) {
         
     }
     // Fim função salvar todas
     
     // Função recuperar todas listas set do programa
-    public static void recuperarTodos() {
+    public static void recuperarTodos(TribunalEleitoral tribunalEleitoral) {
         
     }
     // Fim função recuperar todas
@@ -110,4 +110,5 @@ public class BancoDados {
         }
     }
     // Fim função recuperar
+
 }

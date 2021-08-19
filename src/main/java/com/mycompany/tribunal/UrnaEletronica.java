@@ -27,6 +27,10 @@ public class UrnaEletronica {
         "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO",
         "RR", "SC", "SP", "SE", "TO"};
     private TribunalEleitoral tribunalEleitoral;
+
+    public UrnaEletronica() {
+        this.tribunalEleitoral = new TribunalEleitoral();
+    }
     
     public void setTribunalEleitoral(TribunalEleitoral tribunalEleitoral) {
         this.tribunalEleitoral = tribunalEleitoral;
