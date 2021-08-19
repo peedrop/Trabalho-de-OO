@@ -38,6 +38,10 @@ public class TribunalEleitoral {
     public Set<Partido> getListaPartidos() {
         return this.listaPartidos;
     }
+    
+    public void setListaPartidos(Set<Partido> listaPartidos) {
+        this.listaPartidos = listaPartidos;
+    }
 
     public void setListaCandidatos(Set<Candidato> listaCandidatos) {
         this.listaCandidatos = listaCandidatos;
