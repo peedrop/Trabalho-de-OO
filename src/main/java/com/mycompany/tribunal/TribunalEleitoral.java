@@ -172,9 +172,15 @@ public class TribunalEleitoral {
     }
 
     public void editarPartido(Partido partido_antigo, Partido partido_novo) {
-        listaPartidos.stream().filter((p) -> (partido_antigo == p)).forEachOrdered((p) -> {
-            p = partido_novo;
-        });
+        Partido partido_removido = null;
+        for(Partido p : this.listaPartidos) {
+            if(p == partido_antigo) {
+                partido_removido = p;
+                break;
+            }
+        }
+        this.listaPartidos.remove(partido_removido);
+        this.listaPartidos.add(partido_novo);
     }
     
     public void deletarPartido(Partido partido) {
@@ -182,9 +188,15 @@ public class TribunalEleitoral {
     }
     
     public void editarCandidato(Candidato candidato_antigo, Candidato candidato_novo) {
-        listaCandidatos.stream().filter((c) -> (candidato_antigo == c)).forEachOrdered((c) -> {
-           c = candidato_novo; 
-        });
+        Candidato candidato_removido = null;
+        for(Candidato c : this.listaCandidatos) {
+            if(c == candidato_antigo) {
+                candidato_removido = c;
+                break;
+            }
+        }
+        this.listaCandidatos.remove(candidato_removido);
+        this.listaCandidatos.add(candidato_novo);
     }
     
     public void deletarCandidato(Candidato candidato) {
@@ -192,9 +204,15 @@ public class TribunalEleitoral {
     }
     
     public void editarEleitor(Eleitor eleitor_antigo, Eleitor eleitor_novo) {
-        listaEleitores.stream().filter((e) -> (eleitor_antigo == e)).forEachOrdered((e) -> {
-           e = eleitor_novo; 
-        });
+        Eleitor eleitor_removido = null;
+        for(Eleitor e : this.listaEleitores) {
+            if(e == eleitor_antigo) {
+                eleitor_removido = e;
+                break;
+            }
+        }
+        this.listaEleitores.remove(eleitor_removido);
+        this.listaEleitores.add(eleitor_novo);
     }
     
     public void deletarEleitor(Eleitor eleitor) {
@@ -202,9 +220,15 @@ public class TribunalEleitoral {
     }
     
     public void editarAdministrador(Administrador administrador_antigo, Administrador administrador_novo) {
-        listaAdministradores.stream().filter((a) -> (administrador_antigo == a)).forEachOrdered((a) -> {
-           a = administrador_novo; 
-        });
+        Administrador administrador_removido = null;
+        for(Administrador a : this.listaAdministradores) {
+            if(a == administrador_antigo) {
+                administrador_removido = a;
+                break;
+            }
+        }
+        this.listaAdministradores.remove(administrador_removido);
+        this.listaAdministradores.add(administrador_novo);
     }
     
     public void deletarAdministrador(Administrador administrador) {

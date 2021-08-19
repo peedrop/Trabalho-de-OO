@@ -31,39 +31,14 @@ public class AreaAdmin extends javax.swing.JFrame {
         this.modeloListaEleitores = new DefaultListModel<>();
         this.modeloListaCandidatos = new DefaultListModel<>();
         initComponents();
-        for (Partido partido : this.tribunalEleitoral.getListaPartidos()) {
-            this.modeloListaPartidos.addElement(partido.getSigla());
-        }
-        this.jListPartidos.setModel(this.modeloListaPartidos);
-        this.jListPartidos.repaint();
-        if(this.tribunalEleitoral.getListaAdministradores().isEmpty()) {
-            this.modeloListaAdm.addElement("admin (Crie um novo perfil)");
-        }
-        else {
-            for (Administrador adm : this.tribunalEleitoral.getListaAdministradores()) {
-                this.modeloListaAdm.addElement(adm.getNome() + " - " + adm.getIdentificador());
-            }
-        }
-        this.listaAdm1.setModel(this.modeloListaAdm);
-        this.listaAdm1.repaint();
-        for(Eleitor eleitor : this.tribunalEleitoral.getListaEleitores()) {
-            this.modeloListaEleitores.addElement(eleitor.getNome() + " - " + eleitor.getTitulo_eleitor());
-        }
-        this.jListEleitores.setModel(this.modeloListaEleitores);
-        this.jListEleitores.repaint();
-        for(Candidato candidato : this.tribunalEleitoral.getListaCandidatos()) {
-            this.modeloListaCandidatos.addElement(candidato.getNome() + " - " + candidato.getNumero_cand());
-        }
-        this.jListCandidatos.setModel(this.modeloListaCandidatos);
-        this.jListCandidatos.repaint();
         btnRemoverAdm.setEnabled(true);
         btnEditarAdm.setEnabled(true);
         
         //Iniciando as Listas com os seus respectivos modelos
         FuncoesAuxiliares.iniciaModeloListaPartidos(this.modeloListaPartidos, this.tribunalEleitoral, jListPartidos);
-        FuncoesAuxiliares.iniciaModeloListaAdm(modeloListaAdm, tribunalEleitoral, listaAdm1);
-        FuncoesAuxiliares.iniciaModeloListaEleitores(modeloListaEleitores, tribunalEleitoral, jListEleitores);
-        FuncoesAuxiliares.iniciaModeloListaCandidatos(modeloListaCandidatos, tribunalEleitoral, jListCandidatos);
+        FuncoesAuxiliares.iniciaModeloListaAdm(this.modeloListaAdm, tribunalEleitoral, listaAdm1);
+        FuncoesAuxiliares.iniciaModeloListaEleitores(this.modeloListaEleitores, tribunalEleitoral, jListEleitores);
+        FuncoesAuxiliares.iniciaModeloListaCandidatos(this.modeloListaCandidatos, tribunalEleitoral, jListCandidatos);
     }
 
     /**
@@ -1656,6 +1631,19 @@ public class AreaAdmin extends javax.swing.JFrame {
 
     private void btnRemoverEleitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverEleitorActionPerformed
         // TODO add your handling code here:
+        if(!this.tribunalEleitoral.getListaEleitores().isEmpty() && jListEleitores.getSelectedIndex() != -1) {
+            int pos_sep = jListEleitores.getSelectedValue().indexOf('-');
+            String tituloEleitor = jListEleitores.getSelectedValue().substring(pos_sep+2);
+            for(Eleitor e : this.tribunalEleitoral.getListaEleitores()) {
+                if(e.getTitulo_eleitor() == null ? tituloEleitor == null : e.getTitulo_eleitor().equals(tituloEleitor)) {
+                    this.tribunalEleitoral.deletarEleitor(e);
+                    break;
+                }
+            }
+            this.modeloListaEleitores.remove(jListEleitores.getSelectedIndex());
+            btnLimparEleitor.doClick();
+            JOptionPane.showMessageDialog(rootPane, "Eleitor Removido com sucesso!");
+        }
     }//GEN-LAST:event_btnRemoverEleitorActionPerformed
 
     private void jtTituloEleitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtTituloEleitorActionPerformed
@@ -1794,6 +1782,20 @@ public class AreaAdmin extends javax.swing.JFrame {
 
     private void btnEditarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPartidoActionPerformed
         // TODO add your handling code here:
+        String siglaPartido = jListPartidos.getSelectedValue();
+        Partido partido = null;
+        for(Partido p : this.tribunalEleitoral.getListaPartidos()) {
+            if(p.getSigla() == null ? siglaPartido == null : p.getSigla().equals(siglaPartido)) {
+                partido = p;
+            }
+        }
+        this.modeloListaPartidos.remove(jListPartidos.getSelectedIndex());
+        Partido novo_partido = new Partido(jtNomePartido.getText().trim(), Integer.parseInt(jtNumeroPartido.getText().trim()), jtSiglaPartido.getText().trim());
+        this.tribunalEleitoral.editarPartido(partido, novo_partido);
+        this.modeloListaPartidos.addElement(novo_partido.getSigla());
+        JOptionPane.showMessageDialog(rootPane, "Partido cadastrado com sucesso!");
+               btnLimparPartido.doClick();
+        
     }//GEN-LAST:event_btnEditarPartidoActionPerformed
 
     private void jListEleitoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListEleitoresMouseClicked
@@ -1845,7 +1847,6 @@ public class AreaAdmin extends javax.swing.JFrame {
         int pos_sep = listaAdm1.getSelectedValue().indexOf('-');
         String id = listaAdm1.getSelectedValue().substring(pos_sep+2);
         for(Administrador ad : this.tribunalEleitoral.getListaAdministradores()) {
-            System.out.println(ad.getIdentificador() + "aq");
             if((ad.getIdentificador() == null ? id == null : ad.getIdentificador().equals(id)) && (ad.getIdentificador() == null ? this.identificadorLogado == null : ad.getIdentificador().equals(this.identificadorLogado))) {
                 jtNomeAdm.setText(ad.getNome());
                 jtIdAdm.setText(ad.getIdentificador());
