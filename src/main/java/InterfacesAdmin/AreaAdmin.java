@@ -40,7 +40,7 @@ public class AreaAdmin extends javax.swing.JFrame {
         }
         else {
             for (Administrador adm : this.tribunalEleitoral.getListaAdministradores()) {
-                this.modeloListaAdm.addElement(adm.getNome());
+                this.modeloListaAdm.addElement(adm.getNome() + " - " + adm.getIdentificador());
             }
         }
         this.listaAdm1.setModel(this.modeloListaAdm);
@@ -55,6 +55,8 @@ public class AreaAdmin extends javax.swing.JFrame {
         }
         this.jListCandidatos.setModel(this.modeloListaCandidatos);
         this.jListCandidatos.repaint();
+        btnRemoverAdm.setEnabled(true);
+        btnEditarAdm.setEnabled(true);
     }
 
     /**
@@ -1059,6 +1061,11 @@ public class AreaAdmin extends javax.swing.JFrame {
         painelListaAdm1.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Administradores"));
 
         listaAdm1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        listaAdm1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaAdm1MouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(listaAdm1);
 
         javax.swing.GroupLayout painelListaAdm1Layout = new javax.swing.GroupLayout(painelListaAdm1);
@@ -1428,6 +1435,7 @@ public class AreaAdmin extends javax.swing.JFrame {
             CardLayout cl = (CardLayout) clLogin.getLayout();   //Troca a tela para o ERRO
             cl.show(clLogin, "telaErroLogin");
         }else{
+            this.identificadorLogado = identificador;
             CardLayout cl = (CardLayout) PainelPadrao.getLayout();   //Troca a tela para o dashboard
             cl.show(PainelPadrao, "telaAdmin");
         }
@@ -1493,9 +1501,9 @@ public class AreaAdmin extends javax.swing.JFrame {
             if(this.tribunalEleitoral.getListaAdministradores().isEmpty()) {
                 this.modeloListaAdm.remove(0);
             }
-            this.modeloListaAdm.addElement(jtNomeAdm.getText());
-            listaAdm1.repaint();
             String id = tribunalEleitoral.cadastrarAdministrador(jtNomeAdm.getText(), senha);
+            this.modeloListaAdm.addElement(jtNomeAdm.getText() + " - " + id);
+            listaAdm1.repaint();
             JOptionPane.showMessageDialog(rootPane, "O identificador do novo admin é " + id);
             btnLimparAdm.doClick();
         }
@@ -1711,6 +1719,7 @@ public class AreaAdmin extends javax.swing.JFrame {
 
     private void btnVoltarTelaInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarTelaInicialActionPerformed
         CardLayout cl = (CardLayout) PainelPadrao.getLayout();
+        this.identificadorLogado = "";
         cl.show(PainelPadrao, "telaInicial");
     }//GEN-LAST:event_btnVoltarTelaInicialActionPerformed
 
@@ -1788,9 +1797,6 @@ public class AreaAdmin extends javax.swing.JFrame {
         int pos_sep = jListCandidatos.getSelectedValue().indexOf('-');
         int numero = Integer.parseInt(jListCandidatos.getSelectedValue().substring(pos_sep+2));
         for(Candidato c : this.tribunalEleitoral.getListaCandidatos()) {
-            System.out.println(c.getNome());
-            System.out.println(c.getNumero_cand());
-            System.out.println(numero);
             if(c.getNumero_cand() == numero) {
                 jtNomeCandidato.setText(c.getNome());
                 jtNumeroCandidato.setText(String.valueOf(c.getNumero_cand()));
@@ -1807,6 +1813,33 @@ public class AreaAdmin extends javax.swing.JFrame {
             }
         } 
     }//GEN-LAST:event_jListCandidatosMouseClicked
+
+    private void listaAdm1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaAdm1MouseClicked
+        // TODO add your handling code here:
+        if(listaAdm1.getSelectedIndex() == -1) {
+            return;
+        }
+        Administrador adm = null;
+        int pos_sep = listaAdm1.getSelectedValue().indexOf('-');
+        String id = listaAdm1.getSelectedValue().substring(pos_sep+2);
+        for(Administrador ad : this.tribunalEleitoral.getListaAdministradores()) {
+            System.out.println(ad.getIdentificador() + "aq");
+            if((ad.getIdentificador() == null ? id == null : ad.getIdentificador().equals(id)) && (ad.getIdentificador() == null ? this.identificadorLogado == null : ad.getIdentificador().equals(this.identificadorLogado))) {
+                jtNomeAdm.setText(ad.getNome());
+                jtIdAdm.setText(ad.getIdentificador());
+                btnRemoverAdm.setEnabled(true);
+                btnEditarAdm.setEnabled(true);
+                btnAdicionarAdm.setEnabled(true);
+            }
+            else {
+                jtNomeAdm.setText(null);
+                jtIdAdm.setText(null);
+                btnRemoverAdm.setEnabled(false);
+                btnEditarAdm.setEnabled(false);
+                btnAdicionarAdm.setEnabled(false);
+            }
+        }
+    }//GEN-LAST:event_listaAdm1MouseClicked
     
     
     /**
@@ -1849,6 +1882,7 @@ public class AreaAdmin extends javax.swing.JFrame {
     private DefaultListModel<String> modeloListaEleitores;
     private DefaultListModel<String> modeloListaCandidatos;
     private TribunalEleitoral tribunalEleitoral;
+    private String identificadorLogado;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPadrao;
     private javax.swing.JPanel ErroLogin;
