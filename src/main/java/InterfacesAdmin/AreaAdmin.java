@@ -28,6 +28,7 @@ public class AreaAdmin extends javax.swing.JFrame {
      */
     public AreaAdmin() {
         this.urnaEletronica = new UrnaEletronica();
+        this.bancoDados = new BancoDados();
         this.modeloListaPartidos = new DefaultListModel<>();
         this.modeloListaAdm = new DefaultListModel<>();
         this.modeloListaEleitores = new DefaultListModel<>();
@@ -35,12 +36,13 @@ public class AreaAdmin extends javax.swing.JFrame {
         initComponents();
         btnRemoverAdm.setEnabled(true);
         btnEditarAdm.setEnabled(true);
+        this.bancoDados.recuperarTodos(this.urnaEletronica.getTribunalEleitoral());
         
         //Iniciando as Listas com os seus respectivos modelos
         FuncoesAuxiliares.iniciaModeloListaPartidos(this.modeloListaPartidos, this.urnaEletronica.getTribunalEleitoral(), jListPartidos);
-        FuncoesAuxiliares.iniciaModeloListaAdm(this.modeloListaAdm, urnaEletronica.getTribunalEleitoral(), listaAdm1);
-        FuncoesAuxiliares.iniciaModeloListaEleitores(this.modeloListaEleitores, urnaEletronica.getTribunalEleitoral(), jListEleitores);
-        FuncoesAuxiliares.iniciaModeloListaCandidatos(this.modeloListaCandidatos, urnaEletronica.getTribunalEleitoral(), jListCandidatos);
+        FuncoesAuxiliares.iniciaModeloListaAdm(this.modeloListaAdm, this.urnaEletronica.getTribunalEleitoral(), listaAdm1);
+        FuncoesAuxiliares.iniciaModeloListaEleitores(this.modeloListaEleitores, this.urnaEletronica.getTribunalEleitoral(), jListEleitores);
+        FuncoesAuxiliares.iniciaModeloListaCandidatos(this.modeloListaCandidatos, this.urnaEletronica.getTribunalEleitoral(), jListCandidatos);
     }
 
     /**
@@ -56,6 +58,7 @@ public class AreaAdmin extends javax.swing.JFrame {
         PainelPadrao = new javax.swing.JPanel();
         TelaInicial = new javax.swing.JPanel();
         btnLogin = new javax.swing.JButton();
+        jButtonSair = new javax.swing.JButton();
         clAdmin = new javax.swing.JPanel();
         AdminPadrao = new javax.swing.JPanel();
         btnGerenciarPartido = new javax.swing.JButton();
@@ -163,9 +166,14 @@ public class AreaAdmin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         btnVoltarLogin = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMinimumSize(new java.awt.Dimension(800, 600));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         txtAreaAdm.setText("Área Administrativa");
 
@@ -180,6 +188,13 @@ public class AreaAdmin extends javax.swing.JFrame {
             }
         });
 
+        jButtonSair.setText("Sair");
+        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSairActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout TelaInicialLayout = new javax.swing.GroupLayout(TelaInicial);
         TelaInicial.setLayout(TelaInicialLayout);
         TelaInicialLayout.setHorizontalGroup(
@@ -188,13 +203,18 @@ public class AreaAdmin extends javax.swing.JFrame {
                 .addGap(326, 326, 326)
                 .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
                 .addGap(319, 319, 319))
+            .addGroup(TelaInicialLayout.createSequentialGroup()
+                .addComponent(jButtonSair)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         TelaInicialLayout.setVerticalGroup(
             TelaInicialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TelaInicialLayout.createSequentialGroup()
                 .addGap(238, 238, 238)
                 .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-                .addGap(257, 257, 257))
+                .addGap(136, 136, 136)
+                .addComponent(jButtonSair)
+                .addGap(93, 93, 93))
         );
 
         PainelPadrao.add(TelaInicial, "telaInicial");
@@ -1837,10 +1857,11 @@ public class AreaAdmin extends javax.swing.JFrame {
         int pos_sep = listaAdm1.getSelectedValue().indexOf('-');
         String id = listaAdm1.getSelectedValue().substring(pos_sep+2);
         for(Administrador ad : this.urnaEletronica.getTribunalEleitoral().getListaAdministradores()) {
-            if((ad.getIdentificador() == null ? id == null : ad.getIdentificador().equals(id)) && (ad.getIdentificador() == null ? this.identificadorLogado == null : ad.getIdentificador().equals(this.identificadorLogado))) {
+            if(ad.getIdentificador().equals(id) && this.identificadorLogado.equals(id)) {
                 jtNomeAdm.setText(ad.getNome());
                 btnRemoverAdm.setEnabled(true);
                 btnEditarAdm.setEnabled(true);
+                break;
             }
             else {
                 jtNomeAdm.setText(null);
@@ -1849,13 +1870,23 @@ public class AreaAdmin extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_listaAdm1MouseClicked
+
+    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
+        // TODO add your handling code here:
+        this.bancoDados.salvarTodos(this.urnaEletronica.getTribunalEleitoral());
+        this.dispose();
+    }//GEN-LAST:event_jButtonSairActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        this.bancoDados.salvarTodos(this.urnaEletronica.getTribunalEleitoral());
+    }//GEN-LAST:event_formWindowClosing
     
     
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        BancoDados.recuperarTodos(this.urnaEletronica.getTribunalEleitoral());
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1885,8 +1916,7 @@ public class AreaAdmin extends javax.swing.JFrame {
                 new AreaAdmin().setVisible(true);
             }
         });
-        
-        BancoDados.salvarTodos(this.urnaEletronica.getTribunalEleitoral());
+//        BancoDados.salvarTodos(urnaEletronica.getTribunalEleitoral());
     }
 
     private DefaultListModel<String> modeloListaPartidos;
@@ -1894,6 +1924,7 @@ public class AreaAdmin extends javax.swing.JFrame {
     private DefaultListModel<String> modeloListaEleitores;
     private DefaultListModel<String> modeloListaCandidatos;
     private UrnaEletronica urnaEletronica;
+    private BancoDados bancoDados;
     private String identificadorLogado;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPadrao;
@@ -1949,6 +1980,7 @@ public class AreaAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel clLogin;
     private javax.swing.JLabel dashBoardAdm;
     private javax.swing.JLabel imagemLogin;
+    private javax.swing.JButton jButtonSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

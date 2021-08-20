@@ -47,6 +47,14 @@ public class TribunalEleitoral {
         this.listaCandidatos = listaCandidatos;
     }
     
+    public void setListaAdministradores(Set<Administrador> listaAdministradores) {
+        this.listaAdministradores = listaAdministradores;
+    }
+
+    public void setListaEleitores(Set<Eleitor> listaEleitores) {
+        this.listaEleitores = listaEleitores;
+    }
+   
     public Set<Administrador> getListaAdministradores() {
         return this.listaAdministradores;
     }

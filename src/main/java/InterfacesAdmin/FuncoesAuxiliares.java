@@ -46,7 +46,7 @@ public class FuncoesAuxiliares {
         }
         else {
             for (Administrador adm : tribunalEleitoral.getListaAdministradores()) {
-                modeloLista.addElement(adm.getNome());
+                modeloLista.addElement(adm.getNome() + " - " + adm.getIdentificador());
             }
         }
         lista.setModel(modeloLista);
