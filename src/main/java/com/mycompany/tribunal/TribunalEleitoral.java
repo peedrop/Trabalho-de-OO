@@ -239,6 +239,7 @@ public class TribunalEleitoral {
                 break;
             }
         }
+        administrador_novo.setIdentificador(administrador_antigo.getIdentificador());
         this.listaAdministradores.remove(administrador_removido);
         this.listaAdministradores.add(administrador_novo);
     }

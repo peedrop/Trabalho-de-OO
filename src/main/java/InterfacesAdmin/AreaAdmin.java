@@ -803,6 +803,11 @@ public class AreaAdmin extends javax.swing.JFrame {
 
         btnEditarCandidato.setBackground(new java.awt.Color(92, 184, 92));
         btnEditarCandidato.setText("Salvar Alterações");
+        btnEditarCandidato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarCandidatoActionPerformed(evt);
+            }
+        });
 
         btnRemoverCandidato.setBackground(new java.awt.Color(217, 83, 79));
         btnRemoverCandidato.setLabel("Remover");
@@ -1118,6 +1123,11 @@ public class AreaAdmin extends javax.swing.JFrame {
 
         btnEditarAdm.setBackground(new java.awt.Color(92, 184, 92));
         btnEditarAdm.setText("Salvar Alterações");
+        btnEditarAdm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarAdmActionPerformed(evt);
+            }
+        });
 
         btnRemoverAdm.setBackground(new java.awt.Color(217, 83, 79));
         btnRemoverAdm.setLabel("Remover");
@@ -1141,7 +1151,7 @@ public class AreaAdmin extends javax.swing.JFrame {
                                 .addGroup(painelFormularioAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel18)
                                     .addComponent(jLabel9))
-                                .addGap(0, 267, Short.MAX_VALUE))
+                                .addGap(0, 334, Short.MAX_VALUE))
                             .addComponent(jtSenhaAdm))
                         .addContainerGap())
                     .addGroup(painelFormularioAdm1Layout.createSequentialGroup()
@@ -1149,7 +1159,7 @@ public class AreaAdmin extends javax.swing.JFrame {
                         .addGroup(painelFormularioAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnRemoverAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
                             .addComponent(btnLimparAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                         .addGroup(painelFormularioAdm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnEditarAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnAdicionarAdm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1363,10 +1373,10 @@ public class AreaAdmin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(PainelPadrao, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtAreaAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(PainelPadrao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(txtAreaAdm)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -1512,6 +1522,7 @@ public class AreaAdmin extends javax.swing.JFrame {
         CardLayout cl = (CardLayout) clAdmin.getLayout();
         cl.show(clAdmin, "telaAdminPadrao");
         btnLimparAdm.doClick();
+        listaAdm1.clearSelection();
     }//GEN-LAST:event_btnVoltarDashB2ActionPerformed
 
     private void jtNomeCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNomeCandidatoActionPerformed
@@ -1602,6 +1613,7 @@ public class AreaAdmin extends javax.swing.JFrame {
         btnLimparCandidato.doClick();
         CardLayout cl = (CardLayout) clAdmin.getLayout();
         cl.show(clAdmin, "telaAdminPadrao");
+        jListCandidatos.clearSelection();
     }//GEN-LAST:event_btnVoltarDashBActionPerformed
 
     private void jtNomeEleitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNomeEleitorActionPerformed
@@ -1707,12 +1719,14 @@ public class AreaAdmin extends javax.swing.JFrame {
         CardLayout cl = (CardLayout) clAdmin.getLayout();
         cl.show(clAdmin, "telaAdminPadrao");
         btnLimparPartido.doClick();
+        jListPartidos.clearSelection();
     }//GEN-LAST:event_btnVoltarDashPartidosActionPerformed
 
     private void btnVoltarDashEleitoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarDashEleitoresActionPerformed
         CardLayout cl = (CardLayout) clAdmin.getLayout();
         cl.show(clAdmin, "telaAdminPadrao");
         btnLimparEleitor.doClick();
+        jListEleitores.clearSelection();
     }//GEN-LAST:event_btnVoltarDashEleitoresActionPerformed
 
     private void btnVotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVotacaoActionPerformed
@@ -1881,6 +1895,53 @@ public class AreaAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.bancoDados.salvarTodos(this.urnaEletronica.getTribunalEleitoral());
     }//GEN-LAST:event_formWindowClosing
+
+    private void btnEditarAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarAdmActionPerformed
+        if( listaAdm1.getSelectedIndex() == -1 )
+        {
+            JOptionPane.showMessageDialog(rootPane, "Selecione um Administrador para editá-lo");
+            return;
+        }
+        
+        String nome = jtNomeAdm.getText().trim();
+        String senha = new String(jtSenhaAdm.getPassword());
+        if("".equals(nome) || "".equals(senha.trim()))
+        {
+           JOptionPane.showMessageDialog(rootPane, "Preencha os campos antes de salvá-los"); 
+        }else{
+            Administrador adm = null;
+            int pos_sep = listaAdm1.getSelectedValue().indexOf('-');
+            String id = listaAdm1.getSelectedValue().substring(pos_sep+2);
+            if(!this.identificadorLogado.equals(id))
+            {
+                JOptionPane.showMessageDialog(rootPane, "Você só pode alterar o seus dados!");
+                return;
+            }
+            for(Administrador ad : this.urnaEletronica.getTribunalEleitoral().getListaAdministradores()) {
+                if(ad.getIdentificador().equals(id)) {
+                    adm = ad;
+                    break;
+                }
+            }
+            this.modeloListaAdm.remove(this.listaAdm1.getSelectedIndex());
+            Administrador administrador = new Administrador(nome, senha);
+            this.urnaEletronica.getTribunalEleitoral().editarAdministrador(adm, administrador);
+            this.modeloListaAdm.addElement(administrador.getNome() + " - " + administrador.getIdentificador());
+            JOptionPane.showMessageDialog(rootPane, "Administrador atualizado com sucesso!");
+            btnLimparAdm.doClick();
+        }
+    }//GEN-LAST:event_btnEditarAdmActionPerformed
+
+    private void btnEditarCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCandidatoActionPerformed
+        if( jListCandidatos.getSelectedIndex() == -1 )
+        {
+            JOptionPane.showMessageDialog(rootPane, "Selecione um Administrador para editá-lo");
+            return;
+        }
+        
+        
+        
+    }//GEN-LAST:event_btnEditarCandidatoActionPerformed
     
     
     /**
