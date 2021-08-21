@@ -442,6 +442,11 @@ public class AreaAdmin extends javax.swing.JFrame {
 
         btnEditarEleitor.setBackground(new java.awt.Color(92, 184, 92));
         btnEditarEleitor.setText("Salvar Alterações");
+        btnEditarEleitor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarEleitorActionPerformed(evt);
+            }
+        });
 
         btnRemoverEleitor.setBackground(new java.awt.Color(217, 83, 79));
         btnRemoverEleitor.setLabel("Remover");
@@ -1822,13 +1827,14 @@ public class AreaAdmin extends javax.swing.JFrame {
         for(Partido p : this.urnaEletronica.getTribunalEleitoral().getListaPartidos()) {
             if(p.getSigla() == null ? siglaPartido == null : p.getSigla().equals(siglaPartido)) {
                 partido = p;
+                break;
             }
         }
         this.modeloListaPartidos.remove(jListPartidos.getSelectedIndex());
         Partido novo_partido = new Partido(jtNomePartido.getText().trim(), Integer.parseInt(jtNumeroPartido.getText().trim()), jtSiglaPartido.getText().trim());
         this.urnaEletronica.getTribunalEleitoral().editarPartido(partido, novo_partido);
         this.modeloListaPartidos.addElement(novo_partido.getSigla());
-        JOptionPane.showMessageDialog(rootPane, "Partido cadastrado com sucesso!");
+        JOptionPane.showMessageDialog(rootPane, "Partido editado com sucesso!");
                btnLimparPartido.doClick();
         
     }//GEN-LAST:event_btnEditarPartidoActionPerformed
@@ -1998,14 +2004,31 @@ public class AreaAdmin extends javax.swing.JFrame {
         for(Candidato c : this.urnaEletronica.getTribunalEleitoral().getListaCandidatos()) {
             if(c.getNumero_cand() == numero) {
                 candidadoAntigo = c;
+                break;
             }
         }
         this.modeloListaCandidatos.remove(jListCandidatos.getSelectedIndex());
-        Candidato candidatoNovo = new Candidato(nome, estadoCandidato,partidoCandidato);
-        //Como instanciar uma variavel para quando tiver vice e quando nao tiver???
-        Candidato candidatoNovo = new Candidato(nome, );
-        
+        this.modeloListaCandidatos.addElement(nome + " - " + numero);
+        JOptionPane.showMessageDialog(rootPane, this.urnaEletronica.getTribunalEleitoral().editarCandidato(candidadoAntigo, cargo, numero, nome, partidoCandidato, estadoCandidato, jtNomeViceCandidato.getText().trim(), cbEstadoViceCandidato.getSelectedItem().toString(), partidoSuplente));
     }//GEN-LAST:event_btnEditarCandidatoActionPerformed
+
+    private void btnEditarEleitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEleitorActionPerformed
+        int pos_sep = jListEleitores.getSelectedValue().indexOf('-');
+        String titulo = jListEleitores.getSelectedValue().substring(pos_sep+2);
+        Eleitor eleitor = null;
+        for(Eleitor e : this.urnaEletronica.getTribunalEleitoral().getListaEleitores()) {
+            if(titulo == null ? e.getTitulo_eleitor() == null : titulo.equals(e.getTitulo_eleitor())) {
+                eleitor = e;
+                break;
+            }
+        }
+        this.modeloListaEleitores.remove(jListEleitores.getSelectedIndex());
+        Eleitor novo_eleitor = new Eleitor(jtNomeEleitor.getText().trim(), cbEstadoEleitor.getSelectedItem().toString(), jtCpfEleitor.getText().trim(), jtTituloEleitor.getText().trim());
+        this.urnaEletronica.getTribunalEleitoral().editarEleitor(eleitor, novo_eleitor);
+        this.modeloListaEleitores.addElement(novo_eleitor.getNome() + " - " + novo_eleitor.getTitulo_eleitor());
+        JOptionPane.showMessageDialog(rootPane, "Eleitor editado com sucesso!");
+               btnLimparEleitor.doClick();
+    }//GEN-LAST:event_btnEditarEleitorActionPerformed
     
     
     /**

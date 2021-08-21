@@ -183,7 +183,7 @@ public class TribunalEleitoral {
         }
     }
 
-    public void editarPartido(Partido partido_antigo, Partido partido_novo) {
+    public boolean editarPartido(Partido partido_antigo, Partido partido_novo) {
         Partido partido_removido = null;
         for(Partido p : this.listaPartidos) {
             if(p == partido_antigo) {
@@ -192,14 +192,14 @@ public class TribunalEleitoral {
             }
         }
         this.listaPartidos.remove(partido_removido);
-        this.listaPartidos.add(partido_novo);
+        return this.cadastrarPartido(partido_novo);
     }
     
     public void deletarPartido(Partido partido) {
         listaPartidos.remove(partido);
     }
     
-    public void editarCandidato(Candidato candidato_antigo, Candidato candidato_novo) {
+    public String editarCandidato(Candidato candidato_antigo, String cargo, int numero, String nome, Partido partido, String estado, String suplente, String estado_suplente, Partido partido_suplente) {
         Candidato candidato_removido = null;
         for(Candidato c : this.listaCandidatos) {
             if(c == candidato_antigo) {
@@ -207,15 +207,15 @@ public class TribunalEleitoral {
                 break;
             }
         }
-        this.listaCandidatos.remove(candidato_removido);
-        this.listaCandidatos.add(candidato_novo);
+        this.deletarCandidato(candidato_removido);
+        return this.cadastrarCandidato(cargo, numero, nome, partido, estado, suplente, estado_suplente, partido_suplente);
     }
     
     public void deletarCandidato(Candidato candidato) {
         listaCandidatos.remove(candidato);
     }
     
-    public void editarEleitor(Eleitor eleitor_antigo, Eleitor eleitor_novo) {
+    public String editarEleitor(Eleitor eleitor_antigo, Eleitor eleitor_novo) {
         Eleitor eleitor_removido = null;
         for(Eleitor e : this.listaEleitores) {
             if(e == eleitor_antigo) {
@@ -224,7 +224,7 @@ public class TribunalEleitoral {
             }
         }
         this.listaEleitores.remove(eleitor_removido);
-        this.listaEleitores.add(eleitor_novo);
+        return this.cadastrarEleitor(eleitor_novo.getNome(), eleitor_novo.getEstado(), eleitor_novo.getCpf(), eleitor_novo.getTitulo_eleitor());
     }
     
     public void deletarEleitor(Eleitor eleitor) {
