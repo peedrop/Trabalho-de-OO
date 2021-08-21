@@ -2023,11 +2023,11 @@ public class AreaAdmin extends javax.swing.JFrame {
             }
         }
         this.modeloListaEleitores.remove(jListEleitores.getSelectedIndex());
-        Eleitor novo_eleitor = new Eleitor(jtNomeEleitor.getText().trim(), cbEstadoEleitor.getSelectedItem().toString(), jtCpfEleitor.getText().trim(), jtTituloEleitor.getText().trim());
-        this.urnaEletronica.getTribunalEleitoral().editarEleitor(eleitor, novo_eleitor);
-        this.modeloListaEleitores.addElement(novo_eleitor.getNome() + " - " + novo_eleitor.getTitulo_eleitor());
-        JOptionPane.showMessageDialog(rootPane, "Eleitor editado com sucesso!");
-               btnLimparEleitor.doClick();
+        Eleitor novo_eleitor = new Eleitor(jtNomeEleitor.getText().trim(), cbEstadoEleitor.getSelectedItem().toString(), jtCpfEleitor.getText().trim().replace(".", "").replace("-", ""), jtTituloEleitor.getText().trim());
+        JOptionPane.showMessageDialog(rootPane, this.urnaEletronica.getTribunalEleitoral().editarEleitor(eleitor, novo_eleitor));
+        
+        this.modeloListaEleitores.addElement(novo_eleitor.getNome() + " - " + novo_eleitor.getTitulo_eleitor());       
+        btnLimparEleitor.doClick();
     }//GEN-LAST:event_btnEditarEleitorActionPerformed
     
     

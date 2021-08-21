@@ -250,6 +250,8 @@ public class TribunalEleitoral {
      
     public String cadastrarEleitor(String nome, String estado, String cpf, String titulo_eleitor) {
         try {
+            System.out.println(cpf.toCharArray().length);
+            System.out.println(titulo_eleitor.toCharArray().length);
             if(cpf.toCharArray().length != 11 || titulo_eleitor.toCharArray().length != 12) {
                 return "Número de dígitos de um dos documentos inválido!";
             }
