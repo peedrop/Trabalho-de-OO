@@ -1832,11 +1832,11 @@ public class AreaAdmin extends javax.swing.JFrame {
         }
         this.modeloListaPartidos.remove(jListPartidos.getSelectedIndex());
         Partido novo_partido = new Partido(jtNomePartido.getText().trim(), Integer.parseInt(jtNumeroPartido.getText().trim()), jtSiglaPartido.getText().trim());
-        this.urnaEletronica.getTribunalEleitoral().editarPartido(partido, novo_partido);
-        this.modeloListaPartidos.addElement(novo_partido.getSigla());
-        JOptionPane.showMessageDialog(rootPane, "Partido editado com sucesso!");
-               btnLimparPartido.doClick();
-        
+        if(this.urnaEletronica.getTribunalEleitoral().editarPartido(partido, novo_partido)) {
+                this.modeloListaPartidos.addElement(novo_partido.getSigla());
+                JOptionPane.showMessageDialog(rootPane, "Partido editado com sucesso!");
+                   btnLimparPartido.doClick();   
+        }
     }//GEN-LAST:event_btnEditarPartidoActionPerformed
 
     private void jListEleitoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListEleitoresMouseClicked
@@ -2007,9 +2007,11 @@ public class AreaAdmin extends javax.swing.JFrame {
                 break;
             }
         }
-        this.modeloListaCandidatos.remove(jListCandidatos.getSelectedIndex());
-        this.modeloListaCandidatos.addElement(nome + " - " + numero);
         JOptionPane.showMessageDialog(rootPane, this.urnaEletronica.getTribunalEleitoral().editarCandidato(candidadoAntigo, cargo, numero, nome, partidoCandidato, estadoCandidato, jtNomeViceCandidato.getText().trim(), cbEstadoViceCandidato.getSelectedItem().toString(), partidoSuplente));
+        if("O candidato foi adicionado com sucesso.".equals(this.urnaEletronica.getTribunalEleitoral().editarCandidato(candidadoAntigo, cargo, numero, nome, partidoCandidato, estadoCandidato, jtNomeViceCandidato.getText().trim(), cbEstadoViceCandidato.getSelectedItem().toString(), partidoSuplente))) {
+            this.modeloListaCandidatos.remove(jListCandidatos.getSelectedIndex());
+            this.modeloListaCandidatos.addElement(nome + " - " + numero);
+        }
     }//GEN-LAST:event_btnEditarCandidatoActionPerformed
 
     private void btnEditarEleitorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEleitorActionPerformed
@@ -2025,9 +2027,10 @@ public class AreaAdmin extends javax.swing.JFrame {
         this.modeloListaEleitores.remove(jListEleitores.getSelectedIndex());
         Eleitor novo_eleitor = new Eleitor(jtNomeEleitor.getText().trim(), cbEstadoEleitor.getSelectedItem().toString(), jtCpfEleitor.getText().trim().replace(".", "").replace("-", ""), jtTituloEleitor.getText().trim());
         JOptionPane.showMessageDialog(rootPane, this.urnaEletronica.getTribunalEleitoral().editarEleitor(eleitor, novo_eleitor));
-        
-        this.modeloListaEleitores.addElement(novo_eleitor.getNome() + " - " + novo_eleitor.getTitulo_eleitor());       
-        btnLimparEleitor.doClick();
+        if("Eleitor cadastrado com sucesso.".equals(this.urnaEletronica.getTribunalEleitoral().editarEleitor(eleitor, novo_eleitor))) {
+            this.modeloListaEleitores.addElement(novo_eleitor.getNome() + " - " + novo_eleitor.getTitulo_eleitor());       
+            btnLimparEleitor.doClick();
+        }
     }//GEN-LAST:event_btnEditarEleitorActionPerformed
     
     
