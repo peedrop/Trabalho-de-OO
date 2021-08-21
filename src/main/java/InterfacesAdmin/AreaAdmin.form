@@ -87,11 +87,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="326" max="-2" attributes="0"/>
-                      <Component id="btnLogin" pref="135" max="32767" attributes="0"/>
+                      <Component id="btnLogin" pref="133" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="319" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jButtonSair" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSair" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -100,9 +100,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="238" max="-2" attributes="0"/>
-                      <Component id="btnLogin" pref="56" max="32767" attributes="0"/>
+                      <Component id="btnLogin" pref="110" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
-                      <Component id="jButtonSair" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSair" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -117,12 +117,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLoginActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButtonSair">
+            <Component class="javax.swing.JButton" name="btnSair">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sair"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSairActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSairActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -185,7 +185,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnVoltarTelaInicial" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnLogout" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -208,7 +208,7 @@
                               <Component id="btnGerenciarPartido" alignment="3" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                          <Component id="btnVoltarTelaInicial" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnLogout" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -267,12 +267,12 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVotacaoActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnVoltarTelaInicial">
+                <Component class="javax.swing.JButton" name="btnLogout">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Log Out"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarTelaInicialActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLogoutActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -287,7 +287,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel27" alignment="0" pref="829" max="32767" attributes="0"/>
+                      <Component id="jLabel27" alignment="0" pref="780" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
                           <Component id="btnEncerrarVotacao" min="-2" pref="146" max="-2" attributes="0"/>
@@ -313,7 +313,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="169" max="-2" attributes="0"/>
                           <Component id="btnVoltarVot" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="344" max="32767" attributes="0"/>
+                          <EmptySpace pref="349" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -501,7 +501,7 @@
                                                           <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
                                                       </Group>
-                                                      <EmptySpace min="0" pref="293" max="32767" attributes="0"/>
+                                                      <EmptySpace min="0" pref="262" max="32767" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" attributes="0">
                                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -848,7 +848,7 @@
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
-                                              <EmptySpace min="10" pref="215" max="32767" attributes="0"/>
+                                              <EmptySpace min="10" pref="172" max="32767" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                   <Component id="btnRemoverPartido" alignment="1" pref="117" max="32767" attributes="0"/>
                                                   <Component id="btnLimparPartido" max="32767" attributes="0"/>
@@ -1541,7 +1541,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnVoltarDashB2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel20" pref="753" max="32767" attributes="0"/>
+                          <Component id="jLabel20" pref="705" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1641,7 +1641,7 @@
                                                   <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <EmptySpace min="0" pref="334" max="32767" attributes="0"/>
+                                              <EmptySpace min="0" pref="286" max="32767" attributes="0"/>
                                           </Group>
                                           <Component id="jtSenhaAdm" max="32767" attributes="0"/>
                                       </Group>
@@ -1653,7 +1653,7 @@
                                           <Component id="btnRemoverAdm" pref="117" max="32767" attributes="0"/>
                                           <Component id="btnLimparAdm" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace pref="96" max="32767" attributes="0"/>
+                                      <EmptySpace pref="48" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="btnEditarAdm" max="32767" attributes="0"/>
                                           <Component id="btnAdicionarAdm" max="32767" attributes="0"/>
@@ -1675,7 +1675,7 @@
                               <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jtSenhaAdm" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="300" max="32767" attributes="0"/>
+                              <EmptySpace pref="419" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="btnAdicionarAdm" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnRemoverAdm" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1813,7 +1813,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="btnVoltarInicial" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="602" max="32767" attributes="0"/>
+                                  <EmptySpace pref="600" max="32767" attributes="0"/>
                                   <Component id="btnLogar" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
@@ -1831,7 +1831,7 @@
                                   <EmptySpace min="-2" pref="204" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="txtSenha" max="32767" attributes="0"/>
-                                      <Component id="txtId" pref="454" max="32767" attributes="0"/>
+                                      <Component id="txtId" pref="453" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -1951,14 +1951,14 @@
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="314" max="32767" attributes="0"/>
+                          <EmptySpace pref="312" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="196" max="32767" attributes="0"/>
+                          <EmptySpace pref="254" max="32767" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="247" max="-2" attributes="0"/>
                           <Component id="btnVoltarLogin" min="-2" max="-2" attributes="0"/>
