@@ -61,7 +61,6 @@ public class Urna extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         inputUrna = new javax.swing.JTextField();
-        cardSenador = new javax.swing.JPanel();
         cardDeputadoFederal = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -70,6 +69,22 @@ public class Urna extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         inputUrna1 = new javax.swing.JTextField();
+        cardDeputadoEstadual = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        inputUrna2 = new javax.swing.JTextField();
+        cardSenador = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        inputSenador = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -325,7 +340,7 @@ public class Urna extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("PRESIDENTE");
+        jLabel3.setText("SENADOR");
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -376,7 +391,7 @@ public class Urna extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel7)))
-                .addGap(339, 507, Short.MAX_VALUE))
+                .addGap(339, 544, Short.MAX_VALUE))
         );
         cardPresidenteLayout.setVerticalGroup(
             cardPresidenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -399,19 +414,6 @@ public class Urna extends javax.swing.JFrame {
         );
 
         clCandidatos.add(cardPresidente, "cardPresidente");
-
-        javax.swing.GroupLayout cardSenadorLayout = new javax.swing.GroupLayout(cardSenador);
-        cardSenador.setLayout(cardSenadorLayout);
-        cardSenadorLayout.setHorizontalGroup(
-            cardSenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 767, Short.MAX_VALUE)
-        );
-        cardSenadorLayout.setVerticalGroup(
-            cardSenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 296, Short.MAX_VALUE)
-        );
-
-        clCandidatos.add(cardSenador, "cardSenador");
 
         cardDeputadoFederal.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -468,7 +470,7 @@ public class Urna extends javax.swing.JFrame {
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel16)))
-                .addGap(339, 507, Short.MAX_VALUE))
+                .addGap(339, 544, Short.MAX_VALUE))
         );
         cardDeputadoFederalLayout.setVerticalGroup(
             cardDeputadoFederalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -491,6 +493,164 @@ public class Urna extends javax.swing.JFrame {
         );
 
         clCandidatos.add(cardDeputadoFederal, "cardDeputadoFederal");
+
+        cardDeputadoEstadual.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel19.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel19.setText("DEPUTADO ESTADUAL");
+
+        jLabel20.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel20.setText("NUMERO:");
+
+        jLabel21.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel21.setText("NOME:");
+
+        jLabel22.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel22.setText("LUIZ INACIO LULA DA SILVA");
+
+        jLabel23.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel23.setText("PARTIDO:");
+
+        jLabel24.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel24.setText("PT");
+
+        inputUrna2.setEditable(false);
+        inputUrna2.setBackground(new java.awt.Color(255, 255, 255));
+        inputUrna2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        inputUrna2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputUrna2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout cardDeputadoEstadualLayout = new javax.swing.GroupLayout(cardDeputadoEstadual);
+        cardDeputadoEstadual.setLayout(cardDeputadoEstadualLayout);
+        cardDeputadoEstadualLayout.setHorizontalGroup(
+            cardDeputadoEstadualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardDeputadoEstadualLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cardDeputadoEstadualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cardDeputadoEstadualLayout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(inputUrna2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel19)
+                    .addGroup(cardDeputadoEstadualLayout.createSequentialGroup()
+                        .addComponent(jLabel23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel24))
+                    .addGroup(cardDeputadoEstadualLayout.createSequentialGroup()
+                        .addComponent(jLabel21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel22)))
+                .addGap(339, 528, Short.MAX_VALUE))
+        );
+        cardDeputadoEstadualLayout.setVerticalGroup(
+            cardDeputadoEstadualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardDeputadoEstadualLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel19)
+                .addGap(32, 32, 32)
+                .addGroup(cardDeputadoEstadualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel20)
+                    .addComponent(inputUrna2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGroup(cardDeputadoEstadualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel22))
+                .addGap(46, 46, 46)
+                .addGroup(cardDeputadoEstadualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(jLabel24))
+                .addGap(40, 40, 40))
+        );
+
+        clCandidatos.add(cardDeputadoEstadual, "cardDeputadoEstadual");
+
+        cardSenador.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel25.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel25.setText("SENADOR");
+
+        jLabel26.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel26.setText("NUMERO:");
+
+        jLabel27.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel27.setText("NOME:");
+
+        jLabel28.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel28.setText("LUIZ INACIO LULA DA SILVA");
+
+        jLabel29.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel29.setText("PARTIDO:");
+
+        jLabel30.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel30.setText("PT");
+
+        inputSenador.setEditable(false);
+        inputSenador.setBackground(new java.awt.Color(255, 255, 255));
+        inputSenador.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        inputSenador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputSenadorActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout cardSenadorLayout = new javax.swing.GroupLayout(cardSenador);
+        cardSenador.setLayout(cardSenadorLayout);
+        cardSenadorLayout.setHorizontalGroup(
+            cardSenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardSenadorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cardSenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cardSenadorLayout.createSequentialGroup()
+                        .addComponent(jLabel26)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(inputSenador, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel25)
+                    .addGroup(cardSenadorLayout.createSequentialGroup()
+                        .addComponent(jLabel29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel30))
+                    .addGroup(cardSenadorLayout.createSequentialGroup()
+                        .addComponent(jLabel27)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel28)))
+                .addGap(339, 544, Short.MAX_VALUE))
+        );
+        cardSenadorLayout.setVerticalGroup(
+            cardSenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardSenadorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel25)
+                .addGap(32, 32, 32)
+                .addGroup(cardSenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel26)
+                    .addComponent(inputSenador, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGroup(cardSenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(jLabel28))
+                .addGap(46, 46, 46)
+                .addGroup(cardSenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel30))
+                .addGap(40, 40, 40))
+        );
+
+        clCandidatos.add(cardSenador, "cardSenador");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -542,7 +702,7 @@ public class Urna extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(10, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -660,7 +820,7 @@ public class Urna extends javax.swing.JFrame {
     }//GEN-LAST:event_button6ActionPerformed
 
     private void button0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button0ActionPerformed
-        String inputUrnaString = inputUrna.getText();
+        String inputUrnaString = clCandidatos.getInputContext()
         int num = inputUrnaString.length();
         if (num < 2){
             inputUrna.setText(inputUrnaString + "0");
@@ -674,6 +834,14 @@ public class Urna extends javax.swing.JFrame {
     private void inputUrna1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUrna1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputUrna1ActionPerformed
+
+    private void inputUrna2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUrna2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputUrna2ActionPerformed
+
+    private void inputSenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSenadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputSenadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -724,12 +892,15 @@ public class Urna extends javax.swing.JFrame {
     private javax.swing.JButton buttonBranco;
     private javax.swing.JButton buttonConfirma;
     private javax.swing.JButton buttonCorrige;
+    private javax.swing.JPanel cardDeputadoEstadual;
     private javax.swing.JPanel cardDeputadoFederal;
     private javax.swing.JPanel cardPresidente;
     private javax.swing.JPanel cardSenador;
     private javax.swing.JPanel clCandidatos;
+    private javax.swing.JTextField inputSenador;
     private javax.swing.JTextField inputUrna;
     private javax.swing.JTextField inputUrna1;
+    private javax.swing.JTextField inputUrna2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -740,8 +911,20 @@ public class Urna extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
