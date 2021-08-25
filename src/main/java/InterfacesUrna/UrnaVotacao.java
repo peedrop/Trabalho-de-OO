@@ -5,6 +5,8 @@
  */
 package InterfacesUrna;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author gabri
@@ -28,33 +30,95 @@ public class UrnaVotacao extends javax.swing.JFrame {
     private void initComponents() {
 
         Urna = new javax.swing.JPanel();
+        votacaoDeputadoEstadual = new javax.swing.JPanel();
+        panelTeclado2 = new javax.swing.JPanel();
+        teclado2 = new javax.swing.JPanel();
+        button1DeputadoEstadual = new javax.swing.JButton();
+        button2DeputadoEstadual = new javax.swing.JButton();
+        button3DeputadoEstadual = new javax.swing.JButton();
+        button4DeputadoEstadual = new javax.swing.JButton();
+        button5DeputadoEstadual = new javax.swing.JButton();
+        button6DeputadoEstadual = new javax.swing.JButton();
+        button7DeputadoEstadual = new javax.swing.JButton();
+        button8DeputadoEstadual = new javax.swing.JButton();
+        button9DeputadoEstadual = new javax.swing.JButton();
+        button0DeputadoEstadual = new javax.swing.JButton();
+        buttonBrancoDeputadoEstadual = new javax.swing.JButton();
+        buttonCorrigeDeputadoEstadual = new javax.swing.JButton();
+        buttonConfirmaDeputadoEstadual = new javax.swing.JButton();
+        tribunalEleitoral2 = new javax.swing.JLabel();
+        tela1 = new javax.swing.JPanel();
+        votoPara2 = new javax.swing.JLabel();
+        panelInformacoes2 = new javax.swing.JPanel();
+        cargo2 = new javax.swing.JLabel();
+        numero2 = new javax.swing.JLabel();
+        inputNumeroDeputadoEstadual = new javax.swing.JTextField();
+        nome2 = new javax.swing.JLabel();
+        nomeCandidatoDeputadoEstadual = new javax.swing.JLabel();
+        partido2 = new javax.swing.JLabel();
+        partidoCandidatoDeputadoEstadual = new javax.swing.JLabel();
+        panelInstrucoes2 = new javax.swing.JPanel();
+        instrucoes2 = new javax.swing.JLabel();
+        votacaoSenador = new javax.swing.JPanel();
+        panelTeclado1 = new javax.swing.JPanel();
+        teclado1 = new javax.swing.JPanel();
+        button0Senador = new javax.swing.JButton();
+        button1Senador = new javax.swing.JButton();
+        button2Senador = new javax.swing.JButton();
+        button3Senador = new javax.swing.JButton();
+        button4Senador = new javax.swing.JButton();
+        button5Senador = new javax.swing.JButton();
+        button6Senador = new javax.swing.JButton();
+        button7Senador = new javax.swing.JButton();
+        button8Senador = new javax.swing.JButton();
+        button9Senador = new javax.swing.JButton();
+        buttonBrancoSenador = new javax.swing.JButton();
+        buttonCorrigeSenador = new javax.swing.JButton();
+        buttonConfirmaSenador = new javax.swing.JButton();
+        tribunalEleitoral1 = new javax.swing.JLabel();
+        telaSenador = new javax.swing.JPanel();
+        votoPara1 = new javax.swing.JLabel();
+        panelInformacoes1 = new javax.swing.JPanel();
+        cargo1 = new javax.swing.JLabel();
+        numero1 = new javax.swing.JLabel();
+        inputNumeroSenador = new javax.swing.JTextField();
+        nome1 = new javax.swing.JLabel();
+        nomeCandidatoSenador = new javax.swing.JLabel();
+        partido1 = new javax.swing.JLabel();
+        partidoCandidatoSenador = new javax.swing.JLabel();
+        Suplente = new javax.swing.JLabel();
+        nomeSuplente = new javax.swing.JLabel();
+        panelInstrucoes1 = new javax.swing.JPanel();
+        instrucoes1 = new javax.swing.JLabel();
         votacaoPresidente = new javax.swing.JPanel();
         panelTeclado = new javax.swing.JPanel();
         teclado = new javax.swing.JPanel();
-        button1 = new javax.swing.JButton();
-        button2 = new javax.swing.JButton();
-        button3 = new javax.swing.JButton();
-        button4 = new javax.swing.JButton();
-        button5 = new javax.swing.JButton();
-        button6 = new javax.swing.JButton();
-        button7 = new javax.swing.JButton();
-        button8 = new javax.swing.JButton();
-        button9 = new javax.swing.JButton();
-        button0 = new javax.swing.JButton();
-        buttonBranco = new javax.swing.JButton();
-        buttonCorrige = new javax.swing.JButton();
-        buttonConfirma = new javax.swing.JButton();
+        button1Presidente = new javax.swing.JButton();
+        button2Presidente = new javax.swing.JButton();
+        button3Presidente = new javax.swing.JButton();
+        button4Presidente = new javax.swing.JButton();
+        button5Presidente = new javax.swing.JButton();
+        button6Presidente = new javax.swing.JButton();
+        button7Presidente = new javax.swing.JButton();
+        button8Presidente = new javax.swing.JButton();
+        button9Presidente = new javax.swing.JButton();
+        button0Presidente = new javax.swing.JButton();
+        buttonBrancoPresidente = new javax.swing.JButton();
+        buttonCorrigePresidente = new javax.swing.JButton();
+        buttonConfirmaPresidente = new javax.swing.JButton();
         tribunalEleitoral = new javax.swing.JLabel();
         tela = new javax.swing.JPanel();
         votoPara = new javax.swing.JLabel();
         panelInformacoes = new javax.swing.JPanel();
         cargo = new javax.swing.JLabel();
         numero = new javax.swing.JLabel();
-        inputNumero = new javax.swing.JTextField();
+        inputNumeroPresidente = new javax.swing.JTextField();
         nome = new javax.swing.JLabel();
-        partidoCandidato = new javax.swing.JLabel();
+        nomeCandidatoPresidente = new javax.swing.JLabel();
         partido = new javax.swing.JLabel();
-        nomeCandidato = new javax.swing.JLabel();
+        partidoCandidatoPresidente = new javax.swing.JLabel();
+        vice = new javax.swing.JLabel();
+        nomeVice = new javax.swing.JLabel();
         panelInstrucoes = new javax.swing.JPanel();
         instrucoes = new javax.swing.JLabel();
 
@@ -63,6 +127,767 @@ public class UrnaVotacao extends javax.swing.JFrame {
         Urna.setBackground(new java.awt.Color(255, 255, 255));
         Urna.setLayout(new java.awt.CardLayout());
 
+        votacaoDeputadoEstadual.setBackground(new java.awt.Color(255, 255, 255));
+
+        panelTeclado2.setBackground(new java.awt.Color(255, 255, 255));
+        panelTeclado2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        teclado2.setBackground(new java.awt.Color(0, 0, 0));
+
+        button1DeputadoEstadual.setBackground(new java.awt.Color(0, 0, 0));
+        button1DeputadoEstadual.setForeground(new java.awt.Color(255, 255, 255));
+        button1DeputadoEstadual.setText("1");
+        button1DeputadoEstadual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1DeputadoEstadualActionPerformed(evt);
+            }
+        });
+
+        button2DeputadoEstadual.setBackground(new java.awt.Color(0, 0, 0));
+        button2DeputadoEstadual.setForeground(new java.awt.Color(255, 255, 255));
+        button2DeputadoEstadual.setText("2");
+        button2DeputadoEstadual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2DeputadoEstadualActionPerformed(evt);
+            }
+        });
+
+        button3DeputadoEstadual.setBackground(new java.awt.Color(0, 0, 0));
+        button3DeputadoEstadual.setForeground(new java.awt.Color(255, 255, 255));
+        button3DeputadoEstadual.setText("3");
+        button3DeputadoEstadual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button3DeputadoEstadualActionPerformed(evt);
+            }
+        });
+
+        button4DeputadoEstadual.setBackground(new java.awt.Color(0, 0, 0));
+        button4DeputadoEstadual.setForeground(new java.awt.Color(255, 255, 255));
+        button4DeputadoEstadual.setText("4");
+        button4DeputadoEstadual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button4DeputadoEstadualActionPerformed(evt);
+            }
+        });
+
+        button5DeputadoEstadual.setBackground(new java.awt.Color(0, 0, 0));
+        button5DeputadoEstadual.setForeground(new java.awt.Color(255, 255, 255));
+        button5DeputadoEstadual.setText("5");
+        button5DeputadoEstadual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button5DeputadoEstadualActionPerformed(evt);
+            }
+        });
+
+        button6DeputadoEstadual.setBackground(new java.awt.Color(0, 0, 0));
+        button6DeputadoEstadual.setForeground(new java.awt.Color(255, 255, 255));
+        button6DeputadoEstadual.setText("6");
+        button6DeputadoEstadual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button6DeputadoEstadualActionPerformed(evt);
+            }
+        });
+
+        button7DeputadoEstadual.setBackground(new java.awt.Color(0, 0, 0));
+        button7DeputadoEstadual.setForeground(new java.awt.Color(255, 255, 255));
+        button7DeputadoEstadual.setText("7");
+        button7DeputadoEstadual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button7DeputadoEstadualActionPerformed(evt);
+            }
+        });
+
+        button8DeputadoEstadual.setBackground(new java.awt.Color(0, 0, 0));
+        button8DeputadoEstadual.setForeground(new java.awt.Color(255, 255, 255));
+        button8DeputadoEstadual.setText("8");
+        button8DeputadoEstadual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button8DeputadoEstadualActionPerformed(evt);
+            }
+        });
+
+        button9DeputadoEstadual.setBackground(new java.awt.Color(0, 0, 0));
+        button9DeputadoEstadual.setForeground(new java.awt.Color(255, 255, 255));
+        button9DeputadoEstadual.setText("9");
+        button9DeputadoEstadual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button9DeputadoEstadualActionPerformed(evt);
+            }
+        });
+
+        button0DeputadoEstadual.setBackground(new java.awt.Color(0, 0, 0));
+        button0DeputadoEstadual.setForeground(new java.awt.Color(255, 255, 255));
+        button0DeputadoEstadual.setText("0");
+        button0DeputadoEstadual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button0DeputadoEstadualActionPerformed(evt);
+            }
+        });
+
+        buttonBrancoDeputadoEstadual.setBackground(new java.awt.Color(255, 255, 255));
+        buttonBrancoDeputadoEstadual.setForeground(new java.awt.Color(0, 0, 0));
+        buttonBrancoDeputadoEstadual.setText("BRANCO");
+        buttonBrancoDeputadoEstadual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBrancoDeputadoEstadualActionPerformed(evt);
+            }
+        });
+
+        buttonCorrigeDeputadoEstadual.setBackground(new java.awt.Color(255, 102, 51));
+        buttonCorrigeDeputadoEstadual.setForeground(new java.awt.Color(255, 255, 255));
+        buttonCorrigeDeputadoEstadual.setText("CORRIGE");
+        buttonCorrigeDeputadoEstadual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCorrigeDeputadoEstadualActionPerformed(evt);
+            }
+        });
+
+        buttonConfirmaDeputadoEstadual.setBackground(new java.awt.Color(0, 204, 0));
+        buttonConfirmaDeputadoEstadual.setForeground(new java.awt.Color(255, 255, 255));
+        buttonConfirmaDeputadoEstadual.setText("CONFIRMA");
+        buttonConfirmaDeputadoEstadual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonConfirmaDeputadoEstadualActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout teclado2Layout = new javax.swing.GroupLayout(teclado2);
+        teclado2.setLayout(teclado2Layout);
+        teclado2Layout.setHorizontalGroup(
+            teclado2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(teclado2Layout.createSequentialGroup()
+                .addGroup(teclado2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(teclado2Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(teclado2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(teclado2Layout.createSequentialGroup()
+                                .addGroup(teclado2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(button4DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button1DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button7DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE))
+                            .addGroup(teclado2Layout.createSequentialGroup()
+                                .addComponent(buttonBrancoDeputadoEstadual)
+                                .addGap(42, 42, 42)
+                                .addComponent(buttonCorrigeDeputadoEstadual)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(buttonConfirmaDeputadoEstadual))))
+                    .addGroup(teclado2Layout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addGroup(teclado2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(button8DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button5DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button2DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button0DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(teclado2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(button3DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button6DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button9DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        teclado2Layout.setVerticalGroup(
+            teclado2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(teclado2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(teclado2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button1DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button2DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button3DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addGroup(teclado2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button4DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button5DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button6DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(teclado2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button7DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button8DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button9DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(button0DeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addGroup(teclado2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonBrancoDeputadoEstadual)
+                    .addComponent(buttonCorrigeDeputadoEstadual)
+                    .addComponent(buttonConfirmaDeputadoEstadual))
+                .addGap(22, 22, 22))
+        );
+
+        tribunalEleitoral2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        tribunalEleitoral2.setForeground(new java.awt.Color(0, 0, 0));
+        tribunalEleitoral2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tribunalEleitoral2.setText("<html> TRIBUNAL <br> ELEITORAL <html>");
+
+        javax.swing.GroupLayout panelTeclado2Layout = new javax.swing.GroupLayout(panelTeclado2);
+        panelTeclado2.setLayout(panelTeclado2Layout);
+        panelTeclado2Layout.setHorizontalGroup(
+            panelTeclado2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(teclado2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTeclado2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(tribunalEleitoral2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        panelTeclado2Layout.setVerticalGroup(
+            panelTeclado2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTeclado2Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(tribunalEleitoral2)
+                .addGap(18, 18, 18)
+                .addComponent(teclado2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        tela1.setBackground(new java.awt.Color(255, 255, 255));
+        tela1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        votoPara2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        votoPara2.setForeground(new java.awt.Color(0, 0, 0));
+        votoPara2.setText("SEU VOTO PARA:");
+
+        panelInformacoes2.setBackground(new java.awt.Color(204, 204, 204));
+        panelInformacoes2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        cargo2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        cargo2.setForeground(new java.awt.Color(0, 0, 0));
+        cargo2.setText("DEPUTADO ESTADUAL");
+
+        numero2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        numero2.setForeground(new java.awt.Color(0, 0, 0));
+        numero2.setText("NUMERO:");
+
+        inputNumeroDeputadoEstadual.setEditable(false);
+        inputNumeroDeputadoEstadual.setBackground(new java.awt.Color(255, 255, 255));
+        inputNumeroDeputadoEstadual.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        inputNumeroDeputadoEstadual.setForeground(new java.awt.Color(0, 0, 0));
+        inputNumeroDeputadoEstadual.setToolTipText("");
+        inputNumeroDeputadoEstadual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputNumeroDeputadoEstadualActionPerformed(evt);
+            }
+        });
+
+        nome2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        nome2.setForeground(new java.awt.Color(0, 0, 0));
+        nome2.setText("NOME:");
+
+        nomeCandidatoDeputadoEstadual.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nomeCandidatoDeputadoEstadual.setForeground(new java.awt.Color(0, 0, 0));
+        nomeCandidatoDeputadoEstadual.setText("LUIZ INACIO LULA DA SILVA");
+
+        partido2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        partido2.setForeground(new java.awt.Color(0, 0, 0));
+        partido2.setText("PARTIDO:");
+
+        partidoCandidatoDeputadoEstadual.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        partidoCandidatoDeputadoEstadual.setForeground(new java.awt.Color(0, 0, 0));
+        partidoCandidatoDeputadoEstadual.setText("PT - PARTIDO DOS TRABALHADORES ");
+
+        javax.swing.GroupLayout panelInformacoes2Layout = new javax.swing.GroupLayout(panelInformacoes2);
+        panelInformacoes2.setLayout(panelInformacoes2Layout);
+        panelInformacoes2Layout.setHorizontalGroup(
+            panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInformacoes2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cargo2)
+                    .addGroup(panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panelInformacoes2Layout.createSequentialGroup()
+                            .addComponent(numero2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(inputNumeroDeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(panelInformacoes2Layout.createSequentialGroup()
+                            .addComponent(partido2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(partidoCandidatoDeputadoEstadual))
+                        .addGroup(panelInformacoes2Layout.createSequentialGroup()
+                            .addComponent(nome2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(nomeCandidatoDeputadoEstadual))))
+                .addContainerGap(114, Short.MAX_VALUE))
+        );
+        panelInformacoes2Layout.setVerticalGroup(
+            panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInformacoes2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cargo2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addGroup(panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(numero2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(inputNumeroDeputadoEstadual, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(79, 79, 79)
+                .addGroup(panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nome2)
+                    .addComponent(nomeCandidatoDeputadoEstadual))
+                .addGap(67, 67, 67)
+                .addGroup(panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(partido2)
+                    .addComponent(partidoCandidatoDeputadoEstadual))
+                .addGap(55, 55, 55))
+        );
+
+        panelInstrucoes2.setBackground(new java.awt.Color(255, 255, 255));
+        panelInstrucoes2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        instrucoes2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        instrucoes2.setForeground(new java.awt.Color(0, 0, 0));
+        instrucoes2.setText("<html>APERTE A TECLA:<br>VERDE para CONFIRMAR este VOTO<br>LARANJA para REINICIAR este VOTO</html>");
+
+        javax.swing.GroupLayout panelInstrucoes2Layout = new javax.swing.GroupLayout(panelInstrucoes2);
+        panelInstrucoes2.setLayout(panelInstrucoes2Layout);
+        panelInstrucoes2Layout.setHorizontalGroup(
+            panelInstrucoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInstrucoes2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(instrucoes2)
+                .addContainerGap())
+        );
+        panelInstrucoes2Layout.setVerticalGroup(
+            panelInstrucoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInstrucoes2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(instrucoes2)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout tela1Layout = new javax.swing.GroupLayout(tela1);
+        tela1.setLayout(tela1Layout);
+        tela1Layout.setHorizontalGroup(
+            tela1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tela1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(tela1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelInstrucoes2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelInformacoes2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(tela1Layout.createSequentialGroup()
+                        .addComponent(votoPara2)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        tela1Layout.setVerticalGroup(
+            tela1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tela1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(votoPara2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panelInformacoes2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(panelInstrucoes2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout votacaoDeputadoEstadualLayout = new javax.swing.GroupLayout(votacaoDeputadoEstadual);
+        votacaoDeputadoEstadual.setLayout(votacaoDeputadoEstadualLayout);
+        votacaoDeputadoEstadualLayout.setHorizontalGroup(
+            votacaoDeputadoEstadualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, votacaoDeputadoEstadualLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tela1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panelTeclado2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        votacaoDeputadoEstadualLayout.setVerticalGroup(
+            votacaoDeputadoEstadualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, votacaoDeputadoEstadualLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(votacaoDeputadoEstadualLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(tela1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelTeclado2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        Urna.add(votacaoDeputadoEstadual, "cardPresidente");
+
+        votacaoSenador.setBackground(new java.awt.Color(255, 255, 255));
+
+        panelTeclado1.setBackground(new java.awt.Color(255, 255, 255));
+        panelTeclado1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        teclado1.setBackground(new java.awt.Color(0, 0, 0));
+
+        button0Senador.setBackground(new java.awt.Color(0, 0, 0));
+        button0Senador.setForeground(new java.awt.Color(255, 255, 255));
+        button0Senador.setText("0");
+        button0Senador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button0SenadorActionPerformed(evt);
+            }
+        });
+
+        button1Senador.setBackground(new java.awt.Color(0, 0, 0));
+        button1Senador.setForeground(new java.awt.Color(255, 255, 255));
+        button1Senador.setText("1");
+        button1Senador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1SenadorActionPerformed(evt);
+            }
+        });
+
+        button2Senador.setBackground(new java.awt.Color(0, 0, 0));
+        button2Senador.setForeground(new java.awt.Color(255, 255, 255));
+        button2Senador.setText("2");
+        button2Senador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2SenadorActionPerformed(evt);
+            }
+        });
+
+        button3Senador.setBackground(new java.awt.Color(0, 0, 0));
+        button3Senador.setForeground(new java.awt.Color(255, 255, 255));
+        button3Senador.setText("3");
+        button3Senador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button3SenadorActionPerformed(evt);
+            }
+        });
+
+        button4Senador.setBackground(new java.awt.Color(0, 0, 0));
+        button4Senador.setForeground(new java.awt.Color(255, 255, 255));
+        button4Senador.setText("4");
+        button4Senador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button4SenadorActionPerformed(evt);
+            }
+        });
+
+        button5Senador.setBackground(new java.awt.Color(0, 0, 0));
+        button5Senador.setForeground(new java.awt.Color(255, 255, 255));
+        button5Senador.setText("5");
+        button5Senador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button5SenadorActionPerformed(evt);
+            }
+        });
+
+        button6Senador.setBackground(new java.awt.Color(0, 0, 0));
+        button6Senador.setForeground(new java.awt.Color(255, 255, 255));
+        button6Senador.setText("6");
+        button6Senador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button6SenadorActionPerformed(evt);
+            }
+        });
+
+        button7Senador.setBackground(new java.awt.Color(0, 0, 0));
+        button7Senador.setForeground(new java.awt.Color(255, 255, 255));
+        button7Senador.setText("7");
+        button7Senador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button7SenadorActionPerformed(evt);
+            }
+        });
+
+        button8Senador.setBackground(new java.awt.Color(0, 0, 0));
+        button8Senador.setForeground(new java.awt.Color(255, 255, 255));
+        button8Senador.setText("8");
+        button8Senador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button8SenadorActionPerformed(evt);
+            }
+        });
+
+        button9Senador.setBackground(new java.awt.Color(0, 0, 0));
+        button9Senador.setForeground(new java.awt.Color(255, 255, 255));
+        button9Senador.setText("9");
+        button9Senador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button9SenadorActionPerformed(evt);
+            }
+        });
+
+        buttonBrancoSenador.setBackground(new java.awt.Color(255, 255, 255));
+        buttonBrancoSenador.setForeground(new java.awt.Color(0, 0, 0));
+        buttonBrancoSenador.setText("BRANCO");
+        buttonBrancoSenador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBrancoSenadorActionPerformed(evt);
+            }
+        });
+
+        buttonCorrigeSenador.setBackground(new java.awt.Color(255, 102, 51));
+        buttonCorrigeSenador.setForeground(new java.awt.Color(255, 255, 255));
+        buttonCorrigeSenador.setText("CORRIGE");
+        buttonCorrigeSenador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonCorrigeSenadorActionPerformed(evt);
+            }
+        });
+
+        buttonConfirmaSenador.setBackground(new java.awt.Color(0, 204, 0));
+        buttonConfirmaSenador.setForeground(new java.awt.Color(255, 255, 255));
+        buttonConfirmaSenador.setText("CONFIRMA");
+        buttonConfirmaSenador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonConfirmaSenadorActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout teclado1Layout = new javax.swing.GroupLayout(teclado1);
+        teclado1.setLayout(teclado1Layout);
+        teclado1Layout.setHorizontalGroup(
+            teclado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(teclado1Layout.createSequentialGroup()
+                .addGroup(teclado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(teclado1Layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(teclado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(teclado1Layout.createSequentialGroup()
+                                .addGroup(teclado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(button4Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button1Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button7Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE))
+                            .addGroup(teclado1Layout.createSequentialGroup()
+                                .addComponent(buttonBrancoSenador)
+                                .addGap(42, 42, 42)
+                                .addComponent(buttonCorrigeSenador)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(buttonConfirmaSenador))))
+                    .addGroup(teclado1Layout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addGroup(teclado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(button8Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button5Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button2Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button0Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(teclado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(button3Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button6Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button9Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        teclado1Layout.setVerticalGroup(
+            teclado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(teclado1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(teclado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button1Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button2Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button3Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addGroup(teclado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button4Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button5Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button6Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(teclado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(button7Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button8Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button9Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(button0Senador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addGroup(teclado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonBrancoSenador)
+                    .addComponent(buttonCorrigeSenador)
+                    .addComponent(buttonConfirmaSenador))
+                .addGap(22, 22, 22))
+        );
+
+        tribunalEleitoral1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        tribunalEleitoral1.setForeground(new java.awt.Color(0, 0, 0));
+        tribunalEleitoral1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tribunalEleitoral1.setText("<html> TRIBUNAL <br> ELEITORAL <html>");
+
+        javax.swing.GroupLayout panelTeclado1Layout = new javax.swing.GroupLayout(panelTeclado1);
+        panelTeclado1.setLayout(panelTeclado1Layout);
+        panelTeclado1Layout.setHorizontalGroup(
+            panelTeclado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(teclado1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTeclado1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(tribunalEleitoral1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        panelTeclado1Layout.setVerticalGroup(
+            panelTeclado1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTeclado1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(tribunalEleitoral1)
+                .addGap(18, 18, 18)
+                .addComponent(teclado1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        telaSenador.setBackground(new java.awt.Color(255, 255, 255));
+        telaSenador.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        votoPara1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        votoPara1.setForeground(new java.awt.Color(0, 0, 0));
+        votoPara1.setText("SEU VOTO PARA:");
+
+        panelInformacoes1.setBackground(new java.awt.Color(204, 204, 204));
+        panelInformacoes1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        cargo1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        cargo1.setForeground(new java.awt.Color(0, 0, 0));
+        cargo1.setText("SENADOR");
+
+        numero1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        numero1.setForeground(new java.awt.Color(0, 0, 0));
+        numero1.setText("NUMERO:");
+
+        inputNumeroSenador.setEditable(false);
+        inputNumeroSenador.setBackground(new java.awt.Color(255, 255, 255));
+        inputNumeroSenador.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        inputNumeroSenador.setForeground(new java.awt.Color(0, 0, 0));
+        inputNumeroSenador.setToolTipText("");
+        inputNumeroSenador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputNumeroSenadorActionPerformed(evt);
+            }
+        });
+
+        nome1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        nome1.setForeground(new java.awt.Color(0, 0, 0));
+        nome1.setText("NOME:");
+
+        nomeCandidatoSenador.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nomeCandidatoSenador.setForeground(new java.awt.Color(0, 0, 0));
+        nomeCandidatoSenador.setText("LUIZ INACIO LULA DA SILVA");
+
+        partido1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        partido1.setForeground(new java.awt.Color(0, 0, 0));
+        partido1.setText("PARTIDO:");
+
+        partidoCandidatoSenador.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        partidoCandidatoSenador.setForeground(new java.awt.Color(0, 0, 0));
+        partidoCandidatoSenador.setText("PT - PARTIDO DOS TRABALHADORES ");
+
+        Suplente.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        Suplente.setForeground(new java.awt.Color(0, 0, 0));
+        Suplente.setText("SUPLENTE:");
+
+        nomeSuplente.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nomeSuplente.setForeground(new java.awt.Color(0, 0, 0));
+        nomeSuplente.setText("LUIZ INACIO LULA DA SILVA");
+
+        javax.swing.GroupLayout panelInformacoes1Layout = new javax.swing.GroupLayout(panelInformacoes1);
+        panelInformacoes1.setLayout(panelInformacoes1Layout);
+        panelInformacoes1Layout.setHorizontalGroup(
+            panelInformacoes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInformacoes1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelInformacoes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelInformacoes1Layout.createSequentialGroup()
+                        .addComponent(numero1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(inputNumeroSenador, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelInformacoes1Layout.createSequentialGroup()
+                        .addComponent(nome1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomeCandidatoSenador))
+                    .addGroup(panelInformacoes1Layout.createSequentialGroup()
+                        .addComponent(partido1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(partidoCandidatoSenador))
+                    .addGroup(panelInformacoes1Layout.createSequentialGroup()
+                        .addComponent(Suplente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomeSuplente))
+                    .addGroup(panelInformacoes1Layout.createSequentialGroup()
+                        .addGap(191, 191, 191)
+                        .addComponent(cargo1)))
+                .addContainerGap(114, Short.MAX_VALUE))
+        );
+        panelInformacoes1Layout.setVerticalGroup(
+            panelInformacoes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInformacoes1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cargo1)
+                .addGap(53, 53, 53)
+                .addGroup(panelInformacoes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(numero1)
+                    .addComponent(inputNumeroSenador, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addGroup(panelInformacoes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nome1)
+                    .addComponent(nomeCandidatoSenador))
+                .addGap(43, 43, 43)
+                .addGroup(panelInformacoes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(partido1)
+                    .addComponent(partidoCandidatoSenador))
+                .addGap(47, 47, 47)
+                .addGroup(panelInformacoes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Suplente)
+                    .addComponent(nomeSuplente))
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        panelInstrucoes1.setBackground(new java.awt.Color(255, 255, 255));
+        panelInstrucoes1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        instrucoes1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        instrucoes1.setForeground(new java.awt.Color(0, 0, 0));
+        instrucoes1.setText("<html>APERTE A TECLA:<br>VERDE para CONFIRMAR este VOTO<br>LARANJA para REINICIAR este VOTO</html>");
+
+        javax.swing.GroupLayout panelInstrucoes1Layout = new javax.swing.GroupLayout(panelInstrucoes1);
+        panelInstrucoes1.setLayout(panelInstrucoes1Layout);
+        panelInstrucoes1Layout.setHorizontalGroup(
+            panelInstrucoes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInstrucoes1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(instrucoes1)
+                .addContainerGap())
+        );
+        panelInstrucoes1Layout.setVerticalGroup(
+            panelInstrucoes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInstrucoes1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(instrucoes1)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout telaSenadorLayout = new javax.swing.GroupLayout(telaSenador);
+        telaSenador.setLayout(telaSenadorLayout);
+        telaSenadorLayout.setHorizontalGroup(
+            telaSenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(telaSenadorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(telaSenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelInstrucoes1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelInformacoes1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(telaSenadorLayout.createSequentialGroup()
+                        .addComponent(votoPara1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        telaSenadorLayout.setVerticalGroup(
+            telaSenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaSenadorLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(votoPara1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panelInformacoes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(panelInstrucoes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout votacaoSenadorLayout = new javax.swing.GroupLayout(votacaoSenador);
+        votacaoSenador.setLayout(votacaoSenadorLayout);
+        votacaoSenadorLayout.setHorizontalGroup(
+            votacaoSenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, votacaoSenadorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(telaSenador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panelTeclado1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        votacaoSenadorLayout.setVerticalGroup(
+            votacaoSenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, votacaoSenadorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(votacaoSenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(telaSenador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelTeclado1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        Urna.add(votacaoSenador, "cardSenador");
+
         votacaoPresidente.setBackground(new java.awt.Color(255, 255, 255));
 
         panelTeclado.setBackground(new java.awt.Color(255, 255, 255));
@@ -70,120 +895,120 @@ public class UrnaVotacao extends javax.swing.JFrame {
 
         teclado.setBackground(new java.awt.Color(0, 0, 0));
 
-        button1.setBackground(new java.awt.Color(0, 0, 0));
-        button1.setForeground(new java.awt.Color(255, 255, 255));
-        button1.setText("1");
-        button1.addActionListener(new java.awt.event.ActionListener() {
+        button1Presidente.setBackground(new java.awt.Color(0, 0, 0));
+        button1Presidente.setForeground(new java.awt.Color(255, 255, 255));
+        button1Presidente.setText("1");
+        button1Presidente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button1ActionPerformed(evt);
+                button1PresidenteActionPerformed(evt);
             }
         });
 
-        button2.setBackground(new java.awt.Color(0, 0, 0));
-        button2.setForeground(new java.awt.Color(255, 255, 255));
-        button2.setText("2");
-        button2.addActionListener(new java.awt.event.ActionListener() {
+        button2Presidente.setBackground(new java.awt.Color(0, 0, 0));
+        button2Presidente.setForeground(new java.awt.Color(255, 255, 255));
+        button2Presidente.setText("2");
+        button2Presidente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2ActionPerformed(evt);
+                button2PresidenteActionPerformed(evt);
             }
         });
 
-        button3.setBackground(new java.awt.Color(0, 0, 0));
-        button3.setForeground(new java.awt.Color(255, 255, 255));
-        button3.setText("3");
-        button3.addActionListener(new java.awt.event.ActionListener() {
+        button3Presidente.setBackground(new java.awt.Color(0, 0, 0));
+        button3Presidente.setForeground(new java.awt.Color(255, 255, 255));
+        button3Presidente.setText("3");
+        button3Presidente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button3ActionPerformed(evt);
+                button3PresidenteActionPerformed(evt);
             }
         });
 
-        button4.setBackground(new java.awt.Color(0, 0, 0));
-        button4.setForeground(new java.awt.Color(255, 255, 255));
-        button4.setText("4");
-        button4.addActionListener(new java.awt.event.ActionListener() {
+        button4Presidente.setBackground(new java.awt.Color(0, 0, 0));
+        button4Presidente.setForeground(new java.awt.Color(255, 255, 255));
+        button4Presidente.setText("4");
+        button4Presidente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button4ActionPerformed(evt);
+                button4PresidenteActionPerformed(evt);
             }
         });
 
-        button5.setBackground(new java.awt.Color(0, 0, 0));
-        button5.setForeground(new java.awt.Color(255, 255, 255));
-        button5.setText("5");
-        button5.addActionListener(new java.awt.event.ActionListener() {
+        button5Presidente.setBackground(new java.awt.Color(0, 0, 0));
+        button5Presidente.setForeground(new java.awt.Color(255, 255, 255));
+        button5Presidente.setText("5");
+        button5Presidente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button5ActionPerformed(evt);
+                button5PresidenteActionPerformed(evt);
             }
         });
 
-        button6.setBackground(new java.awt.Color(0, 0, 0));
-        button6.setForeground(new java.awt.Color(255, 255, 255));
-        button6.setText("6");
-        button6.addActionListener(new java.awt.event.ActionListener() {
+        button6Presidente.setBackground(new java.awt.Color(0, 0, 0));
+        button6Presidente.setForeground(new java.awt.Color(255, 255, 255));
+        button6Presidente.setText("6");
+        button6Presidente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button6ActionPerformed(evt);
+                button6PresidenteActionPerformed(evt);
             }
         });
 
-        button7.setBackground(new java.awt.Color(0, 0, 0));
-        button7.setForeground(new java.awt.Color(255, 255, 255));
-        button7.setText("7");
-        button7.addActionListener(new java.awt.event.ActionListener() {
+        button7Presidente.setBackground(new java.awt.Color(0, 0, 0));
+        button7Presidente.setForeground(new java.awt.Color(255, 255, 255));
+        button7Presidente.setText("7");
+        button7Presidente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button7ActionPerformed(evt);
+                button7PresidenteActionPerformed(evt);
             }
         });
 
-        button8.setBackground(new java.awt.Color(0, 0, 0));
-        button8.setForeground(new java.awt.Color(255, 255, 255));
-        button8.setText("8");
-        button8.addActionListener(new java.awt.event.ActionListener() {
+        button8Presidente.setBackground(new java.awt.Color(0, 0, 0));
+        button8Presidente.setForeground(new java.awt.Color(255, 255, 255));
+        button8Presidente.setText("8");
+        button8Presidente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button8ActionPerformed(evt);
+                button8PresidenteActionPerformed(evt);
             }
         });
 
-        button9.setBackground(new java.awt.Color(0, 0, 0));
-        button9.setForeground(new java.awt.Color(255, 255, 255));
-        button9.setText("9");
-        button9.addActionListener(new java.awt.event.ActionListener() {
+        button9Presidente.setBackground(new java.awt.Color(0, 0, 0));
+        button9Presidente.setForeground(new java.awt.Color(255, 255, 255));
+        button9Presidente.setText("9");
+        button9Presidente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button9ActionPerformed(evt);
+                button9PresidenteActionPerformed(evt);
             }
         });
 
-        button0.setBackground(new java.awt.Color(0, 0, 0));
-        button0.setForeground(new java.awt.Color(255, 255, 255));
-        button0.setText("0");
-        button0.addActionListener(new java.awt.event.ActionListener() {
+        button0Presidente.setBackground(new java.awt.Color(0, 0, 0));
+        button0Presidente.setForeground(new java.awt.Color(255, 255, 255));
+        button0Presidente.setText("0");
+        button0Presidente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button0ActionPerformed(evt);
+                button0PresidenteActionPerformed(evt);
             }
         });
 
-        buttonBranco.setBackground(new java.awt.Color(255, 255, 255));
-        buttonBranco.setForeground(new java.awt.Color(0, 0, 0));
-        buttonBranco.setText("BRANCO");
-        buttonBranco.addActionListener(new java.awt.event.ActionListener() {
+        buttonBrancoPresidente.setBackground(new java.awt.Color(255, 255, 255));
+        buttonBrancoPresidente.setForeground(new java.awt.Color(0, 0, 0));
+        buttonBrancoPresidente.setText("BRANCO");
+        buttonBrancoPresidente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonBrancoActionPerformed(evt);
+                buttonBrancoPresidenteActionPerformed(evt);
             }
         });
 
-        buttonCorrige.setBackground(new java.awt.Color(255, 102, 51));
-        buttonCorrige.setForeground(new java.awt.Color(255, 255, 255));
-        buttonCorrige.setText("CORRIGE");
-        buttonCorrige.addActionListener(new java.awt.event.ActionListener() {
+        buttonCorrigePresidente.setBackground(new java.awt.Color(255, 102, 51));
+        buttonCorrigePresidente.setForeground(new java.awt.Color(255, 255, 255));
+        buttonCorrigePresidente.setText("CORRIGE");
+        buttonCorrigePresidente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonCorrigeActionPerformed(evt);
+                buttonCorrigePresidenteActionPerformed(evt);
             }
         });
 
-        buttonConfirma.setBackground(new java.awt.Color(0, 204, 0));
-        buttonConfirma.setForeground(new java.awt.Color(255, 255, 255));
-        buttonConfirma.setText("CONFIRMA");
-        buttonConfirma.addActionListener(new java.awt.event.ActionListener() {
+        buttonConfirmaPresidente.setBackground(new java.awt.Color(0, 204, 0));
+        buttonConfirmaPresidente.setForeground(new java.awt.Color(255, 255, 255));
+        buttonConfirmaPresidente.setText("CONFIRMA");
+        buttonConfirmaPresidente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonConfirmaActionPerformed(evt);
+                buttonConfirmaPresidenteActionPerformed(evt);
             }
         });
 
@@ -198,28 +1023,28 @@ public class UrnaVotacao extends javax.swing.JFrame {
                         .addGroup(tecladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(tecladoLayout.createSequentialGroup()
                                 .addGroup(tecladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(button4Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button1Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(button7Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE))
                             .addGroup(tecladoLayout.createSequentialGroup()
-                                .addComponent(buttonBranco)
+                                .addComponent(buttonBrancoPresidente)
                                 .addGap(42, 42, 42)
-                                .addComponent(buttonCorrige)
+                                .addComponent(buttonCorrigePresidente)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(buttonConfirma))))
+                                .addComponent(buttonConfirmaPresidente))))
                     .addGroup(tecladoLayout.createSequentialGroup()
                         .addGap(173, 173, 173)
                         .addGroup(tecladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button0, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(button8Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button5Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button2Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button0Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(tecladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(button3Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button6Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button9Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         tecladoLayout.setVerticalGroup(
@@ -227,26 +1052,26 @@ public class UrnaVotacao extends javax.swing.JFrame {
             .addGroup(tecladoLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(tecladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(button1Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button2Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button3Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
                 .addGroup(tecladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(button4Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button5Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button6Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addGroup(tecladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(button7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button8, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button9, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(button7Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button8Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(button9Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(button0, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(button0Presidente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addGroup(tecladoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonBranco)
-                    .addComponent(buttonCorrige)
-                    .addComponent(buttonConfirma))
+                    .addComponent(buttonBrancoPresidente)
+                    .addComponent(buttonCorrigePresidente)
+                    .addComponent(buttonConfirmaPresidente))
                 .addGap(22, 22, 22))
         );
 
@@ -292,25 +1117,40 @@ public class UrnaVotacao extends javax.swing.JFrame {
         numero.setForeground(new java.awt.Color(0, 0, 0));
         numero.setText("NUMERO:");
 
-        inputNumero.setEditable(false);
-        inputNumero.setBackground(new java.awt.Color(255, 255, 255));
-        inputNumero.setForeground(new java.awt.Color(0, 0, 0));
+        inputNumeroPresidente.setEditable(false);
+        inputNumeroPresidente.setBackground(new java.awt.Color(255, 255, 255));
+        inputNumeroPresidente.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        inputNumeroPresidente.setForeground(new java.awt.Color(0, 0, 0));
+        inputNumeroPresidente.setToolTipText("");
+        inputNumeroPresidente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputNumeroPresidenteActionPerformed(evt);
+            }
+        });
 
         nome.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         nome.setForeground(new java.awt.Color(0, 0, 0));
         nome.setText("NOME:");
 
-        partidoCandidato.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        partidoCandidato.setForeground(new java.awt.Color(0, 0, 0));
-        partidoCandidato.setText("PT - PARTIDO DOS TRABALHADORES ");
+        nomeCandidatoPresidente.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nomeCandidatoPresidente.setForeground(new java.awt.Color(0, 0, 0));
+        nomeCandidatoPresidente.setText("LUIZ INACIO LULA DA SILVA");
 
         partido.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         partido.setForeground(new java.awt.Color(0, 0, 0));
         partido.setText("PARTIDO:");
 
-        nomeCandidato.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        nomeCandidato.setForeground(new java.awt.Color(0, 0, 0));
-        nomeCandidato.setText("LUIZ INACIO LULA DA SILVA");
+        partidoCandidatoPresidente.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        partidoCandidatoPresidente.setForeground(new java.awt.Color(0, 0, 0));
+        partidoCandidatoPresidente.setText("PT - PARTIDO DOS TRABALHADORES ");
+
+        vice.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        vice.setForeground(new java.awt.Color(0, 0, 0));
+        vice.setText("VICE:");
+
+        nomeVice.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nomeVice.setForeground(new java.awt.Color(0, 0, 0));
+        nomeVice.setText("LUIZ INACIO LULA DA SILVA");
 
         javax.swing.GroupLayout panelInformacoesLayout = new javax.swing.GroupLayout(panelInformacoes);
         panelInformacoes.setLayout(panelInformacoesLayout);
@@ -319,19 +1159,25 @@ public class UrnaVotacao extends javax.swing.JFrame {
             .addGroup(panelInformacoesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cargo)
                     .addGroup(panelInformacoesLayout.createSequentialGroup()
                         .addComponent(numero)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(inputNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(inputNumeroPresidente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelInformacoesLayout.createSequentialGroup()
+                        .addGap(166, 166, 166)
+                        .addComponent(cargo))
                     .addGroup(panelInformacoesLayout.createSequentialGroup()
                         .addComponent(nome)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(nomeCandidato))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomeCandidatoPresidente))
                     .addGroup(panelInformacoesLayout.createSequentialGroup()
                         .addComponent(partido)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(partidoCandidato)))
+                        .addComponent(partidoCandidatoPresidente))
+                    .addGroup(panelInformacoesLayout.createSequentialGroup()
+                        .addComponent(vice)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomeVice)))
                 .addContainerGap(114, Short.MAX_VALUE))
         );
         panelInformacoesLayout.setVerticalGroup(
@@ -339,19 +1185,23 @@ public class UrnaVotacao extends javax.swing.JFrame {
             .addGroup(panelInformacoesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(cargo)
-                .addGap(53, 53, 53)
+                .addGap(45, 45, 45)
                 .addGroup(panelInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(numero)
-                    .addComponent(inputNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(69, 69, 69)
+                    .addComponent(inputNumeroPresidente, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
                 .addGroup(panelInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nome)
-                    .addComponent(nomeCandidato))
-                .addGap(66, 66, 66)
+                    .addComponent(nomeCandidatoPresidente))
+                .addGap(55, 55, 55)
                 .addGroup(panelInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(partido)
-                    .addComponent(partidoCandidato))
-                .addContainerGap(76, Short.MAX_VALUE))
+                    .addComponent(partidoCandidatoPresidente))
+                .addGap(46, 46, 46)
+                .addGroup(panelInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(vice)
+                    .addComponent(nomeVice))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         panelInstrucoes.setBackground(new java.awt.Color(255, 255, 255));
@@ -425,7 +1275,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        Urna.add(votacaoPresidente, "card2");
+        Urna.add(votacaoPresidente, "cardPresidente");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -438,60 +1288,300 @@ public class UrnaVotacao extends javax.swing.JFrame {
             .addComponent(Urna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        Urna.getAccessibleContext().setAccessibleName("clUrna");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button0ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button0ActionPerformed
+    private void button0PresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button0PresidenteActionPerformed
+        String inputNumeroString = inputNumeroPresidente.getText();
+        int num = inputNumeroString.length();
+        if (num < 2){
+            inputNumeroPresidente.setText(inputNumeroString + "0");
+        }
+    }//GEN-LAST:event_button0PresidenteActionPerformed
 
-    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button1ActionPerformed
+    private void button1PresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1PresidenteActionPerformed
+        String inputNumeroString = inputNumeroPresidente.getText();
+        int num = inputNumeroString.length();
+        if (num < 2){
+            inputNumeroPresidente.setText(inputNumeroString + "1");
+        }
+    }//GEN-LAST:event_button1PresidenteActionPerformed
 
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button2ActionPerformed
+    private void button2PresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2PresidenteActionPerformed
+        String inputNumeroString = inputNumeroPresidente.getText();
+        int num = inputNumeroString.length();
+        if (num < 2){
+            inputNumeroPresidente.setText(inputNumeroString + "2");
+        }
+    }//GEN-LAST:event_button2PresidenteActionPerformed
 
-    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button3ActionPerformed
+    private void button3PresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3PresidenteActionPerformed
+        String inputNumeroString = inputNumeroPresidente.getText();
+        int num = inputNumeroString.length();
+        if (num < 2){
+            inputNumeroPresidente.setText(inputNumeroString + "3");
+        }
+    }//GEN-LAST:event_button3PresidenteActionPerformed
 
-    private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button4ActionPerformed
+    private void button4PresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4PresidenteActionPerformed
+        String inputNumeroString = inputNumeroPresidente.getText();
+        int num = inputNumeroString.length();
+        if (num < 2){
+            inputNumeroPresidente.setText(inputNumeroString + "4");
+        }
+    }//GEN-LAST:event_button4PresidenteActionPerformed
 
-    private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button5ActionPerformed
+    private void button5PresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5PresidenteActionPerformed
+        String inputNumeroString = inputNumeroPresidente.getText();
+        int num = inputNumeroString.length();
+        if (num < 2){
+            inputNumeroPresidente.setText(inputNumeroString + "5");
+        }
+    }//GEN-LAST:event_button5PresidenteActionPerformed
 
-    private void button6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button6ActionPerformed
+    private void button6PresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6PresidenteActionPerformed
+        String inputNumeroString = inputNumeroPresidente.getText();
+        int num = inputNumeroString.length();
+        if (num < 2){
+            inputNumeroPresidente.setText(inputNumeroString + "6");
+        }
+    }//GEN-LAST:event_button6PresidenteActionPerformed
 
-    private void button7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button7ActionPerformed
+    private void button7PresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7PresidenteActionPerformed
+        String inputNumeroString = inputNumeroPresidente.getText();
+        int num = inputNumeroString.length();
+        if (num < 2){
+            inputNumeroPresidente.setText(inputNumeroString + "7");
+        }
+    }//GEN-LAST:event_button7PresidenteActionPerformed
 
-    private void button8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button8ActionPerformed
+    private void button8PresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8PresidenteActionPerformed
+        String inputNumeroString = inputNumeroPresidente.getText();
+        int num = inputNumeroString.length();
+        if (num < 2){
+            inputNumeroPresidente.setText(inputNumeroString + "8");
+        }
+    }//GEN-LAST:event_button8PresidenteActionPerformed
 
-    private void button9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button9ActionPerformed
+    private void button9PresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9PresidenteActionPerformed
+        String inputNumeroString = inputNumeroPresidente.getText();
+        int num = inputNumeroString.length();
+        if (num < 2){
+            inputNumeroPresidente.setText(inputNumeroString + "9");
+        }
+    }//GEN-LAST:event_button9PresidenteActionPerformed
 
-    private void buttonBrancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBrancoActionPerformed
+    private void buttonBrancoPresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBrancoPresidenteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buttonBrancoActionPerformed
+    }//GEN-LAST:event_buttonBrancoPresidenteActionPerformed
 
-    private void buttonCorrigeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCorrigeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonCorrigeActionPerformed
+    private void buttonCorrigePresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCorrigePresidenteActionPerformed
+        inputNumeroPresidente.setText("");
+    }//GEN-LAST:event_buttonCorrigePresidenteActionPerformed
 
-    private void buttonConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConfirmaActionPerformed
+    private void buttonConfirmaPresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConfirmaPresidenteActionPerformed
+
+    }//GEN-LAST:event_buttonConfirmaPresidenteActionPerformed
+
+    private void inputNumeroPresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNumeroPresidenteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_buttonConfirmaActionPerformed
+    }//GEN-LAST:event_inputNumeroPresidenteActionPerformed
+
+    private void button1SenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1SenadorActionPerformed
+        String inputNumeroString = inputNumeroSenador.getText();
+        int num = inputNumeroString.length();
+        if (num < 3){
+            inputNumeroSenador.setText(inputNumeroString + "1");
+        }
+    }//GEN-LAST:event_button1SenadorActionPerformed
+
+    private void button2SenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2SenadorActionPerformed
+        String inputNumeroString = inputNumeroSenador.getText();
+        int num = inputNumeroString.length();
+        if (num < 3){
+            inputNumeroSenador.setText(inputNumeroString + "2");
+        }
+    }//GEN-LAST:event_button2SenadorActionPerformed
+
+    private void button3SenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3SenadorActionPerformed
+        String inputNumeroString = inputNumeroSenador.getText();
+        int num = inputNumeroString.length();
+        if (num < 3){
+            inputNumeroSenador.setText(inputNumeroString + "3");
+        }
+    }//GEN-LAST:event_button3SenadorActionPerformed
+
+    private void button4SenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4SenadorActionPerformed
+        String inputNumeroString = inputNumeroSenador.getText();
+        int num = inputNumeroString.length();
+        if (num < 3){
+            inputNumeroSenador.setText(inputNumeroString + "4");
+        }
+    }//GEN-LAST:event_button4SenadorActionPerformed
+
+    private void button5SenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5SenadorActionPerformed
+        String inputNumeroString = inputNumeroSenador.getText();
+        int num = inputNumeroString.length();
+        if (num < 3){
+            inputNumeroSenador.setText(inputNumeroString + "5");
+        }
+    }//GEN-LAST:event_button5SenadorActionPerformed
+
+    private void button6SenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6SenadorActionPerformed
+        String inputNumeroString = inputNumeroSenador.getText();
+        int num = inputNumeroString.length();
+        if (num < 3){
+            inputNumeroSenador.setText(inputNumeroString + "6");
+        }
+    }//GEN-LAST:event_button6SenadorActionPerformed
+
+    private void button7SenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7SenadorActionPerformed
+        String inputNumeroString = inputNumeroSenador.getText();
+        int num = inputNumeroString.length();
+        if (num < 3){
+            inputNumeroSenador.setText(inputNumeroString + "7");
+        }
+    }//GEN-LAST:event_button7SenadorActionPerformed
+
+    private void button8SenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8SenadorActionPerformed
+        String inputNumeroString = inputNumeroSenador.getText();
+        int num = inputNumeroString.length();
+        if (num < 3){
+            inputNumeroSenador.setText(inputNumeroString + "8");
+        }
+    }//GEN-LAST:event_button8SenadorActionPerformed
+
+    private void button9SenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9SenadorActionPerformed
+        String inputNumeroString = inputNumeroSenador.getText();
+        int num = inputNumeroString.length();
+        if (num < 3){
+            inputNumeroSenador.setText(inputNumeroString + "9");
+        }
+    }//GEN-LAST:event_button9SenadorActionPerformed
+
+    private void button0SenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button0SenadorActionPerformed
+        String inputNumeroString = inputNumeroSenador.getText();
+        int num = inputNumeroString.length();
+        if (num < 3){
+            inputNumeroSenador.setText(inputNumeroString + "0");
+        }
+    }//GEN-LAST:event_button0SenadorActionPerformed
+
+    private void buttonBrancoSenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBrancoSenadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonBrancoSenadorActionPerformed
+
+    private void buttonCorrigeSenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCorrigeSenadorActionPerformed
+        inputNumeroSenador.setText("");
+    }//GEN-LAST:event_buttonCorrigeSenadorActionPerformed
+
+    private void buttonConfirmaSenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConfirmaSenadorActionPerformed
+        CardLayout cl = (CardLayout) Urna.getLayout();
+        cl.next(Urna);
+    }//GEN-LAST:event_buttonConfirmaSenadorActionPerformed
+
+    private void inputNumeroSenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNumeroSenadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputNumeroSenadorActionPerformed
+
+    private void button1DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1DeputadoEstadualActionPerformed
+        String inputNumeroString = inputNumeroDeputadoEstadual.getText();
+        int num = inputNumeroString.length();
+        if (num < 5){
+            inputNumeroDeputadoEstadual.setText(inputNumeroString + "1");
+        }
+    }//GEN-LAST:event_button1DeputadoEstadualActionPerformed
+
+    private void button2DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2DeputadoEstadualActionPerformed
+        String inputNumeroString = inputNumeroDeputadoEstadual.getText();
+        int num = inputNumeroString.length();
+        if (num < 5){
+            inputNumeroDeputadoEstadual.setText(inputNumeroString + "2");
+        }
+    }//GEN-LAST:event_button2DeputadoEstadualActionPerformed
+
+    private void button3DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3DeputadoEstadualActionPerformed
+        String inputNumeroString = inputNumeroDeputadoEstadual.getText();
+        int num = inputNumeroString.length();
+        if (num < 5){
+            inputNumeroDeputadoEstadual.setText(inputNumeroString + "3");
+        }
+    }//GEN-LAST:event_button3DeputadoEstadualActionPerformed
+
+    private void button4DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4DeputadoEstadualActionPerformed
+        String inputNumeroString = inputNumeroDeputadoEstadual.getText();
+        int num = inputNumeroString.length();
+        if (num < 5){
+            inputNumeroDeputadoEstadual.setText(inputNumeroString + "4");
+        }
+    }//GEN-LAST:event_button4DeputadoEstadualActionPerformed
+
+    private void button5DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5DeputadoEstadualActionPerformed
+        String inputNumeroString = inputNumeroDeputadoEstadual.getText();
+        int num = inputNumeroString.length();
+        if (num < 5){
+            inputNumeroDeputadoEstadual.setText(inputNumeroString + "5");
+        }
+    }//GEN-LAST:event_button5DeputadoEstadualActionPerformed
+
+    private void button6DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6DeputadoEstadualActionPerformed
+        String inputNumeroString = inputNumeroDeputadoEstadual.getText();
+        int num = inputNumeroString.length();
+        if (num < 5){
+            inputNumeroDeputadoEstadual.setText(inputNumeroString + "6");
+        }
+    }//GEN-LAST:event_button6DeputadoEstadualActionPerformed
+
+    private void button7DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7DeputadoEstadualActionPerformed
+        String inputNumeroString = inputNumeroDeputadoEstadual.getText();
+        int num = inputNumeroString.length();
+        if (num < 5){
+            inputNumeroDeputadoEstadual.setText(inputNumeroString + "7");
+        }
+    }//GEN-LAST:event_button7DeputadoEstadualActionPerformed
+
+    private void button8DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8DeputadoEstadualActionPerformed
+        String inputNumeroString = inputNumeroDeputadoEstadual.getText();
+        int num = inputNumeroString.length();
+        if (num < 5){
+            inputNumeroDeputadoEstadual.setText(inputNumeroString + "8");
+        }
+    }//GEN-LAST:event_button8DeputadoEstadualActionPerformed
+
+    private void button9DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9DeputadoEstadualActionPerformed
+        String inputNumeroString = inputNumeroDeputadoEstadual.getText();
+        int num = inputNumeroString.length();
+        if (num < 5){
+            inputNumeroDeputadoEstadual.setText(inputNumeroString + "9");
+        }
+    }//GEN-LAST:event_button9DeputadoEstadualActionPerformed
+
+    private void button0DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button0DeputadoEstadualActionPerformed
+        String inputNumeroString = inputNumeroDeputadoEstadual.getText();
+        int num = inputNumeroString.length();
+        if (num < 5){
+            inputNumeroDeputadoEstadual.setText(inputNumeroString + "0");
+        }
+    }//GEN-LAST:event_button0DeputadoEstadualActionPerformed
+
+    private void buttonBrancoDeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBrancoDeputadoEstadualActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonBrancoDeputadoEstadualActionPerformed
+
+    private void buttonCorrigeDeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCorrigeDeputadoEstadualActionPerformed
+        inputNumeroDeputadoEstadual.setText("");
+    }//GEN-LAST:event_buttonCorrigeDeputadoEstadualActionPerformed
+
+    private void buttonConfirmaDeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConfirmaDeputadoEstadualActionPerformed
+        CardLayout cl = (CardLayout) Urna.getLayout();
+        cl.next(Urna);
+    }//GEN-LAST:event_buttonConfirmaDeputadoEstadualActionPerformed
+
+    private void inputNumeroDeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNumeroDeputadoEstadualActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputNumeroDeputadoEstadualActionPerformed
 
     /**
      * @param args the command line arguments
@@ -529,35 +1619,97 @@ public class UrnaVotacao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Suplente;
     private javax.swing.JPanel Urna;
-    private javax.swing.JButton button0;
-    private javax.swing.JButton button1;
-    private javax.swing.JButton button2;
-    private javax.swing.JButton button3;
-    private javax.swing.JButton button4;
-    private javax.swing.JButton button5;
-    private javax.swing.JButton button6;
-    private javax.swing.JButton button7;
-    private javax.swing.JButton button8;
-    private javax.swing.JButton button9;
-    private javax.swing.JButton buttonBranco;
-    private javax.swing.JButton buttonConfirma;
-    private javax.swing.JButton buttonCorrige;
+    private javax.swing.JButton button0DeputadoEstadual;
+    private javax.swing.JButton button0Presidente;
+    private javax.swing.JButton button0Senador;
+    private javax.swing.JButton button1DeputadoEstadual;
+    private javax.swing.JButton button1Presidente;
+    private javax.swing.JButton button1Senador;
+    private javax.swing.JButton button2DeputadoEstadual;
+    private javax.swing.JButton button2Presidente;
+    private javax.swing.JButton button2Senador;
+    private javax.swing.JButton button3DeputadoEstadual;
+    private javax.swing.JButton button3Presidente;
+    private javax.swing.JButton button3Senador;
+    private javax.swing.JButton button4DeputadoEstadual;
+    private javax.swing.JButton button4Presidente;
+    private javax.swing.JButton button4Senador;
+    private javax.swing.JButton button5DeputadoEstadual;
+    private javax.swing.JButton button5Presidente;
+    private javax.swing.JButton button5Senador;
+    private javax.swing.JButton button6DeputadoEstadual;
+    private javax.swing.JButton button6Presidente;
+    private javax.swing.JButton button6Senador;
+    private javax.swing.JButton button7DeputadoEstadual;
+    private javax.swing.JButton button7Presidente;
+    private javax.swing.JButton button7Senador;
+    private javax.swing.JButton button8DeputadoEstadual;
+    private javax.swing.JButton button8Presidente;
+    private javax.swing.JButton button8Senador;
+    private javax.swing.JButton button9DeputadoEstadual;
+    private javax.swing.JButton button9Presidente;
+    private javax.swing.JButton button9Senador;
+    private javax.swing.JButton buttonBrancoDeputadoEstadual;
+    private javax.swing.JButton buttonBrancoPresidente;
+    private javax.swing.JButton buttonBrancoSenador;
+    private javax.swing.JButton buttonConfirmaDeputadoEstadual;
+    private javax.swing.JButton buttonConfirmaPresidente;
+    private javax.swing.JButton buttonConfirmaSenador;
+    private javax.swing.JButton buttonCorrigeDeputadoEstadual;
+    private javax.swing.JButton buttonCorrigePresidente;
+    private javax.swing.JButton buttonCorrigeSenador;
     private javax.swing.JLabel cargo;
-    private javax.swing.JTextField inputNumero;
+    private javax.swing.JLabel cargo1;
+    private javax.swing.JLabel cargo2;
+    private javax.swing.JTextField inputNumeroDeputadoEstadual;
+    private javax.swing.JTextField inputNumeroPresidente;
+    private javax.swing.JTextField inputNumeroSenador;
     private javax.swing.JLabel instrucoes;
+    private javax.swing.JLabel instrucoes1;
+    private javax.swing.JLabel instrucoes2;
     private javax.swing.JLabel nome;
-    private javax.swing.JLabel nomeCandidato;
+    private javax.swing.JLabel nome1;
+    private javax.swing.JLabel nome2;
+    private javax.swing.JLabel nomeCandidatoDeputadoEstadual;
+    private javax.swing.JLabel nomeCandidatoPresidente;
+    private javax.swing.JLabel nomeCandidatoSenador;
+    private javax.swing.JLabel nomeSuplente;
+    private javax.swing.JLabel nomeVice;
     private javax.swing.JLabel numero;
+    private javax.swing.JLabel numero1;
+    private javax.swing.JLabel numero2;
     private javax.swing.JPanel panelInformacoes;
+    private javax.swing.JPanel panelInformacoes1;
+    private javax.swing.JPanel panelInformacoes2;
     private javax.swing.JPanel panelInstrucoes;
+    private javax.swing.JPanel panelInstrucoes1;
+    private javax.swing.JPanel panelInstrucoes2;
     private javax.swing.JPanel panelTeclado;
+    private javax.swing.JPanel panelTeclado1;
+    private javax.swing.JPanel panelTeclado2;
     private javax.swing.JLabel partido;
-    private javax.swing.JLabel partidoCandidato;
+    private javax.swing.JLabel partido1;
+    private javax.swing.JLabel partido2;
+    private javax.swing.JLabel partidoCandidatoDeputadoEstadual;
+    private javax.swing.JLabel partidoCandidatoPresidente;
+    private javax.swing.JLabel partidoCandidatoSenador;
     private javax.swing.JPanel teclado;
+    private javax.swing.JPanel teclado1;
+    private javax.swing.JPanel teclado2;
     private javax.swing.JPanel tela;
+    private javax.swing.JPanel tela1;
+    private javax.swing.JPanel telaSenador;
     private javax.swing.JLabel tribunalEleitoral;
+    private javax.swing.JLabel tribunalEleitoral1;
+    private javax.swing.JLabel tribunalEleitoral2;
+    private javax.swing.JLabel vice;
+    private javax.swing.JPanel votacaoDeputadoEstadual;
     private javax.swing.JPanel votacaoPresidente;
+    private javax.swing.JPanel votacaoSenador;
     private javax.swing.JLabel votoPara;
+    private javax.swing.JLabel votoPara1;
+    private javax.swing.JLabel votoPara2;
     // End of variables declaration//GEN-END:variables
 }
