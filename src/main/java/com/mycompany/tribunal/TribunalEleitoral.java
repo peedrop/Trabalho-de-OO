@@ -67,6 +67,7 @@ public class TribunalEleitoral {
                         boolean flag_presidente = false;
                         Presidente presidente = new Presidente(new Candidato(suplente, estado_suplente, partido_suplente), nome, estado, partido);
                         for(Candidato c : listaCandidatos) {
+                            System.out.println("candidato: " + c.toString());
                             if(c.getClass() == presidente.getClass()) {
                                 if(c.getPartido() == presidente.getPartido()) {
                                     flag_presidente = true; //existe um candidato a presidente com esse partido

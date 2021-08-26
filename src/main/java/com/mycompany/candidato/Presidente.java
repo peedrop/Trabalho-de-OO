@@ -52,5 +52,10 @@ public class Presidente extends Candidato {
     public void setNumero_votos(int numero_votos) {
         this.numero_votos = numero_votos;
     }
+
+    @Override
+    public String toString() {
+        return "Presidente";
+    }
     
 }
