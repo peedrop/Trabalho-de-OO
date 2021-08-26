@@ -67,9 +67,8 @@ public class TribunalEleitoral {
                         boolean flag_presidente = false;
                         Presidente presidente = new Presidente(new Candidato(suplente, estado_suplente, partido_suplente), nome, estado, partido);
                         for(Candidato c : listaCandidatos) {
-                            System.out.println("candidato: " + c.toString());
-                            if(c.getClass() == presidente.getClass()) {
-                                if(c.getPartido() == presidente.getPartido()) {
+                            if("Presidente".equals(c.cargo)) {
+                                if(c.getPartido().getSigla().equals(presidente.getPartido().getSigla())) {
                                     flag_presidente = true; //existe um candidato a presidente com esse partido
                                     return "O candidato já existe.";
                                 }
@@ -91,7 +90,7 @@ public class TribunalEleitoral {
                             boolean flag_senador = false;
                             Senador senador = new Senador(nome, estado, partido, new Candidato(suplente, estado_suplente, partido_suplente), numero);
                             for(Candidato c : listaCandidatos) {
-                                if(c.getClass() == senador.getClass()) {
+                                if(c instanceof Senador) {
                                     if(c.getNumero_cand() == senador.getNumero_cand()) {
                                         flag_senador = true;
                                         return "O candidato já existe.";
@@ -115,7 +114,7 @@ public class TribunalEleitoral {
                             boolean flag_depfed = false;
                             DeputadoFederal deputadoFederal = new DeputadoFederal(nome, estado, partido, new Candidato(suplente, estado_suplente, partido_suplente), numero);
                             for(Candidato c : listaCandidatos) {
-                                if(c.getClass() == deputadoFederal.getClass()) {
+                                if(c instanceof DeputadoFederal) {
                                     if(c.getNumero_cand() == deputadoFederal.getNumero_cand()) {
                                         flag_depfed = true;
                                         return "O deputado federal já existe.";
@@ -139,7 +138,7 @@ public class TribunalEleitoral {
                             boolean flag_depest = false;
                             DeputadoEstadual deputadoEstadual = new DeputadoEstadual(nome, estado, partido, new Candidato(suplente, estado_suplente, partido_suplente), numero);
                             for(Candidato c : listaCandidatos) {
-                                if(c.getClass() == deputadoEstadual.getClass()) {
+                                if(c instanceof DeputadoEstadual) {
                                     if(c.getNumero_cand() == deputadoEstadual.getNumero_cand()) {
                                         flag_depest = true;
                                         return "O deputado estadual já existe.";
