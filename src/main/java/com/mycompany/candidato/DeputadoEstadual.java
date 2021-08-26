@@ -16,6 +16,7 @@ public class DeputadoEstadual extends Candidato {
     public DeputadoEstadual(String nome, String estado, Partido partido, Candidato suplente, int numero_cand) {
         super(nome, estado, partido, suplente);
         this.numero_cand = numero_cand;
+        this.cargo = "Deputado Estadual";
     }
     
     public int getNumero_cand() {

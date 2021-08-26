@@ -16,6 +16,7 @@ public class Candidato {
     Candidato suplente_vice;
     int numero_cand;
     int numero_votos;
+    public String cargo;
     
     public Candidato(String nome, String estado, Partido partido) {
         this.nome = nome;
@@ -57,4 +58,13 @@ public class Candidato {
     public String getEstado() {
         return this.estado;
     }
+
+    public String getCargo() {
+        return this.cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+    
 }

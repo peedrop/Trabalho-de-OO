@@ -118,7 +118,8 @@ public class BancoDados {
                 return listaSet;
             }
         } catch(IOException ex) {
-            return null;
+            Set<T> listaVazia = new HashSet<>();
+            return listaVazia;
         }
     }
     // Fim função recuperar
