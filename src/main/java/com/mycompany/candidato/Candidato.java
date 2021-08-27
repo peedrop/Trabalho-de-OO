@@ -24,11 +24,12 @@ public class Candidato {
         this.partido = partido;
     }
     
-    public Candidato(String nome, String estado, Partido partido, Candidato suplente_vice) {
+    public Candidato(String nome, String estado, Partido partido, Candidato suplente_vice, int numero_cand) {
         this.nome = nome;
         this.estado = estado;
         this.partido = partido;
         this.suplente_vice = suplente_vice;
+        this.numero_cand = numero_cand;
     }
     
     public String getNome() {

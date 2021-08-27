@@ -11,11 +11,9 @@ package com.mycompany.candidato;
  */
 public class DeputadoFederal extends Candidato {
     private Candidato suplente;
-    private int numero_cand;
     
     public DeputadoFederal(String nome, String estado, Partido partido, Candidato suplente, int numero_cand) {
-        super(nome, estado, partido, suplente);
-        this.numero_cand = numero_cand; 
+        super(nome, estado, partido, suplente, numero_cand);
         this.cargo = "Deputado Federal";
     }
 
