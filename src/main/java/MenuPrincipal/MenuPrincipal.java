@@ -6,6 +6,7 @@
 package MenuPrincipal;
 
 import InterfacesAdmin.AreaAdmin;
+import InterfacesUrna.UrnaVotacao;
 import java.awt.CardLayout;
 
 /**
@@ -283,8 +284,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         if(!"".equals(cpf) && !"".equals(titulo)) {
             if( this.areaAdmin.getUrna().validaDadosEleitor(titulo, cpf) )
             {
-                //Chamar tela de votação
-                System.out.println("Chama a Votação!");
+                UrnaVotacao urna = new UrnaVotacao(titulo, this.areaAdmin.getUrna());
+                urna.setVisible(true);
+                
             }else
             {
                 CardLayout cl = (CardLayout) clMenuPrincipal.getLayout();

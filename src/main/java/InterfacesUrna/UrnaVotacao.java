@@ -5,7 +5,10 @@
  */
 package InterfacesUrna;
 
+import com.mycompany.tribunal.UrnaEletronica;
+import com.mycompany.candidato.Candidato;
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,7 +19,9 @@ public class UrnaVotacao extends javax.swing.JFrame {
     /**
      * Creates new form UrnaVotacao
      */
-    public UrnaVotacao() {
+    public UrnaVotacao(String titulo, UrnaEletronica urna) {
+        this.titulo = titulo;
+        this.urnaEletronica = urna;
         initComponents();
     }
 
@@ -390,6 +395,13 @@ public class UrnaVotacao extends javax.swing.JFrame {
         inputNumeroDeputadoEstadual.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         inputNumeroDeputadoEstadual.setForeground(new java.awt.Color(0, 0, 0));
         inputNumeroDeputadoEstadual.setToolTipText("");
+        inputNumeroDeputadoEstadual.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                inputNumeroDeputadoEstadualInputMethodTextChanged(evt);
+            }
+        });
         inputNumeroDeputadoEstadual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputNumeroDeputadoEstadualActionPerformed(evt);
@@ -402,7 +414,6 @@ public class UrnaVotacao extends javax.swing.JFrame {
 
         nomeCandidatoDeputadoEstadual.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         nomeCandidatoDeputadoEstadual.setForeground(new java.awt.Color(0, 0, 0));
-        nomeCandidatoDeputadoEstadual.setText("LUIZ INACIO LULA DA SILVA");
 
         partido2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         partido2.setForeground(new java.awt.Color(0, 0, 0));
@@ -410,7 +421,6 @@ public class UrnaVotacao extends javax.swing.JFrame {
 
         partidoCandidatoDeputadoEstadual.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         partidoCandidatoDeputadoEstadual.setForeground(new java.awt.Color(0, 0, 0));
-        partidoCandidatoDeputadoEstadual.setText("PT - PARTIDO DOS TRABALHADORES ");
 
         javax.swing.GroupLayout panelInformacoes2Layout = new javax.swing.GroupLayout(panelInformacoes2);
         panelInformacoes2.setLayout(panelInformacoes2Layout);
@@ -419,21 +429,25 @@ public class UrnaVotacao extends javax.swing.JFrame {
             .addGroup(panelInformacoes2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(cargo2)
-                    .addGroup(panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(panelInformacoes2Layout.createSequentialGroup()
-                            .addComponent(numero2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(inputNumeroDeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(panelInformacoes2Layout.createSequentialGroup()
-                            .addComponent(partido2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(partidoCandidatoDeputadoEstadual))
-                        .addGroup(panelInformacoes2Layout.createSequentialGroup()
-                            .addComponent(nome2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(nomeCandidatoDeputadoEstadual))))
-                .addContainerGap(114, Short.MAX_VALUE))
+                    .addGroup(panelInformacoes2Layout.createSequentialGroup()
+                        .addComponent(cargo2)
+                        .addGap(10, 10, 10))
+                    .addGroup(panelInformacoes2Layout.createSequentialGroup()
+                        .addGroup(panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelInformacoes2Layout.createSequentialGroup()
+                                .addComponent(numero2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(inputNumeroDeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelInformacoes2Layout.createSequentialGroup()
+                                .addComponent(nome2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(nomeCandidatoDeputadoEstadual)))
+                        .addGap(271, 271, 271))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelInformacoes2Layout.createSequentialGroup()
+                        .addComponent(partido2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(partidoCandidatoDeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
         panelInformacoes2Layout.setVerticalGroup(
             panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -451,7 +465,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
                 .addGap(67, 67, 67)
                 .addGroup(panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(partido2)
-                    .addComponent(partidoCandidatoDeputadoEstadual))
+                    .addComponent(partidoCandidatoDeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(55, 55, 55))
         );
 
@@ -1893,6 +1907,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 5){
             inputNumeroDeputadoEstadual.setText(inputNumeroString + "1");
         }
+        this.setLabel();
     }//GEN-LAST:event_button1DeputadoEstadualActionPerformed
 
     private void button2DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2DeputadoEstadualActionPerformed
@@ -1901,6 +1916,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 5){
             inputNumeroDeputadoEstadual.setText(inputNumeroString + "2");
         }
+        this.setLabel();
     }//GEN-LAST:event_button2DeputadoEstadualActionPerformed
 
     private void button3DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3DeputadoEstadualActionPerformed
@@ -1909,6 +1925,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 5){
             inputNumeroDeputadoEstadual.setText(inputNumeroString + "3");
         }
+        this.setLabel();
     }//GEN-LAST:event_button3DeputadoEstadualActionPerformed
 
     private void button4DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4DeputadoEstadualActionPerformed
@@ -1917,6 +1934,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 5){
             inputNumeroDeputadoEstadual.setText(inputNumeroString + "4");
         }
+        this.setLabel();
     }//GEN-LAST:event_button4DeputadoEstadualActionPerformed
 
     private void button5DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5DeputadoEstadualActionPerformed
@@ -1925,6 +1943,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 5){
             inputNumeroDeputadoEstadual.setText(inputNumeroString + "5");
         }
+        this.setLabel();
     }//GEN-LAST:event_button5DeputadoEstadualActionPerformed
 
     private void button6DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6DeputadoEstadualActionPerformed
@@ -1933,6 +1952,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 5){
             inputNumeroDeputadoEstadual.setText(inputNumeroString + "6");
         }
+        this.setLabel();
     }//GEN-LAST:event_button6DeputadoEstadualActionPerformed
 
     private void button7DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7DeputadoEstadualActionPerformed
@@ -1941,6 +1961,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 5){
             inputNumeroDeputadoEstadual.setText(inputNumeroString + "7");
         }
+        this.setLabel();
     }//GEN-LAST:event_button7DeputadoEstadualActionPerformed
 
     private void button8DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8DeputadoEstadualActionPerformed
@@ -1949,6 +1970,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 5){
             inputNumeroDeputadoEstadual.setText(inputNumeroString + "8");
         }
+        this.setLabel();
     }//GEN-LAST:event_button8DeputadoEstadualActionPerformed
 
     private void button9DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9DeputadoEstadualActionPerformed
@@ -1957,6 +1979,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 5){
             inputNumeroDeputadoEstadual.setText(inputNumeroString + "9");
         }
+        this.setLabel();
     }//GEN-LAST:event_button9DeputadoEstadualActionPerformed
 
     private void button0DeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button0DeputadoEstadualActionPerformed
@@ -1965,6 +1988,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 5){
             inputNumeroDeputadoEstadual.setText(inputNumeroString + "0");
         }
+        this.setLabel();
     }//GEN-LAST:event_button0DeputadoEstadualActionPerformed
 
     private void buttonBrancoDeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBrancoDeputadoEstadualActionPerformed
@@ -1976,6 +2000,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonCorrigeDeputadoEstadualActionPerformed
 
     private void buttonConfirmaDeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConfirmaDeputadoEstadualActionPerformed
+        JOptionPane.showMessageDialog(rootPane, this.urnaEletronica.votar(this.titulo, "Deputado Estadual", Integer.parseInt(inputNumeroDeputadoEstadual.getText())));
         CardLayout cl = (CardLayout) Urna.getLayout();
         cl.next(Urna);
     }//GEN-LAST:event_buttonConfirmaDeputadoEstadualActionPerformed
@@ -1990,6 +2015,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 4){
             inputNumeroDeputadoFederal.setText(inputNumeroString + "1");
         }
+        setLabel();
     }//GEN-LAST:event_button1DeputadoFederalActionPerformed
 
     private void button2DeputadoFederalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2DeputadoFederalActionPerformed
@@ -1998,6 +2024,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 4){
             inputNumeroDeputadoFederal.setText(inputNumeroString + "2");
         }
+        setLabel();
     }//GEN-LAST:event_button2DeputadoFederalActionPerformed
 
     private void button3DeputadoFederalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3DeputadoFederalActionPerformed
@@ -2006,6 +2033,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 4){
             inputNumeroDeputadoFederal.setText(inputNumeroString + "3");
         }
+        setLabel();
     }//GEN-LAST:event_button3DeputadoFederalActionPerformed
 
     private void button4DeputadoFederalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4DeputadoFederalActionPerformed
@@ -2014,6 +2042,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 4){
             inputNumeroDeputadoFederal.setText(inputNumeroString + "4");
         }
+        setLabel();
     }//GEN-LAST:event_button4DeputadoFederalActionPerformed
 
     private void button5DeputadoFederalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5DeputadoFederalActionPerformed
@@ -2022,6 +2051,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 4){
             inputNumeroDeputadoFederal.setText(inputNumeroString + "5");
         }
+        setLabel();
     }//GEN-LAST:event_button5DeputadoFederalActionPerformed
 
     private void button6DeputadoFederalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button6DeputadoFederalActionPerformed
@@ -2030,6 +2060,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 4){
             inputNumeroDeputadoFederal.setText(inputNumeroString + "6");
         }
+        setLabel();
     }//GEN-LAST:event_button6DeputadoFederalActionPerformed
 
     private void button7DeputadoFederalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button7DeputadoFederalActionPerformed
@@ -2038,6 +2069,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 4){
             inputNumeroDeputadoFederal.setText(inputNumeroString + "7");
         }
+        setLabel();
     }//GEN-LAST:event_button7DeputadoFederalActionPerformed
 
     private void button8DeputadoFederalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button8DeputadoFederalActionPerformed
@@ -2046,6 +2078,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 4){
             inputNumeroDeputadoFederal.setText(inputNumeroString + "8");
         }
+        setLabel();
     }//GEN-LAST:event_button8DeputadoFederalActionPerformed
 
     private void button9DeputadoFederalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button9DeputadoFederalActionPerformed
@@ -2054,6 +2087,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 4){
             inputNumeroDeputadoFederal.setText(inputNumeroString + "9");
         }
+        setLabel();
     }//GEN-LAST:event_button9DeputadoFederalActionPerformed
 
     private void button0DeputadoFederalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button0DeputadoFederalActionPerformed
@@ -2062,6 +2096,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if (num < 4){
             inputNumeroDeputadoFederal.setText(inputNumeroString + "0");
         }
+        setLabel();
     }//GEN-LAST:event_button0DeputadoFederalActionPerformed
 
     private void buttonBrancoDeputadoFederalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBrancoDeputadoFederalActionPerformed
@@ -2081,41 +2116,57 @@ public class UrnaVotacao extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputNumeroDeputadoFederalActionPerformed
 
+    private void inputNumeroDeputadoEstadualInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_inputNumeroDeputadoEstadualInputMethodTextChanged
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_inputNumeroDeputadoEstadualInputMethodTextChanged
+
+    public void setLabel() {
+        Candidato c;
+        c = this.urnaEletronica.buscaCandidato(Integer.parseInt(inputNumeroDeputadoFederal.getText()));
+        if(c != null) {
+            nomeCandidatoDeputadoEstadual.setText(c.getNome());
+            partidoCandidatoDeputadoEstadual.setText(c.getPartido().getSigla() + " - " + c.getPartido().getNome());
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UrnaVotacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UrnaVotacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UrnaVotacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UrnaVotacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(UrnaVotacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(UrnaVotacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(UrnaVotacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(UrnaVotacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new UrnaVotacao().setVisible(true);
+//            }
+//        });
+//    }
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new UrnaVotacao().setVisible(true);
-            }
-        });
-    }
-
+    private String titulo;
+    private UrnaEletronica urnaEletronica;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Suplente;
     private javax.swing.JPanel Urna;
