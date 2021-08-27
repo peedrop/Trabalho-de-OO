@@ -40,6 +40,10 @@ public class UrnaEletronica {
         return this.tribunalEleitoral;
     }
     
+    public boolean getVotacao() {
+        return votacao;
+    }
+    
     public void iniciarVotacao() {
        votacao = true;
     }
@@ -256,7 +260,16 @@ public class UrnaEletronica {
         } catch(Exception e) {
             System.out.println("Erro!");
         }    
-    } 
+    }
+    
+    public boolean validaDadosEleitor(String titulo_eleitor, String cpf) {
+        for(Eleitor e : this.tribunalEleitoral.getListaEleitores()) {
+            if(e.getCpf().equals(cpf) && e.getTitulo_eleitor().equals(titulo_eleitor)) {
+                return true;
+            }
+        }
+        return false;
+    }    
     
     public void votar(String titulo_eleitor, String cargo, int numero_escolhido) {
         try {
@@ -267,30 +280,32 @@ public class UrnaEletronica {
                         votante = eleitor;
                     }
                 }
-                for(Candidato candidato : this.tribunalEleitoral.getListaCandidatos()) {
-                    if("Presidente".equals(cargo)) {
-                        if(candidato.getNumero_cand() == numero_escolhido) {
-                            candidato.setNumeroVotos(1 + candidato.getNumeroVotos());
-                            numero_votos_presidente++;
-                        }
-                    }
-                    else {
-                        candidato.setNumeroVotos(1 + candidato.getNumeroVotos());
-                        for(int i = 0; i < estados.length; i++) {
-                            if(votante.getEstado() == null ? estados[i] == null : votante.getEstado().equals(estados[i])) {
-                                if(candidato instanceof Senador) {
-                                    numero_votos_estado_sen[i]++;
-                                }
-                                else if(candidato instanceof DeputadoFederal) {
-                                    numero_votos_estado_depfed[i]++;
-                                }
-                                else if(candidato instanceof DeputadoEstadual) {
-                                    numero_votos_estado_depest[i]++;
-                                }
-                                break;
+                if(validaDadosEleitor(titulo_eleitor, votante.getCpf())) {
+                    for(Candidato candidato : this.tribunalEleitoral.getListaCandidatos()) {
+                        if("Presidente".equals(cargo)) {
+                            if(candidato.getNumero_cand() == numero_escolhido) {
+                                candidato.setNumeroVotos(1 + candidato.getNumeroVotos());
+                                numero_votos_presidente++;
                             }
                         }
-                    }
+                        else {
+                            candidato.setNumeroVotos(1 + candidato.getNumeroVotos());
+                            for(int i = 0; i < estados.length; i++) {
+                                if(votante.getEstado() == null ? estados[i] == null : votante.getEstado().equals(estados[i])) {
+                                    if(candidato instanceof Senador) {
+                                        numero_votos_estado_sen[i]++;
+                                    }
+                                    else if(candidato instanceof DeputadoFederal) {
+                                        numero_votos_estado_depfed[i]++;
+                                    }
+                                    else if(candidato instanceof DeputadoEstadual) {
+                                        numero_votos_estado_depest[i]++;
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                    } 
                 }
             }
             else {

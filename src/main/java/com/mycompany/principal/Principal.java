@@ -11,6 +11,7 @@ import com.mycompany.candidato.Presidente;
 import com.mycompany.usuarios.Administrador;
 import com.mycompany.json.BancoDados;
 import InterfacesAdmin.AreaAdmin;
+import MenuPrincipal.MenuPrincipal;
 import com.mycompany.tribunal.TribunalEleitoral;
 import com.mycompany.tribunal.UrnaEletronica;
 import java.util.Set;
@@ -21,6 +22,8 @@ import java.util.Set;
  */
 public class Principal {
     public static void main(String[] args) {
+        MenuPrincipal menuPrincipal = new MenuPrincipal();
+        menuPrincipal.setVisible(true);
         System.out.println("Teste");
     }
 }

@@ -5,6 +5,7 @@
  */
 package MenuPrincipal;
 
+import InterfacesAdmin.AreaAdmin;
 import java.awt.CardLayout;
 
 /**
@@ -18,6 +19,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
+        this.areaAdmin = new AreaAdmin();
     }
 
     /**
@@ -43,8 +45,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         btnValida = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        jtCpfEleitor = new javax.swing.JFormattedTextField();
+        jtTituloEleitor = new javax.swing.JFormattedTextField();
         cardErroDados = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
@@ -64,6 +66,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel1.setText("Eleições");
 
         jButton2.setText("Área Administrativa");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout cardMenuLayout = new javax.swing.GroupLayout(cardMenu);
         cardMenu.setLayout(cardMenuLayout);
@@ -78,7 +85,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(cardMenuLayout.createSequentialGroup()
                 .addGap(192, 192, 192)
                 .addComponent(btnVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(215, Short.MAX_VALUE))
+                .addContainerGap(302, Short.MAX_VALUE))
         );
         cardMenuLayout.setVerticalGroup(
             cardMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,7 +96,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addGap(162, 162, 162)
                 .addComponent(btnVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(208, Short.MAX_VALUE))
+                .addContainerGap(237, Short.MAX_VALUE))
         );
 
         clMenuPrincipal.add(cardMenu, "cardMenu");
@@ -159,13 +166,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            jtCpfEleitor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("############")));
+            jtTituloEleitor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("############")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -187,8 +194,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
                             .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
                         .addGroup(cardDadosEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .addComponent(jFormattedTextField2))))
+                            .addComponent(jtCpfEleitor, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(jtTituloEleitor))))
                 .addGap(41, 41, 41))
         );
         cardDadosEleitorLayout.setVerticalGroup(
@@ -197,11 +204,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap(181, Short.MAX_VALUE)
                 .addGroup(cardDadosEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtCpfEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(cardDadosEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtTituloEleitor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(173, 173, 173)
                 .addGroup(cardDadosEleitorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnValida)
@@ -271,13 +278,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btnValidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValidaActionPerformed
-        if( validaDadosEleitor() )
-        {
-            System.out.println("Chama a Votação!");
-        }else
-        {
-            CardLayout cl = (CardLayout) clMenuPrincipal.getLayout();
-            cl.show(clMenuPrincipal, "cardErroDados");
+        String cpf = jtCpfEleitor.getText().trim().replace(".", "").replace("-", "");
+        String titulo = jtTituloEleitor.getText().trim();
+        if(!"".equals(cpf) && !"".equals(titulo)) {
+            if( this.areaAdmin.getUrna().validaDadosEleitor(titulo, cpf) )
+            {
+                //Chamar tela de votação
+                System.out.println("Chama a Votação!");
+            }else
+            {
+                CardLayout cl = (CardLayout) clMenuPrincipal.getLayout();
+                cl.show(clMenuPrincipal, "cardErroDados");
+            }
         }
     }//GEN-LAST:event_btnValidaActionPerformed
 
@@ -287,7 +299,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void btnVotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVotacaoActionPerformed
-        if( validaVotacao() )
+        if( this.areaAdmin.getUrna().getVotacao() )
         {
             CardLayout cl = (CardLayout) clMenuPrincipal.getLayout();
             cl.show(clMenuPrincipal, "cardDadosEleitor");
@@ -301,6 +313,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         CardLayout cl = (CardLayout) clMenuPrincipal.getLayout();
         cl.show(clMenuPrincipal, "cardMenu");
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.areaAdmin.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -337,6 +354,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
     }
 
+    private AreaAdmin areaAdmin;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnValida;
     private javax.swing.JButton btnVotacao;
@@ -349,8 +367,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -358,13 +374,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JFormattedTextField jtCpfEleitor;
+    private javax.swing.JFormattedTextField jtTituloEleitor;
     // End of variables declaration//GEN-END:variables
 
-    private boolean validaDadosEleitor() {
-        return true;
-    }
-
-    private boolean validaVotacao() {
-        return true;
-    }
+    
 }
