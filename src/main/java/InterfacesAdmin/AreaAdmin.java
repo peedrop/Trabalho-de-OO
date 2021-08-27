@@ -324,6 +324,7 @@ public class AreaAdmin extends javax.swing.JFrame {
         btnEncerrarVotacao.setBackground(new java.awt.Color(217, 83, 79));
         btnEncerrarVotacao.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnEncerrarVotacao.setText("Encerrar");
+        btnEncerrarVotacao.setEnabled(false);
         btnEncerrarVotacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEncerrarVotacaoActionPerformed(evt);
@@ -333,7 +334,11 @@ public class AreaAdmin extends javax.swing.JFrame {
         btnIniciarVotacao.setBackground(new java.awt.Color(92, 184, 92));
         btnIniciarVotacao.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnIniciarVotacao.setText("Iniciar");
-        btnIniciarVotacao.setEnabled(false);
+        btnIniciarVotacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIniciarVotacaoActionPerformed(evt);
+            }
+        });
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1764,7 +1769,10 @@ public class AreaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVotacaoActionPerformed
 
     private void btnEncerrarVotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncerrarVotacaoActionPerformed
-        
+        this.urnaEletronica.encerrarVotacao();
+        //TO-DO: Abrir JOptionPanel com string retornada desse método
+        this.btnIniciarVotacao.setEnabled(true);
+        this.btnEncerrarVotacao.setEnabled(false);
     }//GEN-LAST:event_btnEncerrarVotacaoActionPerformed
 
     private void cbEstadoCandidatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEstadoCandidatoActionPerformed
@@ -2032,6 +2040,13 @@ public class AreaAdmin extends javax.swing.JFrame {
             btnLimparEleitor.doClick();
         }
     }//GEN-LAST:event_btnEditarEleitorActionPerformed
+
+    private void btnIniciarVotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarVotacaoActionPerformed
+        // TODO add your handling code here:
+        this.urnaEletronica.iniciarVotacao();
+        this.btnIniciarVotacao.setEnabled(false);
+        this.btnEncerrarVotacao.setEnabled(true);
+    }//GEN-LAST:event_btnIniciarVotacaoActionPerformed
     
     
     /**
@@ -2190,4 +2205,8 @@ public class AreaAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField txtId;
     private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
+
+    public UrnaEletronica getUrna() {
+        return this.urnaEletronica;
+    }
 }
