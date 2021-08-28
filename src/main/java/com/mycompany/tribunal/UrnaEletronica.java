@@ -20,9 +20,9 @@ import java.util.Set;
 public class UrnaEletronica {
     private static boolean votacao = false;
     private static int numero_votos_presidente = 0;
-    private static int[] numero_votos_estado_sen = {0};
-    private static int[] numero_votos_estado_depest = {0};
-    private static int[] numero_votos_estado_depfed = {0};
+    private static int[] numero_votos_estado_sen = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    private static int[] numero_votos_estado_depest = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    private static int[] numero_votos_estado_depfed = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     private final String[] estados = {"AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES",
         "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO",
         "RR", "SC", "SP", "SE", "TO"};
@@ -282,27 +282,29 @@ public class UrnaEletronica {
                 }
                 if(validaDadosEleitor(titulo_eleitor, votante.getCpf())) {
                     for(Candidato candidato : this.tribunalEleitoral.getListaCandidatos()) {
-                        if("Presidente".equals(candidato.cargo)) {
-                            if(candidato.getNumero_cand() == numero_escolhido) {
+                        if(candidato.getNumero_cand() == numero_escolhido) {
+                            if("Presidente".equals(candidato.cargo)) {
                                 candidato.setNumeroVotos(1 + candidato.getNumeroVotos());
                                 numero_votos_presidente++;
                                 return "Voto contabilizado com sucesso!";
-                            }
-                        }
-                        else {
-                            candidato.setNumeroVotos(1 + candidato.getNumeroVotos());
-                            for(int i = 0; i < estados.length; i++) {
-                                if(votante.getEstado().equals(estados[i]) && numero_escolhido == candidato.getNumero_cand()) {
-                                    if("Senador".equals(candidato.cargo)) {
-                                        numero_votos_estado_sen[i]++;
+                            }else {
+                                candidato.setNumeroVotos(1 + candidato.getNumeroVotos());
+                                for(int i = 0; i < estados.length; i++) {
+                                    if(votante.getEstado().trim().equals(estados[i])) {
+                                        if("Senador".equals(candidato.cargo)) {
+                                            numero_votos_estado_sen[i]++;
+                                            return "Voto contabilizado com sucesso!";
+                                        }
+                                        else if("Deputado Estadual".equals(candidato.cargo)) {
+                                            numero_votos_estado_depfed[i]++;
+                                            return "Voto contabilizado com sucesso!";
+                                        }
+                                        else if("Deputado Federal".equals(candidato.cargo)) {
+                                            numero_votos_estado_depest[i]++;
+                                            return "Voto contabilizado com sucesso!";
+                                        }
+                                        break;
                                     }
-                                    else if("Deputado Estadual".equals(candidato.cargo)) {
-                                        numero_votos_estado_depfed[i]++;
-                                    }
-                                    else if("Deputado Federal".equals(candidato.cargo)) {
-                                        numero_votos_estado_depest[i]++;
-                                    }
-                                    break;
                                 }
                             }
                         }
