@@ -79,7 +79,12 @@ public class BancoDados {
         salvar(tribunalEleitoral.getListaPartidos(), "partidos");
         salvar(tribunalEleitoral.getListaEleitores(), "eleitores");
         salvar(tribunalEleitoral.getListaAdministradores(), "administradores");
-        salvar(tribunalEleitoral.getListaCandidatos(), "candidatos");
+        
+        Set<Candidato> candidatos = tribunalEleitoral.getListaCandidatos();
+        for(Candidato c : candidatos) {
+            c.setNumeroVotos(0);
+        }
+        salvar(candidatos, "candidatos");
     }
     // Fim função salvar todas
     

@@ -191,8 +191,28 @@ public class TribunalEleitoral {
                 break;
             }
         }
-        this.listaPartidos.remove(partido_removido);
-        return this.cadastrarPartido(partido_novo);
+        if(this.atualizarCandidatosPartido(partido_antigo, partido_novo)){
+            this.listaPartidos.remove(partido_removido);
+            return this.cadastrarPartido(partido_novo);
+        }else{
+            return false;
+        }
+    }
+    
+    public boolean atualizarCandidatosPartido(Partido partido_antigo, Partido partido_novo) {
+        for(Candidato c : this.listaCandidatos) {
+            if(c.getPartido().getNumero() == partido_antigo.getNumero()) {
+                char numero_cand_chars[] = Integer.toString(c.getNumero_cand()).toCharArray();
+                char numero_partido_chars[] = Integer.toString(partido_novo.getNumero()).toCharArray();
+                numero_cand_chars[0] = numero_partido_chars[0];
+                numero_cand_chars[1] = numero_partido_chars[1];
+                String string_numero_cand = new String(numero_cand_chars);
+                int novo_numero_cand = Integer.parseInt(string_numero_cand);
+                this.editarCandidato(c, c.getCargo(), novo_numero_cand, c.getNome(), partido_novo, c.getEstado(), c.getSuplenteVice().getNome(), c.getSuplenteVice().getEstado(), c.getSuplenteVice().getPartido());
+                return true;
+            }
+        }
+        return false;
     }
     
     public void deletarPartido(Partido partido) {
