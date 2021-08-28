@@ -1880,7 +1880,7 @@ public class AreaAdmin extends javax.swing.JFrame {
                     cbPartidoViceCandidato.setSelectedItem(c.getSuplenteVice().getPartido().getNome());
                     cbEstadoViceCandidato.setSelectedItem(c.getSuplenteVice().getEstado());
                 }
-                if(null == c.cargo) {
+                if(c.cargo == null) {
                     cbTipoCandidato.setSelectedItem(c.cargo);
                 }
                 else switch (c.cargo) {

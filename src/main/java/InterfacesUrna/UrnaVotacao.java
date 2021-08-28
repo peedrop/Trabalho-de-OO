@@ -418,26 +418,24 @@ public class UrnaVotacao extends javax.swing.JFrame {
             panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInformacoes2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(panelInformacoes2Layout.createSequentialGroup()
                         .addComponent(cargo2)
-                        .addGap(10, 10, 10))
+                        .addGap(87, 87, 87))
                     .addGroup(panelInformacoes2Layout.createSequentialGroup()
-                        .addGroup(panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelInformacoes2Layout.createSequentialGroup()
-                                .addComponent(numero2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(inputNumeroDeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelInformacoes2Layout.createSequentialGroup()
-                                .addComponent(nome2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nomeCandidatoDeputadoEstadual)))
-                        .addGap(271, 271, 271))
+                        .addComponent(numero2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(inputNumeroDeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(348, 348, 348))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelInformacoes2Layout.createSequentialGroup()
                         .addComponent(partido2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(partidoCandidatoDeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(104, Short.MAX_VALUE))
+                        .addComponent(partidoCandidatoDeputadoEstadual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelInformacoes2Layout.createSequentialGroup()
+                        .addComponent(nome2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomeCandidatoDeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         panelInformacoes2Layout.setVerticalGroup(
             panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -451,7 +449,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
                 .addGap(79, 79, 79)
                 .addGroup(panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nome2)
-                    .addComponent(nomeCandidatoDeputadoEstadual))
+                    .addComponent(nomeCandidatoDeputadoEstadual, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(67, 67, 67)
                 .addGroup(panelInformacoes2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(partido2)
@@ -769,13 +767,11 @@ public class UrnaVotacao extends javax.swing.JFrame {
         nome3.setText("NOME:");
 
         nomeCandidatoDeputadoFederal.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        nomeCandidatoDeputadoFederal.setText("LUIZ INACIO LULA DA SILVA");
 
         partido3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         partido3.setText("PARTIDO:");
 
         partidoCandidatoDeputadoFederal.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        partidoCandidatoDeputadoFederal.setText("PT - PARTIDO DOS TRABALHADORES ");
 
         javax.swing.GroupLayout panelInformacoes3Layout = new javax.swing.GroupLayout(panelInformacoes3);
         panelInformacoes3.setLayout(panelInformacoes3Layout);
@@ -784,21 +780,24 @@ public class UrnaVotacao extends javax.swing.JFrame {
             .addGroup(panelInformacoes3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelInformacoes3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(cargo3)
-                    .addGroup(panelInformacoes3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(panelInformacoes3Layout.createSequentialGroup()
-                            .addComponent(numero3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(inputNumeroDeputadoFederal, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(panelInformacoes3Layout.createSequentialGroup()
-                            .addComponent(partido3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(partidoCandidatoDeputadoFederal))
-                        .addGroup(panelInformacoes3Layout.createSequentialGroup()
-                            .addComponent(nome3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(nomeCandidatoDeputadoFederal))))
-                .addContainerGap(114, Short.MAX_VALUE))
+                    .addGroup(panelInformacoes3Layout.createSequentialGroup()
+                        .addGap(0, 172, Short.MAX_VALUE)
+                        .addComponent(cargo3)
+                        .addGap(104, 104, 104))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelInformacoes3Layout.createSequentialGroup()
+                        .addComponent(nome3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomeCandidatoDeputadoFederal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelInformacoes3Layout.createSequentialGroup()
+                        .addComponent(numero3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(inputNumeroDeputadoFederal, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelInformacoes3Layout.createSequentialGroup()
+                        .addComponent(partido3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(partidoCandidatoDeputadoFederal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         panelInformacoes3Layout.setVerticalGroup(
             panelInformacoes3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1130,19 +1129,16 @@ public class UrnaVotacao extends javax.swing.JFrame {
         nome1.setText("NOME:");
 
         nomeCandidatoSenador.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        nomeCandidatoSenador.setText("LUIZ INACIO LULA DA SILVA");
 
         partido1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         partido1.setText("PARTIDO:");
 
         partidoCandidatoSenador.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        partidoCandidatoSenador.setText("PT - PARTIDO DOS TRABALHADORES ");
 
         Suplente.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         Suplente.setText("SUPLENTE:");
 
         nomeSuplente.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        nomeSuplente.setText("LUIZ INACIO LULA DA SILVA");
 
         javax.swing.GroupLayout panelInformacoes1Layout = new javax.swing.GroupLayout(panelInformacoes1);
         panelInformacoes1.setLayout(panelInformacoes1Layout);
@@ -1152,25 +1148,28 @@ public class UrnaVotacao extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panelInformacoes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelInformacoes1Layout.createSequentialGroup()
-                        .addComponent(numero1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(inputNumeroSenador, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelInformacoes1Layout.createSequentialGroup()
                         .addComponent(nome1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nomeCandidatoSenador))
+                        .addComponent(nomeCandidatoSenador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelInformacoes1Layout.createSequentialGroup()
+                        .addGroup(panelInformacoes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelInformacoes1Layout.createSequentialGroup()
+                                .addComponent(numero1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(inputNumeroSenador, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelInformacoes1Layout.createSequentialGroup()
+                                .addGap(191, 191, 191)
+                                .addComponent(cargo1)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panelInformacoes1Layout.createSequentialGroup()
                         .addComponent(partido1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(partidoCandidatoSenador))
+                        .addComponent(partidoCandidatoSenador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(panelInformacoes1Layout.createSequentialGroup()
                         .addComponent(Suplente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nomeSuplente))
-                    .addGroup(panelInformacoes1Layout.createSequentialGroup()
-                        .addGap(191, 191, 191)
-                        .addComponent(cargo1)))
-                .addContainerGap(114, Short.MAX_VALUE))
+                        .addComponent(nomeSuplente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         panelInformacoes1Layout.setVerticalGroup(
             panelInformacoes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1208,7 +1207,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
             panelInstrucoes1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInstrucoes1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(instrucoes1)
+                .addComponent(instrucoes1, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelInstrucoes1Layout.setVerticalGroup(
@@ -1506,19 +1505,16 @@ public class UrnaVotacao extends javax.swing.JFrame {
         nome.setText("NOME:");
 
         nomeCandidatoPresidente.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        nomeCandidatoPresidente.setText("LUIZ INACIO LULA DA SILVA");
 
         partido.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         partido.setText("PARTIDO:");
 
         partidoCandidatoPresidente.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        partidoCandidatoPresidente.setText("PT - PARTIDO DOS TRABALHADORES ");
 
         vice.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         vice.setText("VICE:");
 
         nomeVice.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        nomeVice.setText("LUIZ INACIO LULA DA SILVA");
 
         javax.swing.GroupLayout panelInformacoesLayout = new javax.swing.GroupLayout(panelInformacoes);
         panelInformacoes.setLayout(panelInformacoesLayout);
@@ -1528,25 +1524,28 @@ public class UrnaVotacao extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panelInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelInformacoesLayout.createSequentialGroup()
-                        .addComponent(numero)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(inputNumeroPresidente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelInformacoesLayout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addComponent(cargo))
-                    .addGroup(panelInformacoesLayout.createSequentialGroup()
                         .addComponent(nome)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nomeCandidatoPresidente))
+                        .addComponent(nomeCandidatoPresidente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelInformacoesLayout.createSequentialGroup()
+                        .addGroup(panelInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelInformacoesLayout.createSequentialGroup()
+                                .addComponent(numero)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(inputNumeroPresidente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelInformacoesLayout.createSequentialGroup()
+                                .addGap(166, 166, 166)
+                                .addComponent(cargo)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panelInformacoesLayout.createSequentialGroup()
                         .addComponent(partido)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(partidoCandidatoPresidente))
+                        .addComponent(partidoCandidatoPresidente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(panelInformacoesLayout.createSequentialGroup()
                         .addComponent(vice)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nomeVice)))
-                .addContainerGap(114, Short.MAX_VALUE))
+                        .addComponent(nomeVice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         panelInformacoesLayout.setVerticalGroup(
             panelInformacoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1584,7 +1583,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
             panelInstrucoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInstrucoesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(instrucoes)
+                .addComponent(instrucoes, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelInstrucoesLayout.setVerticalGroup(
@@ -1658,6 +1657,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
         Urna.getAccessibleContext().setAccessibleName("clUrna");
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void button0PresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button0PresidenteActionPerformed
@@ -1756,9 +1756,18 @@ public class UrnaVotacao extends javax.swing.JFrame {
 
     private void buttonCorrigePresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCorrigePresidenteActionPerformed
         inputNumeroPresidente.setText("");
+        nomeCandidatoPresidente.setText("");
+        partidoCandidatoPresidente.setText("");
+        nomeVice.setText("");
     }//GEN-LAST:event_buttonCorrigePresidenteActionPerformed
 
     private void buttonConfirmaPresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConfirmaPresidenteActionPerformed
+        if(inputNumeroPresidente.getText().length() != 2)
+        {
+            JOptionPane.showMessageDialog(rootPane, "Digite 2 dígitos antes de confirmar!");
+            return;
+        }
+        JOptionPane.showMessageDialog(rootPane, this.urnaEletronica.votar(this.titulo, "Presidente", Integer.parseInt(inputNumeroPresidente.getText())));
         this.dispose();
     }//GEN-LAST:event_buttonConfirmaPresidenteActionPerformed
 
@@ -1862,9 +1871,18 @@ public class UrnaVotacao extends javax.swing.JFrame {
 
     private void buttonCorrigeSenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCorrigeSenadorActionPerformed
         inputNumeroSenador.setText("");
+        nomeCandidatoSenador.setText("");
+        partidoCandidatoSenador.setText("");
+        nomeSuplente.setText("");
     }//GEN-LAST:event_buttonCorrigeSenadorActionPerformed
 
     private void buttonConfirmaSenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConfirmaSenadorActionPerformed
+        if(inputNumeroSenador.getText().length() != 3)
+        {
+            JOptionPane.showMessageDialog(rootPane, "Digite 3 dígitos antes de confirmar!");
+            return;
+        }
+        JOptionPane.showMessageDialog(rootPane, this.urnaEletronica.votar(this.titulo, "Senador", Integer.parseInt(inputNumeroSenador.getText())));
         CardLayout cl = (CardLayout) Urna.getLayout();
         cl.next(Urna);
     }//GEN-LAST:event_buttonConfirmaSenadorActionPerformed
@@ -1969,9 +1987,16 @@ public class UrnaVotacao extends javax.swing.JFrame {
 
     private void buttonCorrigeDeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCorrigeDeputadoEstadualActionPerformed
         inputNumeroDeputadoEstadual.setText("");
+        nomeCandidatoDeputadoEstadual.setText("");
+        partidoCandidatoDeputadoEstadual.setText("");
     }//GEN-LAST:event_buttonCorrigeDeputadoEstadualActionPerformed
 
     private void buttonConfirmaDeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConfirmaDeputadoEstadualActionPerformed
+        if(inputNumeroDeputadoEstadual.getText().length() != 5)
+        {
+            JOptionPane.showMessageDialog(rootPane, "Digite 5 dígitos antes de confirmar!");
+            return;
+        }
         JOptionPane.showMessageDialog(rootPane, this.urnaEletronica.votar(this.titulo, "Deputado Estadual", Integer.parseInt(inputNumeroDeputadoEstadual.getText())));
         CardLayout cl = (CardLayout) Urna.getLayout();
         cl.next(Urna);
@@ -2077,9 +2102,17 @@ public class UrnaVotacao extends javax.swing.JFrame {
 
     private void buttonCorrigeDeputadoFederalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCorrigeDeputadoFederalActionPerformed
         inputNumeroDeputadoFederal.setText("");
+        nomeCandidatoDeputadoFederal.setText("");
+        partidoCandidatoDeputadoFederal.setText("");
     }//GEN-LAST:event_buttonCorrigeDeputadoFederalActionPerformed
 
     private void buttonConfirmaDeputadoFederalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConfirmaDeputadoFederalActionPerformed
+        if(inputNumeroDeputadoFederal.getText().length() != 4)
+        {
+            JOptionPane.showMessageDialog(rootPane, "Digite 4 dígitos antes de confirmar!");
+            return;
+        }
+        JOptionPane.showMessageDialog(rootPane, this.urnaEletronica.votar(this.titulo, "Deputado Federal", Integer.parseInt(inputNumeroDeputadoFederal.getText())));
         CardLayout cl = (CardLayout) Urna.getLayout();
         cl.next(Urna);
     }//GEN-LAST:event_buttonConfirmaDeputadoFederalActionPerformed
@@ -2098,6 +2131,10 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if(c != null && c.cargo.equals("Deputado Estadual")) {
             nomeCandidatoDeputadoEstadual.setText(c.getNome());
             partidoCandidatoDeputadoEstadual.setText(c.getPartido().getSigla() + " - " + c.getPartido().getNome());
+        }else if( inputNumeroDeputadoEstadual.getText().length() == 5)
+        {
+            nomeCandidatoDeputadoEstadual.setText("VOTO NULO");
+            partidoCandidatoDeputadoEstadual.setText("");
         }
     }
     public void setLabelDeputadoFederal() {
@@ -2105,6 +2142,9 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if(c != null && c.cargo.equals("Deputado Federal")) {
             nomeCandidatoDeputadoFederal.setText(c.getNome());
             partidoCandidatoDeputadoFederal.setText(c.getPartido().getSigla() + " - " + c.getPartido().getNome());
+        }else if( inputNumeroDeputadoFederal.getText().length() == 4){
+            nomeCandidatoDeputadoFederal.setText("VOTO NULO");
+            partidoCandidatoDeputadoFederal.setText("");
         }
     }
     public void setLabelPresidente() {
@@ -2112,6 +2152,12 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if(c != null && c.cargo.equals("Presidente")) {
             nomeCandidatoPresidente.setText(c.getNome());
             partidoCandidatoPresidente.setText(c.getPartido().getSigla() + " - " + c.getPartido().getNome());
+            nomeVice.setText(c.getSuplenteVice().getNome());
+        }else if( inputNumeroPresidente.getText().length() == 2)
+        {
+            nomeCandidatoPresidente.setText("VOTO NULO");
+            partidoCandidatoPresidente.setText("");
+            nomeVice.setText("");
         }
     }
     public void setLabelSenador() {
@@ -2119,6 +2165,12 @@ public class UrnaVotacao extends javax.swing.JFrame {
         if(c != null && c.cargo.equals("Senador")) {
             nomeCandidatoSenador.setText(c.getNome());
             partidoCandidatoSenador.setText(c.getPartido().getSigla() + " - " + c.getPartido().getNome());
+            nomeSuplente.setText(c.getSuplenteVice().getNome());
+        }else if( inputNumeroSenador.getText().length() == 3)
+        {
+            nomeCandidatoSenador.setText("VOTO NULO");
+            partidoCandidatoSenador.setText("");
+            nomeSuplente.setText("");
         }
     }
     

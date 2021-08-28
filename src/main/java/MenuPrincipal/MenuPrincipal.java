@@ -80,13 +80,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(cardMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 502, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap())
-            .addGroup(cardMenuLayout.createSequentialGroup()
-                .addGap(192, 192, 192)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardMenuLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(302, Short.MAX_VALUE))
+                .addGap(245, 245, 245))
         );
         cardMenuLayout.setVerticalGroup(
             cardMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,9 +95,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addGroup(cardMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jLabel1))
-                .addGap(162, 162, 162)
+                .addGap(180, 180, 180)
                 .addComponent(btnVotacao, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(237, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
         clMenuPrincipal.add(cardMenu, "cardMenu");
