@@ -1880,14 +1880,20 @@ public class AreaAdmin extends javax.swing.JFrame {
                     cbPartidoViceCandidato.setSelectedItem(c.getSuplenteVice().getPartido().getNome());
                     cbEstadoViceCandidato.setSelectedItem(c.getSuplenteVice().getEstado());
                 }
-                if(null == c.getClass().getSimpleName()) {
-                    cbTipoCandidato.setSelectedItem(c.getClass().getSimpleName());
+                if(null == c.cargo) {
+                    cbTipoCandidato.setSelectedItem(c.cargo);
                 }
-                else switch (c.getClass().getSimpleName()) {
-                    case "DeputadoFederal":
+                else switch (c.cargo) {
+                    case "Presidente":
+                        cbTipoCandidato.setSelectedIndex(0);
+                        break;
+                    case "Senador":
+                        cbTipoCandidato.setSelectedIndex(1);
+                        break;
+                    case "Deputado Federal":
                         cbTipoCandidato.setSelectedIndex(2);
                         break;
-                    case "DeputadoEstadual":
+                    case "Deputado Estadual":
                         cbTipoCandidato.setSelectedIndex(3);
                         break;
                     default:
@@ -1981,6 +1987,7 @@ public class AreaAdmin extends javax.swing.JFrame {
         String nome = jtNomeCandidato.getText();
         int pos_sep = jListCandidatos.getSelectedValue().indexOf('-');
         int numero = Integer.parseInt(jListCandidatos.getSelectedValue().substring(pos_sep+2));
+        int novo_numero = Integer.parseInt(jtNumeroCandidato.getText());
         String nomePartidoCandidato = cbPartidoCandidato.getSelectedItem().toString();
         String estadoCandidato = cbEstadoCandidato.getSelectedItem().toString();
         String cargo = cbTipoCandidato.getSelectedItem().toString();
@@ -1992,7 +1999,7 @@ public class AreaAdmin extends javax.swing.JFrame {
         String nomeVice = jtNomeViceCandidato.getText().trim();
         if(!"".equals(nomeVice)){
             String partidoVice = cbPartidoViceCandidato.getSelectedItem().toString();
-            String estadoVice = cbEstadoViceCandidato.getSelectedItem().toString();
+            String estadoVice = cbEstadoViceCandidato.getSelectedItem().toString().trim();
             for(Partido p : this.urnaEletronica.getTribunalEleitoral().getListaPartidos()) {
             if(p.getNome() == null ? partidoVice == null : p.getNome().equals(partidoVice)) {
                 partidoSuplente = p;
@@ -2016,9 +2023,9 @@ public class AreaAdmin extends javax.swing.JFrame {
             }
         }
         JOptionPane.showMessageDialog(rootPane, this.urnaEletronica.getTribunalEleitoral().editarCandidato(candidadoAntigo, cargo, numero, nome, partidoCandidato, estadoCandidato, jtNomeViceCandidato.getText().trim(), cbEstadoViceCandidato.getSelectedItem().toString(), partidoSuplente));
-        if("O candidato foi adicionado com sucesso.".equals(this.urnaEletronica.getTribunalEleitoral().editarCandidato(candidadoAntigo, cargo, numero, nome, partidoCandidato, estadoCandidato, jtNomeViceCandidato.getText().trim(), cbEstadoViceCandidato.getSelectedItem().toString(), partidoSuplente))) {
+        if("O candidato foi adicionado com sucesso.".equals(this.urnaEletronica.getTribunalEleitoral().editarCandidato(candidadoAntigo, cargo, novo_numero, nome, partidoCandidato, estadoCandidato, jtNomeViceCandidato.getText().trim(), cbEstadoViceCandidato.getSelectedItem().toString(), partidoSuplente))) {
             this.modeloListaCandidatos.remove(jListCandidatos.getSelectedIndex());
-            this.modeloListaCandidatos.addElement(nome + " - " + numero);
+            this.modeloListaCandidatos.addElement(nome + " - " + novo_numero);
         }
     }//GEN-LAST:event_btnEditarCandidatoActionPerformed
 
@@ -2034,8 +2041,9 @@ public class AreaAdmin extends javax.swing.JFrame {
         }
         this.modeloListaEleitores.remove(jListEleitores.getSelectedIndex());
         Eleitor novo_eleitor = new Eleitor(jtNomeEleitor.getText().trim(), cbEstadoEleitor.getSelectedItem().toString(), jtCpfEleitor.getText().trim().replace(".", "").replace("-", ""), jtTituloEleitor.getText().trim());
-        JOptionPane.showMessageDialog(rootPane, this.urnaEletronica.getTribunalEleitoral().editarEleitor(eleitor, novo_eleitor));
-        if("Eleitor cadastrado com sucesso.".equals(this.urnaEletronica.getTribunalEleitoral().editarEleitor(eleitor, novo_eleitor))) {
+        String retorno = this.urnaEletronica.getTribunalEleitoral().editarEleitor(eleitor, novo_eleitor);
+        JOptionPane.showMessageDialog(rootPane, retorno);
+        if("Eleitor cadastrado com sucesso.".equals(retorno)) {
             this.modeloListaEleitores.addElement(novo_eleitor.getNome() + " - " + novo_eleitor.getTitulo_eleitor());       
             btnLimparEleitor.doClick();
         }
