@@ -1752,6 +1752,9 @@ public class UrnaVotacao extends javax.swing.JFrame {
 
     private void buttonBrancoPresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBrancoPresidenteActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(rootPane, this.urnaEletronica.votar(this.titulo, "Presidente", 00));
+        CardLayout cl = (CardLayout) Urna.getLayout();
+        cl.next(Urna);
     }//GEN-LAST:event_buttonBrancoPresidenteActionPerformed
 
     private void buttonCorrigePresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCorrigePresidenteActionPerformed
@@ -1867,6 +1870,9 @@ public class UrnaVotacao extends javax.swing.JFrame {
 
     private void buttonBrancoSenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBrancoSenadorActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(rootPane, this.urnaEletronica.votar(this.titulo, "Senador", 000));
+        CardLayout cl = (CardLayout) Urna.getLayout();
+        cl.next(Urna);
     }//GEN-LAST:event_buttonBrancoSenadorActionPerformed
 
     private void buttonCorrigeSenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCorrigeSenadorActionPerformed
@@ -1983,6 +1989,9 @@ public class UrnaVotacao extends javax.swing.JFrame {
 
     private void buttonBrancoDeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBrancoDeputadoEstadualActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(rootPane, this.urnaEletronica.votar(this.titulo, "Deputado Estadual", 00000));
+        CardLayout cl = (CardLayout) Urna.getLayout();
+        cl.next(Urna);
     }//GEN-LAST:event_buttonBrancoDeputadoEstadualActionPerformed
 
     private void buttonCorrigeDeputadoEstadualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCorrigeDeputadoEstadualActionPerformed
@@ -2098,6 +2107,9 @@ public class UrnaVotacao extends javax.swing.JFrame {
 
     private void buttonBrancoDeputadoFederalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBrancoDeputadoFederalActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(rootPane, this.urnaEletronica.votar(this.titulo, "Deputado Federal", 0000));
+        CardLayout cl = (CardLayout) Urna.getLayout();
+        cl.next(Urna);
     }//GEN-LAST:event_buttonBrancoDeputadoFederalActionPerformed
 
     private void buttonCorrigeDeputadoFederalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCorrigeDeputadoFederalActionPerformed
