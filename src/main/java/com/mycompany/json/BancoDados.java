@@ -77,9 +77,16 @@ public class BancoDados {
     // Função salvar todas listas set do programa
     public void salvarTodos(TribunalEleitoral tribunalEleitoral) {
         salvar(tribunalEleitoral.getListaPartidos(), "partidos");
-        salvar(tribunalEleitoral.getListaEleitores(), "eleitores");
         salvar(tribunalEleitoral.getListaAdministradores(), "administradores");
         
+        //SALVANDO ELEITORES
+        Set<Eleitor> eleitores = tribunalEleitoral.getListaEleitores();
+        for(Eleitor e : eleitores) {
+            e.setVotou(false);
+        }
+        salvar(eleitores, "eleitores");
+        
+        //SALVANDO CANDIDATOS
         Set<Candidato> candidatos = tribunalEleitoral.getListaCandidatos();
         for(Candidato c : candidatos) {
             c.setNumeroVotos(0);

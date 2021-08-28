@@ -15,6 +15,7 @@ public class Eleitor {
     private String estado;
     private String cpf;
     private String titulo_eleitor;
+    private boolean votou;
     private static boolean validado;
 
     public Eleitor(String nome, String estado, String cpf, String titulo_eleitor) {
@@ -22,6 +23,7 @@ public class Eleitor {
         this.estado = estado;
         this.cpf = cpf;
         this.titulo_eleitor = titulo_eleitor;
+        this.votou = false;
     }
 
     public String getNome() {
@@ -30,6 +32,14 @@ public class Eleitor {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public boolean getVotou() {
+        return votou;
+    }
+
+    public void setVotou(boolean votou) {
+        this.votou = votou;
     }
 
     public String getEstado() {
