@@ -25,6 +25,14 @@ public class Eleitor {
         this.titulo_eleitor = titulo_eleitor;
         this.votou = false;
     }
+    
+    public Eleitor(String nome, String estado, String cpf, String titulo_eleitor, boolean votou) {
+        this.nome = nome;
+        this.estado = estado;
+        this.cpf = cpf;
+        this.titulo_eleitor = titulo_eleitor;
+        this.votou = votou;
+    }
 
     public String getNome() {
         return nome;
@@ -35,7 +43,7 @@ public class Eleitor {
     }
 
     public boolean getVotou() {
-        return votou;
+        return this.votou;
     }
 
     public void setVotou(boolean votou) {

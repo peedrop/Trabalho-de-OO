@@ -219,7 +219,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         clMenuPrincipal.add(cardDadosEleitor, "cardDadosEleitor");
 
-        jLabel6.setText("Seus dados são inválidos! Tente novamente");
+        jLabel6.setText("Seus dados são inválidos ou você já votou!");
 
         jButton6.setText("Voltar");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -237,7 +237,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             .addGroup(cardErroDadosLayout.createSequentialGroup()
                 .addGap(185, 185, 185)
                 .addComponent(jLabel6)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addContainerGap(207, Short.MAX_VALUE))
             .addGroup(cardErroDadosLayout.createSequentialGroup()
                 .addComponent(jButton6)
                 .addGap(0, 0, Short.MAX_VALUE))
