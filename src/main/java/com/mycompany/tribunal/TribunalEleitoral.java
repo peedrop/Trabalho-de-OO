@@ -191,32 +191,28 @@ public class TribunalEleitoral {
                 break;
             }
         }
-        if(this.atualizarCandidatosPartido(partido_antigo, partido_novo)){
-            this.listaPartidos.remove(partido_removido);
-            return this.cadastrarPartido(partido_novo);
-        }else{
+        if(this.verificarCandidatosPartido(partido_antigo)){
             return false;
         }
+        this.listaPartidos.remove(partido_removido);
+        return this.cadastrarPartido(partido_novo);
     }
     
-    public boolean atualizarCandidatosPartido(Partido partido_antigo, Partido partido_novo) {
+    public boolean verificarCandidatosPartido(Partido partido_antigo) {
         for(Candidato c : this.listaCandidatos) {
             if(c.getPartido().getNumero() == partido_antigo.getNumero()) {
-                char numero_cand_chars[] = Integer.toString(c.getNumero_cand()).toCharArray();
-                char numero_partido_chars[] = Integer.toString(partido_novo.getNumero()).toCharArray();
-                numero_cand_chars[0] = numero_partido_chars[0];
-                numero_cand_chars[1] = numero_partido_chars[1];
-                String string_numero_cand = new String(numero_cand_chars);
-                int novo_numero_cand = Integer.parseInt(string_numero_cand);
-                this.editarCandidato(c, c.getCargo(), novo_numero_cand, c.getNome(), partido_novo, c.getEstado(), c.getSuplenteVice().getNome(), c.getSuplenteVice().getEstado(), c.getSuplenteVice().getPartido());
                 return true;
             }
         }
         return false;
     }
     
-    public void deletarPartido(Partido partido) {
-        listaPartidos.remove(partido);
+    public boolean deletarPartido(Partido partido) {
+        if(!verificarCandidatosPartido(partido)){
+            listaPartidos.remove(partido);
+            return true;
+        }
+        return false;
     }
     
     public String editarCandidato(Candidato candidato_antigo, String cargo, int numero, String nome, Partido partido, String estado, String suplente, String estado_suplente, Partido partido_suplente) {
@@ -244,7 +240,7 @@ public class TribunalEleitoral {
             }
         }
         this.listaEleitores.remove(eleitor_removido);
-        return this.cadastrarEleitor(eleitor_novo.getNome(), eleitor_novo.getEstado(), eleitor_novo.getCpf(), eleitor_novo.getTitulo_eleitor());
+        return this.cadastrarEleitor(eleitor_novo.getNome(), eleitor_novo.getEstado(), eleitor_novo.getCpf(), eleitor_novo.getTitulo_eleitor(), eleitor_novo.getVotou());
     }
     
     public void deletarEleitor(Eleitor eleitor) {
@@ -268,7 +264,7 @@ public class TribunalEleitoral {
         listaAdministradores.remove(administrador);
     }
      
-    public String cadastrarEleitor(String nome, String estado, String cpf, String titulo_eleitor) {
+    public String cadastrarEleitor(String nome, String estado, String cpf, String titulo_eleitor, boolean votou) {
         try {
             System.out.println(cpf.toCharArray().length);
             System.out.println(titulo_eleitor.toCharArray().length);
@@ -283,7 +279,7 @@ public class TribunalEleitoral {
                 }
             }
             if(!flag) {
-                listaEleitores.add(new Eleitor(nome, estado, cpf, titulo_eleitor));
+                listaEleitores.add(new Eleitor(nome, estado, cpf, titulo_eleitor, votou));
                 return "Eleitor cadastrado com sucesso.";
             }
             return "Erro desconhecido";

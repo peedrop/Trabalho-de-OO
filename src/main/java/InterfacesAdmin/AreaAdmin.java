@@ -15,7 +15,9 @@ import com.mycompany.tribunal.TribunalEleitoral;
 import com.mycompany.tribunal.UrnaEletronica;
 import com.mycompany.usuarios.Administrador;
 import com.mycompany.usuarios.Eleitor;
+import java.awt.Dimension;
 import javax.swing.DefaultListModel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 /**
  *
@@ -1655,7 +1657,7 @@ public class AreaAdmin extends javax.swing.JFrame {
         String tituloEleitor = jtTituloEleitor.getText().trim();
         String mensagem = "";
         if(!nomeEleitor.isEmpty() && !cpfEleitor.isEmpty() && !tituloEleitor.isEmpty()) {
-            mensagem = this.urnaEletronica.getTribunalEleitoral().cadastrarEleitor(nomeEleitor, estadoEleitor, cpfEleitor, tituloEleitor);
+            mensagem = this.urnaEletronica.getTribunalEleitoral().cadastrarEleitor(nomeEleitor, estadoEleitor, cpfEleitor, tituloEleitor, false);
             JOptionPane.showMessageDialog(rootPane, mensagem);
             if("Eleitor cadastrado com sucesso.".equals(mensagem)) {
                 btnLimparEleitor.doClick();
@@ -1729,18 +1731,23 @@ public class AreaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAdicionarPartidoActionPerformed
 
     private void btnRemoverPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverPartidoActionPerformed
+        boolean respostaDelete = false;
         if(!this.urnaEletronica.getTribunalEleitoral().getListaPartidos().isEmpty() && jListPartidos.getSelectedIndex() != -1) {
             int dialogResult  = JOptionPane.showConfirmDialog(rootPane, "Deseja Apagar o Partido?");
             if(dialogResult != 0)
                 return;
             for(Partido p : this.urnaEletronica.getTribunalEleitoral().getListaPartidos()) {
                 if(p.getSigla() == null ? jListPartidos.getSelectedValue() == null : p.getSigla().equals(jListPartidos.getSelectedValue())) {
-                    this.urnaEletronica.getTribunalEleitoral().deletarPartido(p);
+                    respostaDelete = this.urnaEletronica.getTribunalEleitoral().deletarPartido(p);
                     break;
                 }
             }
-            this.modeloListaPartidos.remove(jListPartidos.getSelectedIndex());
-            btnLimparPartido.doClick();
+            if(respostaDelete){
+                this.modeloListaPartidos.remove(jListPartidos.getSelectedIndex());
+                btnLimparPartido.doClick();
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Verifique se já não existe candidatos cadastrados neste partido!");
+            }
         }
     }//GEN-LAST:event_btnRemoverPartidoActionPerformed
 
@@ -1769,7 +1776,17 @@ public class AreaAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVotacaoActionPerformed
 
     private void btnEncerrarVotacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncerrarVotacaoActionPerformed
-        this.urnaEletronica.encerrarVotacao();
+        String retorno = this.urnaEletronica.encerrarVotacao();
+//        JOptionPane.showMessageDialog(rootPane, retorno);
+        
+        JTextArea textArea = new JTextArea(retorno);
+        JScrollPane scrollPane = new JScrollPane(textArea);  
+        textArea.setLineWrap(true);  
+        textArea.setWrapStyleWord(true); 
+        scrollPane.setPreferredSize( new Dimension( 500, 500 ) );
+        JOptionPane.showMessageDialog(null, scrollPane, "Resultado da votação",  
+                                               JOptionPane.INFORMATION_MESSAGE);
+        
         //TO-DO: Abrir JOptionPanel com string retornada desse método
         this.btnIniciarVotacao.setEnabled(true);
         this.btnEncerrarVotacao.setEnabled(false);
@@ -1838,11 +1855,15 @@ public class AreaAdmin extends javax.swing.JFrame {
                 break;
             }
         }
-        this.modeloListaPartidos.remove(jListPartidos.getSelectedIndex());
+        
         Partido novo_partido = new Partido(jtNomePartido.getText().trim(), Integer.parseInt(jtNumeroPartido.getText().trim()), jtSiglaPartido.getText().trim());
         if(this.urnaEletronica.getTribunalEleitoral().editarPartido(partido, novo_partido)) {
+                this.modeloListaPartidos.remove(jListPartidos.getSelectedIndex());
                 this.modeloListaPartidos.addElement(novo_partido.getSigla());
                 JOptionPane.showMessageDialog(rootPane, "Partido editado com sucesso!");
+                   btnLimparPartido.doClick();   
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Verifique se não tem candidatos cadastrados neste partido ou se o número já está sendo usado!");
                    btnLimparPartido.doClick();   
         }
     }//GEN-LAST:event_btnEditarPartidoActionPerformed
