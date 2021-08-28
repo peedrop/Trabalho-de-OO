@@ -214,6 +214,9 @@ public class UrnaEletronica {
                         }
                     }
                 }
+                else {
+                    System.out.println("Não houveram votos válidos.");
+                }
             }
             for(int j = 0; j < estados.length; j++) {
                 System.out.println("SENADOR " + estados[j]);
@@ -233,6 +236,9 @@ public class UrnaEletronica {
                             }
                         }
                     }
+                    else {
+                        System.out.println("Não houveram votos válidos.");
+                    }
                 }
                 System.out.println("DEPUTADO FEDERAL " + estados[j]);
                 if(depfed_eleitos.get(j) == null) {
@@ -251,6 +257,9 @@ public class UrnaEletronica {
                             }
                         }
                     }
+                    else {
+                        System.out.println("Não houveram votos válidos.");
+                    }
                 }
                 System.out.println("DEPUTADO ESTADUAL " + estados[j]);
                 if(depest_eleitos.get(j) == null) {
@@ -268,6 +277,9 @@ public class UrnaEletronica {
                                 System.out.println("Nome: " + c.getNome() + " | Partido: " + c.getPartido() + " | Número de votos: " + c.getNumeroVotos() + " (" + (c.getNumeroVotos() / (numero_votos_estado_depest[j]))*100 + "%)");
                             }
                         }
+                    }
+                    else {
+                        System.out.println("Não houveram votos válidos.");
                     }
                 }
             }
@@ -302,18 +314,20 @@ public class UrnaEletronica {
                                 numero_votos_presidente++;
                                 return "Voto contabilizado com sucesso!";
                             }else {
-                                candidato.setNumeroVotos(1 + candidato.getNumeroVotos());
                                 for(int i = 0; i < estados.length; i++) {
                                     if(votante.getEstado().trim().equals(estados[i])) {
                                         if("Senador".equals(candidato.cargo)) {
+                                            candidato.setNumeroVotos(1 + candidato.getNumeroVotos());
                                             numero_votos_estado_sen[i]++;
                                             return "Voto contabilizado com sucesso!";
                                         }
                                         else if("Deputado Estadual".equals(candidato.cargo)) {
+                                            candidato.setNumeroVotos(1 + candidato.getNumeroVotos());
                                             numero_votos_estado_depest[i]++;
                                             return "Voto contabilizado com sucesso!";
                                         }
                                         else if("Deputado Federal".equals(candidato.cargo)) {
+                                            candidato.setNumeroVotos(1 + candidato.getNumeroVotos());
                                             numero_votos_estado_depfed[i]++;
                                             return "Voto contabilizado com sucesso!";
                                         }
