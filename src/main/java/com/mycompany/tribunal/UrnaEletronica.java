@@ -294,7 +294,7 @@ public class UrnaEletronica {
                         votante = eleitor;
                     }
                 }
-                if(validaDadosEleitor(titulo_eleitor, votante.getCpf())) {
+                if(validaDadosEleitor(titulo_eleitor, votante.getCpf()) && !votante.getVotou()) {
                     for(Candidato candidato : this.tribunalEleitoral.getListaCandidatos()) {
                         if(candidato.getNumero_cand() == numero_escolhido) {
                             if("Presidente".equals(candidato.cargo)) {
@@ -321,6 +321,7 @@ public class UrnaEletronica {
                                     }
                                 }
                             }
+                            votante.setVotou(true);
                         }
                     }
                     return "Voto nulo!";
