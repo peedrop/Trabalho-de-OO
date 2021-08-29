@@ -1536,7 +1536,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
                             .addGroup(panelInformacoesLayout.createSequentialGroup()
                                 .addGap(166, 166, 166)
                                 .addComponent(cargo)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 220, Short.MAX_VALUE))
                     .addGroup(panelInformacoesLayout.createSequentialGroup()
                         .addComponent(partido)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1583,7 +1583,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
             panelInstrucoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInstrucoesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(instrucoes, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
+                .addComponent(instrucoes, javax.swing.GroupLayout.DEFAULT_SIZE, 576, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelInstrucoesLayout.setVerticalGroup(
@@ -1601,23 +1601,22 @@ public class UrnaVotacao extends javax.swing.JFrame {
             .addGroup(telaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(telaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelInstrucoes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelInformacoes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(telaLayout.createSequentialGroup()
                         .addComponent(votoPara)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addComponent(panelInstrucoes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         telaLayout.setVerticalGroup(
             telaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addComponent(votoPara)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panelInformacoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(panelInstrucoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(30, 30, 30)
+                .addComponent(panelInstrucoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout votacaoPresidenteLayout = new javax.swing.GroupLayout(votacaoPresidente);
@@ -1753,8 +1752,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
     private void buttonBrancoPresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBrancoPresidenteActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(rootPane, this.urnaEletronica.votar(this.titulo, "Presidente", 00));
-        CardLayout cl = (CardLayout) Urna.getLayout();
-        cl.next(Urna);
+        this.dispose();
     }//GEN-LAST:event_buttonBrancoPresidenteActionPerformed
 
     private void buttonCorrigePresidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCorrigePresidenteActionPerformed
