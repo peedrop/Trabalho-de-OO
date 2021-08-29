@@ -19,10 +19,10 @@ import java.util.Set;
  */
 public class UrnaEletronica {
     private static boolean votacao = false;
-    private static int numero_votos_presidente = 0;
-    private static int[] numero_votos_estado_sen = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-    private static int[] numero_votos_estado_depest = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-    private static int[] numero_votos_estado_depfed = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    private static float numero_votos_presidente = 0;
+    private static float[] numero_votos_estado_sen = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    private static float[] numero_votos_estado_depest = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    private static float[] numero_votos_estado_depfed = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     private final String[] estados = {"AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES",
         "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO",
         "RR", "SC", "SP", "SE", "TO"};
@@ -49,7 +49,7 @@ public class UrnaEletronica {
     }
     
     public String encerrarVotacao() {
-        try {
+//        try {
             String retorno = "";
             votacao = false;
             Candidato presidente_eleito = null;
@@ -96,9 +96,15 @@ public class UrnaEletronica {
                 senadores.add(senadores_estado);
                 deputados_federais.add(deputadosf_estado);
                 deputados_estaduais.add(deputadose_estado);
-                senadores_estado = null;
-                deputadosf_estado = null;
-                deputadose_estado = null;
+                senadores_estado[0] = null;
+                senadores_estado[1] = null;
+                senadores_estado[2] = null;
+                deputadosf_estado[0] = null;
+                deputadosf_estado[1] = null;
+                deputadosf_estado[2] = null;
+                deputadose_estado[0] = null;
+                deputadose_estado[1] = null;
+                deputadose_estado[2] = null;
             }
             for(Candidato c : listaProvisoria) {
                 if("Presidente".equals(c.cargo)) {
@@ -111,8 +117,8 @@ public class UrnaEletronica {
                         }
                     }
                 }
-                listaProvisoria.remove(presidente_eleito);
             }
+            listaProvisoria.remove(presidente_eleito);
             int i = 0;
             Candidato aux_senadores_eleitos[] = {null, null, null};
             Candidato aux_deputadosf_eleitos[] = {null, null, null};
@@ -127,7 +133,7 @@ public class UrnaEletronica {
                         n_cand = senadores.get(i).length;
                     }
                     for(int j = 0; j < n_cand; j++) {
-                        for(Candidato cand : listaProvisoria) {
+                        for(Candidato cand : this.tribunalEleitoral.getListaCandidatos()) {
                             if("Senador".equals(cand.cargo) && cand.getEstado().trim().equals(estados[i])) {
                                 if(senador_eleito == null) {
                                     senador_eleito = cand;
@@ -152,7 +158,7 @@ public class UrnaEletronica {
                         n_cand = deputados_federais.get(i).length;
                     }
                     for(int j = 0; j < n_cand; j++) {
-                        for(Candidato cand : listaProvisoria) {
+                        for(Candidato cand : this.tribunalEleitoral.getListaCandidatos()) {
                             if("Deputado Federal".equals(cand.cargo) && cand.getEstado().trim().equals(estados[i])) {
                                 if(depfed_eleito == null) {
                                     depfed_eleito = cand;
@@ -177,7 +183,7 @@ public class UrnaEletronica {
                         n_cand = deputados_estaduais.get(i).length;
                     }
                     for(int j = 0; j < n_cand; j++) {
-                        for(Candidato cand : listaProvisoria) {
+                        for(Candidato cand : this.tribunalEleitoral.getListaCandidatos()) {
                             if("Deputado Estadual".equals(cand.cargo) && cand.getEstado().trim().equals(estados[i])) {
                                 if(depest_eleito == null) {
                                     depest_eleito = cand;
@@ -253,7 +259,7 @@ public class UrnaEletronica {
                             }    
                         }
                         for(Candidato c : listaProvisoria) {
-                            if("Deputado Federal".equals(c.cargo) && (c.getEstado() == null ? estados[j] == null : c.getEstado().equals(estados[j]))) {
+                            if("Deputado Federal".equals(c.cargo) && (c.getEstado() == null ? estados[j] == null : c.getEstado().trim().equals(estados[j]))) {
                                 retorno += "Nome: " + c.getNome() + " | Partido: " + c.getPartido() + " | Número de votos: " + c.getNumeroVotos() + " (" + (c.getNumeroVotos() / (numero_votos_estado_depfed[j]))*100 + "% dos votos válidos)\n";
                             }
                         }
@@ -285,9 +291,9 @@ public class UrnaEletronica {
                 }
             }
             return retorno;
-        } catch(Exception e) {
-            return "Erro!";
-        }    
+//        } catch(Exception e) {
+//            return "Erro!";
+//        }    
     }
     
     public boolean validaDadosEleitor(String titulo_eleitor, String cpf) {

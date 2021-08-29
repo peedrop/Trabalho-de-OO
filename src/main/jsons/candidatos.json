@@ -1,1 +1,1 @@
-[]
+[{"nome":"Dep 1","estado":" AC","partido":{"nome":"PT","numero":13,"sigla":"PT"},"suplente_vice":{"nome":"Teste","estado":" AC","partido":{"nome":"PT","numero":13,"sigla":"PT"},"numero_cand":0,"numero_votos":0},"numero_cand":13111,"numero_votos":0,"cargo":"Deputado Estadual"},{"nome":"Dep 2","estado":" AL","partido":{"nome":"PT","numero":13,"sigla":"PT"},"suplente_vice":{"nome":"Teste","estado":" AC","partido":{"nome":"PT","numero":13,"sigla":"PT"},"numero_cand":0,"numero_votos":0},"numero_cand":13112,"numero_votos":0,"cargo":"Deputado Estadual"}]
