@@ -7,6 +7,7 @@ package MenuPrincipal;
 
 import InterfacesAdmin.AreaAdmin;
 import InterfacesUrna.UrnaVotacao;
+import com.mycompany.usuarios.Eleitor;
 import java.awt.CardLayout;
 
 /**
@@ -281,10 +282,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void btnValidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValidaActionPerformed
         String cpf = jtCpfEleitor.getText().trim().replace(".", "").replace("-", "");
         String titulo = jtTituloEleitor.getText().trim();
+        Eleitor eleitor = this.areaAdmin.getUrna().buscaEleitorTitulo(titulo);
         if(!"".equals(cpf) && !"".equals(titulo)) {
             if( this.areaAdmin.getUrna().validaDadosEleitor(titulo, cpf) )
             {
-                UrnaVotacao urna = new UrnaVotacao(titulo, this.areaAdmin.getUrna());
+                UrnaVotacao urna = new UrnaVotacao(titulo, this.areaAdmin.getUrna(), eleitor);
                 urna.setVisible(true);
                 
             }else

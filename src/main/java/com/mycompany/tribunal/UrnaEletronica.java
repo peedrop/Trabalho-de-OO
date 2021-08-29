@@ -12,6 +12,8 @@ import com.mycompany.candidato.Presidente;
 import com.mycompany.candidato.Senador;
 import com.mycompany.usuarios.Eleitor;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 /**
  *
@@ -57,35 +59,27 @@ public class UrnaEletronica {
             Candidato depfed_eleito = null;
             Candidato depest_eleito = null;
             Set<Candidato> listaProvisoria = this.getTribunalEleitoral().getListaCandidatos();
-            ArrayList<Candidato> presidentes = new ArrayList<>();
-            ArrayList<Candidato[]> senadores = new ArrayList<>();
-            ArrayList<Candidato[]> deputados_federais = new ArrayList<>();
-            ArrayList<Candidato[]> deputados_estaduais = new ArrayList<>();
-            ArrayList<Candidato[]> sen_eleitos = new ArrayList<>();
-            ArrayList<Candidato[]> depfed_eleitos = new ArrayList<>();
-            ArrayList<Candidato[]> depest_eleitos = new ArrayList<>();
-            for(Candidato c : listaProvisoria) {
-                if("Presidente".equals(c.cargo)) {
-                    presidentes.add(c);
-                }
-            }
-            Candidato senadores_estado[] = {null, null, null};
-            Candidato deputadosf_estado[] = {null, null, null};
-            Candidato deputadose_estado[] = {null, null, null};
+            Candidato matriz_sen[][] = new Candidato[27][10];
+            Candidato matriz_depFed[][] = new Candidato[27][10];
+            Candidato matriz_depEst[][] = new Candidato[27][10];
+            Candidato matriz_sen_eleitos[][] = new Candidato[27][3];
+            Candidato matriz_depFed_eleitos[][] = new Candidato[27][3];
+            Candidato matriz_depEst_eleitos[][] = new Candidato[27][3];
             int sen = 0, depf = 0, depe = 0;
+            int num_est = 0;
             for (String estado : estados) {
                 for (Candidato c : listaProvisoria) {
                     if(c.getEstado().trim().equals(estado)) {
                         if ("Senador".equals(c.cargo)) {
-                            senadores_estado[sen] = c;
+                            matriz_sen[num_est][sen] = c;
                             sen++;
                         }
                         if("Deputado Federal".equals(c.cargo)) {
-                            deputadosf_estado[depf] = c;
+                            matriz_depFed[num_est][depf] = c;
                             depf++;
                         }
                         if("Deputado Estadual".equals(c.cargo)) {
-                            deputadose_estado[depe] = c;
+                            matriz_depEst[num_est][depe] = c;
                             depe++;
                         }
                     }    
@@ -93,21 +87,10 @@ public class UrnaEletronica {
                 sen = 0;
                 depf = 0;
                 depe = 0;
-                senadores.add(senadores_estado);
-                deputados_federais.add(deputadosf_estado);
-                deputados_estaduais.add(deputadose_estado);
-                senadores_estado[0] = null;
-                senadores_estado[1] = null;
-                senadores_estado[2] = null;
-                deputadosf_estado[0] = null;
-                deputadosf_estado[1] = null;
-                deputadosf_estado[2] = null;
-                deputadose_estado[0] = null;
-                deputadose_estado[1] = null;
-                deputadose_estado[2] = null;
+                num_est++;
             }
             for(Candidato c : listaProvisoria) {
-                if("Presidente".equals(c.cargo)) {
+                if("Presidente".equals(c.cargo) && (c.getNumeroVotos() > 0)) {
                     if(presidente_eleito == null) {
                         presidente_eleito = c;
                     }
@@ -120,21 +103,13 @@ public class UrnaEletronica {
             }
             listaProvisoria.remove(presidente_eleito);
             int i = 0;
-            Candidato aux_senadores_eleitos[] = {null, null, null};
-            Candidato aux_deputadosf_eleitos[] = {null, null, null};
-            Candidato aux_deputadose_eleitos[] = {null, null, null};
             int n_cand;
             for(i = 0; i < estados.length; i++) {
-                if(senadores.get(i) != null) {
-                    if(senadores.get(i).length >= 3) {
-                        n_cand = 3;
-                    }
-                    else {
-                        n_cand = senadores.get(i).length;
-                    }
+                if(matriz_sen[i][0] != null) {
+                    n_cand = 3;
                     for(int j = 0; j < n_cand; j++) {
-                        for(Candidato cand : this.tribunalEleitoral.getListaCandidatos()) {
-                            if("Senador".equals(cand.cargo) && cand.getEstado().trim().equals(estados[i])) {
+                        for(Candidato cand : listaProvisoria) {
+                            if(("Senador".equals(cand.cargo) && cand.getEstado().trim().equals(estados[i])) && (cand.getNumeroVotos() > 0)) {
                                 if(senador_eleito == null) {
                                     senador_eleito = cand;
                                 }
@@ -145,21 +120,16 @@ public class UrnaEletronica {
                                 }
                             }
                         }
-                        aux_senadores_eleitos[j] = senador_eleito;
+                        matriz_sen_eleitos[i][j] = senador_eleito;
                         listaProvisoria.remove(senador_eleito);
                         senador_eleito = null;
                     }
                 }
-                if(deputados_federais.get(i) != null) {
-                    if(deputados_federais.get(i).length >= 3) {
-                        n_cand = 3;
-                    }
-                    else {
-                        n_cand = deputados_federais.get(i).length;
-                    }
+                if(matriz_depFed[i][0] != null) {
+                    n_cand = 3;
                     for(int j = 0; j < n_cand; j++) {
-                        for(Candidato cand : this.tribunalEleitoral.getListaCandidatos()) {
-                            if("Deputado Federal".equals(cand.cargo) && cand.getEstado().trim().equals(estados[i])) {
+                        for(Candidato cand : listaProvisoria) {
+                            if(("Deputado Federal".equals(cand.cargo) && cand.getEstado().trim().equals(estados[i])) && (cand.getNumeroVotos() > 0)) {
                                 if(depfed_eleito == null) {
                                     depfed_eleito = cand;
                                 }
@@ -170,21 +140,16 @@ public class UrnaEletronica {
                                 }
                             }
                         }
-                        aux_deputadosf_eleitos[j] = depfed_eleito;
+                        matriz_depFed_eleitos[i][j] = depfed_eleito;
                         listaProvisoria.remove(depfed_eleito);
                         depfed_eleito = null;
                     }
                 }
-                if(deputados_estaduais.get(i) != null) {
-                    if(deputados_estaduais.get(i).length >= 3) {
-                        n_cand = 3;
-                    }
-                    else {
-                        n_cand = deputados_estaduais.get(i).length;
-                    }
+                if(matriz_depEst[i][0] != null) {
+                    n_cand = 3;
                     for(int j = 0; j < n_cand; j++) {
-                        for(Candidato cand : this.tribunalEleitoral.getListaCandidatos()) {
-                            if("Deputado Estadual".equals(cand.cargo) && cand.getEstado().trim().equals(estados[i])) {
+                        for(Candidato cand : listaProvisoria) {
+                            if(("Deputado Estadual".equals(cand.cargo) && cand.getEstado().trim().equals(estados[i])) && (cand.getNumeroVotos() > 0)) {
                                 if(depest_eleito == null) {
                                     depest_eleito = cand;
                                 }
@@ -195,17 +160,11 @@ public class UrnaEletronica {
                                 }
                             }
                         }
-                        aux_deputadose_eleitos[j] = depest_eleito;
+                        matriz_depEst_eleitos[i][j] = depest_eleito;
                         listaProvisoria.remove(depest_eleito);
                         depest_eleito = null;
                     }
                 }
-                sen_eleitos.add(aux_senadores_eleitos);
-                depfed_eleitos.add(aux_deputadosf_eleitos);
-                depest_eleitos.add(aux_deputadose_eleitos);
-                senadores_estado = null;
-                deputadosf_estado = null;
-                deputadose_estado = null;
             }
             retorno += "PRESIDENTE\n";
             if(presidente_eleito == null) {
@@ -227,19 +186,19 @@ public class UrnaEletronica {
             }
             for(int j = 0; j < estados.length; j++) {
                 retorno += "SENADOR " + estados[j] + "\n";
-                if(sen_eleitos.get(j) == null) {
+                if(matriz_sen_eleitos[j][0] == null) {
                     retorno += "Nenhum candidato a senador neste estado foi cadastrado.\n";
                 }
                 else {
                     if(numero_votos_estado_sen[j] > 0) {
-                        for(int cont = 0; cont < sen_eleitos.get(j).length; cont++) {
-                            if(sen_eleitos.get(j)[cont] != null) {
-                                retorno += "Nome: " + sen_eleitos.get(j)[cont].getNome() + " | Partido: " + sen_eleitos.get(j)[cont].getPartido().getSigla() + " | Número de votos: " + sen_eleitos.get(j)[cont].getNumeroVotos() + " (" + (sen_eleitos.get(j)[cont].getNumeroVotos() / (numero_votos_estado_sen[j]))*100 + "% dos votos válidos) (Eleito)\n";
+                        for(int cont = 0; cont < matriz_sen_eleitos[j].length; cont++) {
+                            if(matriz_sen_eleitos[j][cont] != null) {
+                                retorno += "Nome: " + matriz_sen_eleitos[j][cont].getNome() + " | Partido: " + matriz_sen_eleitos[j][cont].getPartido().getSigla() + " | Número de votos: " + matriz_sen_eleitos[j][cont].getNumeroVotos() + " (" + (matriz_sen_eleitos[j][cont].getNumeroVotos() / (numero_votos_estado_sen[j]))*100 + "% dos votos válidos) (Eleito)\n";
                             }    
                         }
                         for(Candidato c : listaProvisoria) {
-                            if("Senador".equals(c.cargo) && (c.getEstado() == null ? estados[j] == null : c.getEstado().equals(estados[j]))) {
-                                retorno += "Nome: " + c.getNome() + " | Partido: " + c.getPartido() + " | Número de votos: " + c.getNumeroVotos() + " (" + (c.getNumeroVotos() / (numero_votos_estado_sen[j]))*100 + "% dos votos válidos)\n";
+                            if("Senador".equals(c.cargo) && (c.getEstado() == null ? estados[j] == null : c.getEstado().trim().equals(estados[j]))) {
+                                retorno += "Nome: " + c.getNome() + " | Partido: " + c.getPartido().getSigla() + " | Número de votos: " + c.getNumeroVotos() + " (" + (c.getNumeroVotos() / (numero_votos_estado_sen[j]))*100 + "% dos votos válidos)\n";
                             }
                         }
                     }
@@ -248,19 +207,19 @@ public class UrnaEletronica {
                     }
                 }
                 retorno += "DEPUTADO FEDERAL " + estados[j] + "\n";
-                if(depfed_eleitos.get(j) == null) {
+                if(matriz_depFed_eleitos[j] == null) {
                     retorno += "Nenhum candidato a deputado federal neste estado foi cadastrado.\n";
                 }
                 else {
                     if(numero_votos_estado_depfed[j] > 0) {
-                        for(int cont = 0; cont < depfed_eleitos.get(j).length; cont++) {
-                            if(depfed_eleitos.get(j)[cont] != null) {
-                                retorno += "Nome: " + depfed_eleitos.get(j)[cont].getNome() + " | Partido: " + depfed_eleitos.get(j)[cont].getPartido().getSigla() + " | Número de votos: " + depfed_eleitos.get(j)[cont].getNumeroVotos() + " (" + (depfed_eleitos.get(j)[cont].getNumeroVotos() / (numero_votos_estado_depfed[j]))*100 + "% dos votos válidos) (Eleito)\n";
+                        for(int cont = 0; cont < matriz_depFed_eleitos[j].length; cont++) {
+                            if(matriz_depFed_eleitos[j][cont] != null) {
+                                retorno += "Nome: " + matriz_depFed_eleitos[j][cont].getNome() + " | Partido: " + matriz_depFed_eleitos[j][cont].getPartido().getSigla() + " | Número de votos: " + matriz_depFed_eleitos[j][cont].getNumeroVotos() + " (" + (matriz_depFed_eleitos[j][cont].getNumeroVotos() / (numero_votos_estado_depfed[j]))*100 + "% dos votos válidos) (Eleito)\n";
                             }    
                         }
                         for(Candidato c : listaProvisoria) {
                             if("Deputado Federal".equals(c.cargo) && (c.getEstado() == null ? estados[j] == null : c.getEstado().trim().equals(estados[j]))) {
-                                retorno += "Nome: " + c.getNome() + " | Partido: " + c.getPartido() + " | Número de votos: " + c.getNumeroVotos() + " (" + (c.getNumeroVotos() / (numero_votos_estado_depfed[j]))*100 + "% dos votos válidos)\n";
+                                retorno += "Nome: " + c.getNome() + " | Partido: " + c.getPartido().getSigla() + " | Número de votos: " + c.getNumeroVotos() + " (" + (c.getNumeroVotos() / (numero_votos_estado_depfed[j]))*100 + "% dos votos válidos)\n";
                             }
                         }
                     }
@@ -269,19 +228,19 @@ public class UrnaEletronica {
                     }
                 }
                 retorno += "DEPUTADO ESTADUAL " + estados[j] + "\n";
-                if(depest_eleitos.get(j) == null) {
+                if(matriz_depEst_eleitos[j] == null) {
                     retorno += "Nenhum candidato a deputado estadual neste estado foi cadastrado!\n";
                 }
                 else {
                     if(numero_votos_estado_depest[j] > 0) {
-                        for(int cont = 0; cont < depest_eleitos.get(j).length; cont++) {
-                            if(depest_eleitos.get(j)[cont] != null) {
-                                retorno += "Nome: " + depest_eleitos.get(j)[cont].getNome() + " | Partido: " + depest_eleitos.get(j)[cont].getPartido().getSigla() + " | Número de votos: " + depest_eleitos.get(j)[cont].getNumeroVotos() + " ( " + (depest_eleitos.get(j)[cont].getNumeroVotos() / (numero_votos_estado_depest[j]))*100 + "% dos votos válidos) (Eleito)\n";
+                        for(int cont = 0; cont < matriz_depEst_eleitos[j].length; cont++) {
+                            if(matriz_depEst_eleitos[j][cont] != null) {
+                                retorno += "Nome: " + matriz_depEst_eleitos[j][cont].getNome() + " | Partido: " + matriz_depEst_eleitos[j][cont].getPartido().getSigla() + " | Número de votos: " + matriz_depEst_eleitos[j][cont].getNumeroVotos() + " ( " + (matriz_depEst_eleitos[j][cont].getNumeroVotos() / (numero_votos_estado_depest[j]))*100 + "% dos votos válidos) (Eleito)\n";
                             }    
                         }
                         for(Candidato c : listaProvisoria) {
-                            if("Deputado Estadual".equals(c.cargo) && (c.getEstado() == null ? estados[j] == null : c.getEstado().equals(estados[j]))) {
-                                retorno += "Nome: " + c.getNome() + " | Partido: " + c.getPartido() + " | Número de votos: " + c.getNumeroVotos() + " (" + (c.getNumeroVotos() / (numero_votos_estado_depest[j]))*100 + "% dos votos válidos)\n";
+                            if("Deputado Estadual".equals(c.cargo) && (c.getEstado() == null ? estados[j] == null : c.getEstado().trim().equals(estados[j]))) {
+                                retorno += "Nome: " + c.getNome() + " | Partido: " + c.getPartido().getSigla() + " | Número de votos: " + c.getNumeroVotos() + " (" + (c.getNumeroVotos() / (numero_votos_estado_depest[j]))*100 + "% dos votos válidos)\n";
                             }
                         }
                     }
@@ -369,6 +328,15 @@ public class UrnaEletronica {
         for(Candidato c : this.tribunalEleitoral.getListaCandidatos()) {
             if(c.getNumero_cand() == numero) {
                 return c;
+            }
+        }
+        return null;
+    }
+    
+    public Eleitor buscaEleitorTitulo(String titulo) {
+        for(Eleitor e : this.tribunalEleitoral.getListaEleitores()) {
+            if(e.getTitulo_eleitor().equals(titulo)) {
+                return e;
             }
         }
         return null;

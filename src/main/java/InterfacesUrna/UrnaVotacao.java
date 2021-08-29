@@ -7,6 +7,7 @@ package InterfacesUrna;
 
 import com.mycompany.tribunal.UrnaEletronica;
 import com.mycompany.candidato.Candidato;
+import com.mycompany.usuarios.Eleitor;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 
@@ -19,9 +20,10 @@ public class UrnaVotacao extends javax.swing.JFrame {
     /**
      * Creates new form UrnaVotacao
      */
-    public UrnaVotacao(String titulo, UrnaEletronica urna) {
+    public UrnaVotacao(String titulo, UrnaEletronica urna, Eleitor eleitor) {
         this.titulo = titulo;
         this.urnaEletronica = urna;
+        this.eleitor = eleitor;
         initComponents();
     }
 
@@ -2138,10 +2140,10 @@ public class UrnaVotacao extends javax.swing.JFrame {
 
     public void setLabelDeputadoEstadual() {
         Candidato c = this.urnaEletronica.buscaCandidato(Integer.parseInt(inputNumeroDeputadoEstadual.getText()));
-        if(c != null && c.cargo.equals("Deputado Estadual")) {
+        if(c != null && c.cargo.equals("Deputado Estadual") && this.eleitor.getEstado().trim().equals(c.getEstado().trim())) {
             nomeCandidatoDeputadoEstadual.setText(c.getNome());
             partidoCandidatoDeputadoEstadual.setText(c.getPartido().getSigla() + " - " + c.getPartido().getNome());
-        }else if( inputNumeroDeputadoEstadual.getText().length() == 5)
+        }else if(inputNumeroDeputadoEstadual.getText().length() == 5)
         {
             nomeCandidatoDeputadoEstadual.setText("VOTO NULO");
             partidoCandidatoDeputadoEstadual.setText("");
@@ -2149,17 +2151,17 @@ public class UrnaVotacao extends javax.swing.JFrame {
     }
     public void setLabelDeputadoFederal() {
         Candidato c = this.urnaEletronica.buscaCandidato(Integer.parseInt(inputNumeroDeputadoFederal.getText()));
-        if(c != null && c.cargo.equals("Deputado Federal")) {
+        if(c != null && c.cargo.equals("Deputado Federal") && this.eleitor.getEstado().trim().equals(c.getEstado().trim())) {
             nomeCandidatoDeputadoFederal.setText(c.getNome());
             partidoCandidatoDeputadoFederal.setText(c.getPartido().getSigla() + " - " + c.getPartido().getNome());
-        }else if( inputNumeroDeputadoFederal.getText().length() == 4){
+        }else if(inputNumeroDeputadoFederal.getText().length() == 4){
             nomeCandidatoDeputadoFederal.setText("VOTO NULO");
             partidoCandidatoDeputadoFederal.setText("");
         }
     }
     public void setLabelPresidente() {
         Candidato c = this.urnaEletronica.buscaCandidato(Integer.parseInt(inputNumeroPresidente.getText()));
-        if(c != null && c.cargo.equals("Presidente")) {
+        if(c != null && c.cargo.equals("Presidente") && this.eleitor.getEstado().trim().equals(c.getEstado().trim())) {
             nomeCandidatoPresidente.setText(c.getNome());
             partidoCandidatoPresidente.setText(c.getPartido().getSigla() + " - " + c.getPartido().getNome());
             nomeVice.setText(c.getSuplenteVice().getNome());
@@ -2172,7 +2174,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
     }
     public void setLabelSenador() {
         Candidato c = this.urnaEletronica.buscaCandidato(Integer.parseInt(inputNumeroSenador.getText()));
-        if(c != null && c.cargo.equals("Senador")) {
+        if(c != null && c.cargo.equals("Senador") && this.eleitor.getEstado().trim().equals(c.getEstado().trim())) {
             nomeCandidatoSenador.setText(c.getNome());
             partidoCandidatoSenador.setText(c.getPartido().getSigla() + " - " + c.getPartido().getNome());
             nomeSuplente.setText(c.getSuplenteVice().getNome());
@@ -2220,6 +2222,7 @@ public class UrnaVotacao extends javax.swing.JFrame {
 //    }
 
     private String titulo;
+    private Eleitor eleitor;
     private UrnaEletronica urnaEletronica;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Suplente;
