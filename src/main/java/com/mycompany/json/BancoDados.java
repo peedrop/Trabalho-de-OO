@@ -36,44 +36,7 @@ public class BancoDados {
     public static String caminhoCompleto(String nomeArquivoJson) {
         return (CAMINHO + nomeArquivoJson + EXTENSAO);
     }
-    
-    public static void main(String[] args) {
-        // Inicio teste salvando
-//        TribunalEleitoral tribunal = new TribunalEleitoral();
-//        Partido p1 = new Partido("Partido 1", 1, "P1");
-//        Partido p2 = new Partido("Partido 2", 2, "P2");
-//        Partido p3 = new Partido("Partido 3", 3, "P3");
-//        Set<Partido> partidos = tribunal.getListaPartidos();
-//        partidos.add(p1);
-//        partidos.add(p2);
-//        partidos.add(p3);
-//        
-//        boolean salvou = BancoDados.salvar(partidos, "partidos");
-//        if(salvou)
-//            System.out.println("Salvo com sucesso!");
-//        else
-//            System.out.println("Erro ao salvar!");
-//        // Fim teste salvando
-//        
-//        
-//        // Inicio teste recuperando
-//        System.out.println("Recuperado");
-//        Set<Partido> partidos2 = BancoDados.recuperar(Partido.class, "partidos");
-//        for(Partido p : partidos2) {
-//            System.out.println(p.getNome());
-//        }
-//        // Fim teste recuperando
-//        
-//        
-//        // Inicio teste sincronizando
-//        System.out.println("Sincronizado");
-//        tribunal.setListaPartidos(partidos2);
-//        Set<Partido> partidos3 = tribunal.getListaPartidos();
-//        for(Partido p : partidos3) {
-//            System.out.println(p.getNome());
-//        }
-        // Fim teste sincronizando
-    }
+
     // Função salvar todas listas set do programa
     public void salvarTodos(TribunalEleitoral tribunalEleitoral) {
         salvar(tribunalEleitoral.getListaPartidos(), "partidos");
