@@ -6,7 +6,7 @@
 package InterfacesUrna;
 
 import com.mycompany.tribunal.UrnaEletronica;
-import com.mycompany.candidato.Candidato;
+import com.mycompany.politicos.Candidato;
 import com.mycompany.usuarios.Eleitor;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;

@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 package com.mycompany.tribunal;
-import com.mycompany.candidato.Candidato;
-import com.mycompany.candidato.DeputadoEstadual;
-import com.mycompany.candidato.DeputadoFederal;
-import com.mycompany.candidato.Partido;
-import com.mycompany.candidato.Presidente;
-import com.mycompany.candidato.Senador;
+import com.mycompany.politicos.Candidato;
+import com.mycompany.politicos.DeputadoEstadual;
+import com.mycompany.politicos.DeputadoFederal;
+import com.mycompany.politicos.Partido;
+import com.mycompany.politicos.Presidente;
+import com.mycompany.politicos.Senador;
 import com.mycompany.usuarios.Administrador;
 import com.mycompany.usuarios.Eleitor;
 import java.nio.charset.Charset;

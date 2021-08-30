@@ -5,9 +5,9 @@
  */
 package InterfacesAdmin;
 
-import com.mycompany.candidato.Candidato;
-import com.mycompany.candidato.Partido;
-import com.mycompany.candidato.Presidente;
+import com.mycompany.politicos.Candidato;
+import com.mycompany.politicos.Partido;
+import com.mycompany.politicos.Presidente;
 import com.mycompany.json.BancoDados;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;

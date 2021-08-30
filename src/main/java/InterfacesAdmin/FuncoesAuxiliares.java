@@ -5,8 +5,8 @@
  */
 package InterfacesAdmin;
 
-import com.mycompany.candidato.Candidato;
-import com.mycompany.candidato.Partido;
+import com.mycompany.politicos.Candidato;
+import com.mycompany.politicos.Partido;
 import com.mycompany.tribunal.TribunalEleitoral;
 import com.mycompany.usuarios.Administrador;
 import com.mycompany.usuarios.Eleitor;
