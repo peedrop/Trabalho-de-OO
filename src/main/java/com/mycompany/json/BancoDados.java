@@ -20,9 +20,11 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- *
- * @author pedro
+/*
+    Gabriel Arantes Resende Pereira - 202065126A
+    Gabriel do Carmo Silva - 202065030A
+    Pedro Leopoldo Dal-Col Vianna - 202065518B
+    Pedro Paulo Silva Filogônio - 202065215A
  */
 public class BancoDados {
         
