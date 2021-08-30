@@ -19,9 +19,11 @@ import java.awt.Dimension;
 import javax.swing.DefaultListModel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-/**
- *
- * @author pedro
+/*
+    Gabriel Arantes Resende Pereira - 202065126A
+    Gabriel do Carmo Silva - 202065030A
+    Pedro Leopoldo Dal-Col Vianna - 202065518B
+    Pedro Paulo Silva Filogônio - 202065215A
  */
 public class AreaAdmin extends javax.swing.JFrame {
 

@@ -6,9 +6,11 @@ package com.mycompany.usuarios;
  * and open the template in the editor.
  */
 
-/**
- *
- * @author gabriel
+/*
+    Gabriel Arantes Resende Pereira - 202065126A
+    Gabriel do Carmo Silva - 202065030A
+    Pedro Leopoldo Dal-Col Vianna - 202065518B
+    Pedro Paulo Silva Filogônio - 202065215A
  */
 public class Eleitor extends Usuario {
     private String estado;

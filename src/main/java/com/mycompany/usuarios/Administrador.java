@@ -5,9 +5,11 @@
  */
 package com.mycompany.usuarios;
 
-/**
- *
- * @author gabriel
+/*
+    Gabriel Arantes Resende Pereira - 202065126A
+    Gabriel do Carmo Silva - 202065030A
+    Pedro Leopoldo Dal-Col Vianna - 202065518B
+    Pedro Paulo Silva Filogônio - 202065215A
  */
 public class Administrador extends Usuario {
     private String senha;

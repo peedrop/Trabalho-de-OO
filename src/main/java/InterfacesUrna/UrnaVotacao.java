@@ -11,9 +11,11 @@ import com.mycompany.usuarios.Eleitor;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author gabri
+/*
+    Gabriel Arantes Resende Pereira - 202065126A
+    Gabriel do Carmo Silva - 202065030A
+    Pedro Leopoldo Dal-Col Vianna - 202065518B
+    Pedro Paulo Silva Filogônio - 202065215A
  */
 public class UrnaVotacao extends javax.swing.JFrame {
 

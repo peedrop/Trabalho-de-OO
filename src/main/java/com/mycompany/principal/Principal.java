@@ -16,9 +16,11 @@ import com.mycompany.tribunal.TribunalEleitoral;
 import com.mycompany.tribunal.UrnaEletronica;
 import java.util.Set;
 
-/**
- *
- * @author gabriel
+/*
+    Gabriel Arantes Resende Pereira - 202065126A
+    Gabriel do Carmo Silva - 202065030A
+    Pedro Leopoldo Dal-Col Vianna - 202065518B
+    Pedro Paulo Silva Filogônio - 202065215A
  */
 public class Principal {
     public static void main(String[] args) {
