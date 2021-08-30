@@ -9,7 +9,7 @@ package com.mycompany.candidato;
  *
  * @author gabriel
  */
-public class DeputadoFederal extends Candidato {
+public class DeputadoFederal extends Candidato implements Deputado {
     private Candidato suplente;
     
     public DeputadoFederal(String nome, String estado, Partido partido, Candidato suplente, int numero_cand) {
@@ -17,8 +17,13 @@ public class DeputadoFederal extends Candidato {
         this.cargo = "Deputado Federal";
     }
 
-    public int getNumero_cand() {
-        return numero_cand;
+    @Override
+    public boolean verificarNumeroCandidato() {
+        return this.numero_cand >= 1000 && this.numero_cand <= 9999;
     }
-    
+
+    @Override
+    public boolean verificarNumeroCandidatoPorPartido() {
+        return Integer.parseInt(Integer.toString(this.numero_cand).substring(0, 2)) != this.partido.getNumero();
+    }
 }

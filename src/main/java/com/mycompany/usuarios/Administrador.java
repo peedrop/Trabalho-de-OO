@@ -9,22 +9,13 @@ package com.mycompany.usuarios;
  *
  * @author gabriel
  */
-public class Administrador {
-    private String nome;
+public class Administrador extends Usuario {
     private String senha;
     private String identificador;
 
     public Administrador(String nome, String senha) {
-        this.nome = nome;
+        super(nome);
         this.senha = senha;
-    }
-    
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getIdentificador() {
@@ -41,5 +32,10 @@ public class Administrador {
     
     public String getSenha() {
         return this.senha;
+    }
+
+    @Override
+    public String imprimirNomeFormatado() {
+        return this.getNome() + " - " + this.identificador;
     }
 }

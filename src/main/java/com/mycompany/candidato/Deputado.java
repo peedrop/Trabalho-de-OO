@@ -10,4 +10,6 @@ package com.mycompany.candidato;
  * @author gabriel
  */
 public interface Deputado {
+    public boolean verificarNumeroCandidato();
+    public boolean verificarNumeroCandidatoPorPartido();
 }

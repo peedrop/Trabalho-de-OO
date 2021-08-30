@@ -33,7 +33,7 @@ public class FuncoesAuxiliares {
     protected static void iniciaModeloListaEleitores(DefaultListModel modeloLista, TribunalEleitoral tribunalEleitoral, JList lista){
         //Inicializando os components
         for (Eleitor eleitor : tribunalEleitoral.getListaEleitores()) {
-            modeloLista.addElement(eleitor.getNome() + " - " + eleitor.getTitulo_eleitor());
+            modeloLista.addElement(eleitor.imprimirNomeFormatado());
         }
         lista.setModel(modeloLista);
         lista.repaint();
@@ -46,7 +46,7 @@ public class FuncoesAuxiliares {
         }
         else {
             for (Administrador adm : tribunalEleitoral.getListaAdministradores()) {
-                modeloLista.addElement(adm.getNome() + " - " + adm.getIdentificador());
+                modeloLista.addElement(adm.imprimirNomeFormatado());
             }
         }
         lista.setModel(modeloLista);

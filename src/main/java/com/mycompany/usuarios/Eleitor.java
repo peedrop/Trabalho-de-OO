@@ -10,8 +10,7 @@ package com.mycompany.usuarios;
  *
  * @author gabriel
  */
-public class Eleitor {
-    private String nome;
+public class Eleitor extends Usuario {
     private String estado;
     private String cpf;
     private String titulo_eleitor;
@@ -19,7 +18,7 @@ public class Eleitor {
     private static boolean validado;
 
     public Eleitor(String nome, String estado, String cpf, String titulo_eleitor) {
-        this.nome = nome;
+        super(nome);
         this.estado = estado;
         this.cpf = cpf;
         this.titulo_eleitor = titulo_eleitor;
@@ -27,19 +26,11 @@ public class Eleitor {
     }
     
     public Eleitor(String nome, String estado, String cpf, String titulo_eleitor, boolean votou) {
-        this.nome = nome;
+        super(nome);
         this.estado = estado;
         this.cpf = cpf;
         this.titulo_eleitor = titulo_eleitor;
         this.votou = votou;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public boolean getVotou() {
@@ -78,5 +69,10 @@ public class Eleitor {
         Eleitor.validado = validado;
         /*método usado pra verificar se ele pode votar ou não. deve ser chamado
         após o eleitor informar seus dados antes da primeira tela de votação */
+    }
+
+    @Override
+    public String imprimirNomeFormatado() {
+        return this.getNome() + " - " + this.titulo_eleitor;
     }
 }
