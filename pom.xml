@@ -44,5 +44,13 @@
                 </executions>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory></directory>
+                <includes>
+                    <include>*.json</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 </project>

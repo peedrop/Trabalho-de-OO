@@ -30,7 +30,7 @@ public class BancoDados {
     private static final String EXTENSAO  = ".json";
     
     // Atributo estático definindo caminho do arquivo
-    private static final String CAMINHO = "src/main/jsons/";
+    private static final String CAMINHO = "./";
     
     // Método estático auxiliar para retornar o caminho completo do arquivo
     public static String caminhoCompleto(String nomeArquivoJson) {
